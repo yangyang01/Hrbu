@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="VerifyImageCode.ashx.cs" Class="WS.Eka.HTHR.WebUI.VerifyImageCode" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="VerifyImageCode.ashx.cs" Class="Hrbu.Teaching.WebUI.VerifyImageCode" %>

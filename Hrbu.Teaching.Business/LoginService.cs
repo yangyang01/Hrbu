@@ -20,7 +20,7 @@ namespace Hrbu.Teaching.Business
 
         public bool GetUserByNoAndPass(string No, string password)
         {
-            return LoginContext.GetUserByNoAndPass(No, password) ;
+            return LoginContext.GetUserByNoAndPass(No, password);
         }
 
         public bool GetRoleByNo(string No)
@@ -31,6 +31,12 @@ namespace Hrbu.Teaching.Business
         public List<string> GetAllRole()
         {
             throw new NotImplementedException();
+        }
+
+
+        public UserUI GetUserInfoByNo(string No)
+        {
+            return EntityMapping.Auto<User, UserUI>(LoginContext.FirstOrDefault(x => x.UserNo == No));
         }
     }
 }

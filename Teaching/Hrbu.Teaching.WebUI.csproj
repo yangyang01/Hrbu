@@ -212,6 +212,7 @@
     <Content Include="Content\js\Utility.js" />
     <Content Include="Content\Images\teach_logo.jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -233,7 +234,6 @@
     <Content Include="Pages\BasicInfo\TeacherInfoDetail.aspx" />
     <Content Include="Pages\BasicInfo\TeacherInfoMaintenance.aspx" />
     <Content Include="Pages\frame.aspx" />
-    <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Power\DataAddUp.aspx" />
     <Content Include="Pages\Power\DataList.aspx" />
     <Content Include="Pages\Power\DateBasicInfo.aspx" />
@@ -358,6 +358,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Pages\BasicInfo\BasicBatch.aspx.cs">
       <DependentUpon>BasicBatch.aspx</DependentUpon>
@@ -442,13 +449,6 @@
     </Compile>
     <Compile Include="Pages\ListDetail.aspx.designer.cs">
       <DependentUpon>ListDetail.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MailBox.aspx.cs">
       <DependentUpon>MailBox.aspx</DependentUpon>

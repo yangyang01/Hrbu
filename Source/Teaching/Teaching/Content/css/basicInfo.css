@@ -1,0 +1,73 @@
+﻿.tcinfo tr, .tcinfo tr td {
+    background-color: white;
+    border-color: black;
+}
+
+.tcinfo {
+    background-color: black;
+    text-align: center;
+    font-weight: bold;
+    line-height: 27px;
+    border-color: black;
+}
+
+.title {
+    color:#728AC0;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+tr {
+    border: 1px solid gray;
+}
+
+td {
+    padding-left: 10px;
+}
+
+span {
+    color: #2B2C31;
+    font-size: 18px;
+    font-weight: 300;
+    margin-left: 120px;
+}
+
+.left {
+    margin-left: 10px;
+    width: 130px;
+    display: inline-block;
+    text-align: right;
+}
+
+.right {
+    margin-left: 15px;
+}
+
+.txt {
+    border: 1px solid #6A6775;
+    height: 23px;
+}
+
+.a {
+    margin-left: 120px;
+}
+
+.course {
+    margin-left: 3px;
+}
+
+.person_pic {
+    width: 100px;
+    height: 130px;
+    display: block;
+    float: left;
+    margin-left: 85px;
+    display: inline-block;
+    float: left;
+    position:absolute;
+}
+
+.personal_img {
+    width: 100px;
+    height: 130px;
+}

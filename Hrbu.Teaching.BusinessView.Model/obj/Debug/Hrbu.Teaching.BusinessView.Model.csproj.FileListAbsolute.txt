@@ -1,0 +1,10 @@
+E:\Teach\Teaching\Hrbu.Teaching.BusinessView.Model\bin\Debug\Hrbu.Teaching.BusinessView.Model.dll
+E:\Teach\Teaching\Hrbu.Teaching.BusinessView.Model\bin\Debug\Hrbu.Teaching.BusinessView.Model.pdb
+E:\Teach\Teaching\Hrbu.Teaching.BusinessView.Model\bin\Debug\Hrbu.Teaching.Utility.dll
+E:\Teach\Teaching\Hrbu.Teaching.BusinessView.Model\bin\Debug\Newtonsoft.Json.dll
+E:\Teach\Teaching\Hrbu.Teaching.BusinessView.Model\bin\Debug\log4net.dll
+E:\Teach\Teaching\Hrbu.Teaching.BusinessView.Model\bin\Debug\Hrbu.Teaching.Utility.pdb
+E:\Teach\Teaching\Hrbu.Teaching.BusinessView.Model\bin\Debug\Newtonsoft.Json.xml
+E:\Teach\Teaching\Hrbu.Teaching.BusinessView.Model\obj\Debug\Hrbu.Teaching.BusinessView.Model.csprojResolveAssemblyReference.cache
+E:\Teach\Teaching\Hrbu.Teaching.BusinessView.Model\obj\Debug\Hrbu.Teaching.BusinessView.Model.dll
+E:\Teach\Teaching\Hrbu.Teaching.BusinessView.Model\obj\Debug\Hrbu.Teaching.BusinessView.Model.pdb

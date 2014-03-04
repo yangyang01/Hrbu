@@ -1,0 +1,95 @@
+img {
+    border: none;
+    height: 134px;
+    width: 160px;
+}
+
+a {
+    color: #6cf;
+}
+
+    a:hover {
+        color: #84B263;
+    }
+
+.box {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    _height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 1100px;
+    height: 130px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner a {
+    display: block;
+    float: left;
+    margin: 15px 0 0 15px;
+}
+
+.banner {
+    position: absolute;
+    width: 800%;
+}
+
+#wrap1,
+#wrap2 {
+    float: left;
+}
+
+.text {
+    text-align: center;
+}
+
+#wrap1 a,
+#wrap2 a {
+    text-decoration: none;
+}
+
+#wrap1 span,
+#wrap2 span {
+    display: block;
+    width: 100px;
+    height: 130px;
+    font-size: 36px;
+    text-align: center;
+    background: white;
+    padding: 0px 10px;
+}
+
+.og_prev, .og_next {
+    width: 30px;
+    height: 50px;
+    background: url(../images/icon.png) no-repeat;
+    background: url(../images/icon_ie6.png) no-repeat\9;
+    position: absolute;
+    top: 33px;
+    z-index: 99;
+    cursor: pointer;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.og_prev {
+    background-position: 0 -60px;
+    left: 4px;
+    margin-top: 30px;
+}
+
+.og_next {
+    background-position: 0 0;
+    right: 4px;
+    margin-top: 30px;
+}

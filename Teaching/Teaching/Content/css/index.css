@@ -1,0 +1,165 @@
+﻿.a {
+    float: left;
+    border-width: 0 1px 1px 1px;
+    border-color: #EE8888;
+    border-style: solid;
+    margin: 5px 3px;
+}
+
+.b {
+    height: 30px;
+    border-width: 1px;
+    border-color: #EE8888;
+    border-style: solid;
+    margin: 0 -1px;
+    background: #FCC1C1;
+    position: relative;
+    float: left;
+}
+
+.c {
+    line-height: 10px;
+    color: #f9f9f9;
+    background: #FDF8F8;
+    border-bottom: 6px solid #FFE2E2;
+}
+
+.d {
+    padding: 0 210px 0px 8px;
+    line-height: 22px;
+    font-size: 14px;
+    color: red;
+    clear: both;
+    margin-top: -12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.title {
+    background-color: red;
+    font-size: 15px;
+    color: yellow;
+}
+
+.cont {
+    height: 320px;
+}
+
+.self {
+    float: left;
+    border-width: 1px;
+    border-color: #EE8888;
+    border-style: solid;
+    height: 317px;
+    width: 300px;
+    margin: 5px 20px;
+}
+
+.navi li {
+    list-style: none;
+    display: inline-block;
+    float: left;
+    width: 120px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    height: 20px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.cxdt {
+    width: 1000px;
+    height: 40px;
+    margin: -10px 0px 10px 5px;
+    clear: both;
+}
+
+.cxdt1 {
+    background: url(/Content/Images/cxdt1.gif) no-repeat;
+}
+
+.cxdt2 {
+    background: url(/Content/Images/cxdt2.gif) no-repeat;
+}
+
+.cxdt3 {
+    background: url(/Content/Images/cxdt3.gif) no-repeat;
+}
+
+.cxdt4 {
+    background: url(/Content/Images/cxdt4.gif) no-repeat;
+}
+
+.cxdt5 {
+    background: url(/Content/Images/cxdt5.gif) no-repeat;
+}
+
+.footer {
+    width: 1080px;
+    background: #fff url(/Content/Images/footer.gif) repeat-x;
+    padding: 35px 0 0 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hint {
+    margin: 5px;
+}
+
+.navi li:hover {
+    /*background: rgb(255, 111, 111) no-repeat right 0;*/
+    color: #F0E950;
+    /*width: 130px;*/
+    height: 12px;
+    margin-top: 3px;
+}
+
+.navi {
+    width: 1090px;
+    height: 35px;
+    background-color: rgb(199, 10, 10);
+    margin: -2px 5px;
+}
+
+.more {
+    font-size: 13px;
+    font-weight: initial;
+}
+
+.inform li {
+    width: 245px;
+    height: 25px;
+    line-height: 25px;
+    padding: 5px 0 5px 20px;
+    background: url(/Content/Images/li.gif) no-repeat 8px center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.newstitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.9em;
+    margin-top: -5px;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+.more a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.more a {
+    color: red;
+}
+
+

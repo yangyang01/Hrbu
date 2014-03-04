@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TCMGModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DataDic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="DataName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="DataDicInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="InfoName" Type="varchar" MaxLength="200" />
+    <Property Name="DataDicId" Type="int" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="URL" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="NameCn" Type="nvarchar" MaxLength="200" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ParentId" Type="int" Nullable="false" />
+    <Property Name="SeqNo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="roleName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="describe" Type="char" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="StudentBasicInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="StudentNo" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Sex" Type="char" MaxLength="2" />
+    <Property Name="Major" Type="int" />
+    <Property Name="Class" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+    <Property Name="ZipCope" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contacts" Type="nvarchar" MaxLength="200" />
+    <Property Name="ConttactTel" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TeacherBasicInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="EmpNo" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Sex" Type="char" MaxLength="2" />
+    <Property Name="Collage" Type="nvarchar" MaxLength="200" />
+    <Property Name="Major" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+    <Property Name="Course1" Type="nvarchar" MaxLength="200" />
+    <Property Name="Course2" Type="nvarchar" MaxLength="200" />
+    <Property Name="Course3" Type="nvarchar" MaxLength="200" />
+    <Property Name="Course4" Type="nvarchar" MaxLength="200" />
+    <Property Name="PATP" Type="nvarchar" MaxLength="200" />
+    <Property Name="HightestDegree" Type="nvarchar" MaxLength="200" />
+    <Property Name="GraduationSchool" Type="nvarchar" MaxLength="200" />
+    <Property Name="IndividualResume" Type="nvarchar" MaxLength="200" />
+    <Property Name="IdentityType" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="UserNo" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TCMGModel1StoreContainer">
+    <EntitySet Name="DataDic" EntityType="Self.DataDic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DataDicInfo" EntityType="Self.DataDicInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentBasicInfo" EntityType="Self.StudentBasicInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TeacherBasicInfo" EntityType="Self.TeacherBasicInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

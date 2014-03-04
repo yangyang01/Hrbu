@@ -1,0 +1,12 @@
+E:\Teach\Teaching\Teaching.Model\bin\Debug\Teaching.Model.dll.config
+E:\Teach\Teaching\Teaching.Model\bin\Debug\Teaching.Model.dll
+E:\Teach\Teaching\Teaching.Model\bin\Debug\Teaching.Model.pdb
+E:\Teach\Teaching\Teaching.Model\bin\Debug\EntityFramework.dll
+E:\Teach\Teaching\Teaching.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Teach\Teaching\Teaching.Model\bin\Debug\EntityFramework.xml
+E:\Teach\Teaching\Teaching.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Teach\Teaching\Teaching.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\Teach\Teaching\Teaching.Model\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\Teach\Teaching\Teaching.Model\obj\Debug\Teaching.Model.dll
+E:\Teach\Teaching\Teaching.Model\obj\Debug\Teaching.Model.pdb
+E:\Teach\Teaching\Teaching.Model\obj\Debug\Hrbu.Teaching.Model.csprojResolveAssemblyReference.cache

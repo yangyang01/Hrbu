@@ -1,4 +1,0 @@
-Hrbu
-====
-
-Teaching system

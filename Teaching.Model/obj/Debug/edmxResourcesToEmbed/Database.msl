@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TCMGModel1StoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="DataDic">
+      <EntityTypeMapping TypeName="TCMGModel1.DataDic">
+        <MappingFragment StoreEntitySet="DataDic">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="DataName" ColumnName="DataName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataDicInfo">
+      <EntityTypeMapping TypeName="TCMGModel1.DataDicInfo">
+        <MappingFragment StoreEntitySet="DataDicInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InfoName" ColumnName="InfoName" />
+          <ScalarProperty Name="DataDicId" ColumnName="DataDicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu">
+      <EntityTypeMapping TypeName="TCMGModel1.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="NameCn" ColumnName="NameCn" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="SeqNo" ColumnName="SeqNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="TCMGModel1.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeacherBasicInfo">
+      <EntityTypeMapping TypeName="TCMGModel1.TeacherBasicInfo">
+        <MappingFragment StoreEntitySet="TeacherBasicInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmpNo" ColumnName="EmpNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Collage" ColumnName="Collage" />
+          <ScalarProperty Name="Major" ColumnName="Major" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Course1" ColumnName="Course1" />
+          <ScalarProperty Name="Course2" ColumnName="Course2" />
+          <ScalarProperty Name="Course3" ColumnName="Course3" />
+          <ScalarProperty Name="Course4" ColumnName="Course4" />
+          <ScalarProperty Name="PATP" ColumnName="PATP" />
+          <ScalarProperty Name="HightestDegree" ColumnName="HightestDegree" />
+          <ScalarProperty Name="GraduationSchool" ColumnName="GraduationSchool" />
+          <ScalarProperty Name="IndividualResume" ColumnName="IndividualResume" />
+          <ScalarProperty Name="IdentityType" ColumnName="IdentityType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="TCMGModel1.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserNo" ColumnName="UserNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentBasicInfo">
+      <EntityTypeMapping TypeName="TCMGModel1.StudentBasicInfo">
+        <MappingFragment StoreEntitySet="StudentBasicInfo">
+          <ScalarProperty Name="ConttactTel" ColumnName="ConttactTel" />
+          <ScalarProperty Name="Contacts" ColumnName="Contacts" />
+          <ScalarProperty Name="ZipCope" ColumnName="ZipCope" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Major" ColumnName="Major" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StudentNo" ColumnName="StudentNo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

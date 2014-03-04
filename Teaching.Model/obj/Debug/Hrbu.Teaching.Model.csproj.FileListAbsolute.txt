@@ -10,3 +10,15 @@ E:\Teach\Teaching\Teaching.Model\bin\Debug\zh-Hans\EntityFramework.SqlServer.res
 E:\Teach\Teaching\Teaching.Model\obj\Debug\Teaching.Model.dll
 E:\Teach\Teaching\Teaching.Model\obj\Debug\Teaching.Model.pdb
 E:\Teach\Teaching\Teaching.Model\obj\Debug\Hrbu.Teaching.Model.csprojResolveAssemblyReference.cache
+E:\Git\Hrbu.Teaching\Hrbu\Teach\Teaching\Teaching.Model\bin\Debug\Teaching.Model.dll.config
+E:\Git\Hrbu.Teaching\Hrbu\Teach\Teaching\Teaching.Model\bin\Debug\Teaching.Model.dll
+E:\Git\Hrbu.Teaching\Hrbu\Teach\Teaching\Teaching.Model\bin\Debug\Teaching.Model.pdb
+E:\Git\Hrbu.Teaching\Hrbu\Teach\Teaching\Teaching.Model\bin\Debug\EntityFramework.dll
+E:\Git\Hrbu.Teaching\Hrbu\Teach\Teaching\Teaching.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Git\Hrbu.Teaching\Hrbu\Teach\Teaching\Teaching.Model\bin\Debug\EntityFramework.xml
+E:\Git\Hrbu.Teaching\Hrbu\Teach\Teaching\Teaching.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Git\Hrbu.Teaching\Hrbu\Teach\Teaching\Teaching.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\Git\Hrbu.Teaching\Hrbu\Teach\Teaching\Teaching.Model\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\Git\Hrbu.Teaching\Hrbu\Teach\Teaching\Teaching.Model\obj\Debug\Hrbu.Teaching.Model.csprojResolveAssemblyReference.cache
+E:\Git\Hrbu.Teaching\Hrbu\Teach\Teaching\Teaching.Model\obj\Debug\Teaching.Model.dll
+E:\Git\Hrbu.Teaching\Hrbu\Teach\Teaching\Teaching.Model\obj\Debug\Teaching.Model.pdb

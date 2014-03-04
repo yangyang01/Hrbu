@@ -33,33 +33,35 @@
                             <div>
                                 <span class="left">学号：</span> <span class="right">
                                     <asp:TextBox ID="txtStuNo" runat="server" CssClass="txt" Style="margin-left: -10px;"></asp:TextBox></span>
-                                <span class="left a">姓名：</span><span class="right"><asp:TextBox ID="txtEmpName" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left a">姓名：</span><span class="right"><asp:TextBox ID="txtStuName" runat="server" CssClass="txt"></asp:TextBox></span>
                             </div>
                             <div>
-                                <span class="left">性别：</span><span class="right"><asp:TextBox ID="TextBox1" runat="server" CssClass="txt"></asp:TextBox></span>
-                                <span class="left a">联系电话：</span><span class="right"><asp:TextBox ID="TextBox2" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left">性别：</span><span class="right"><asp:TextBox ID="txtSex" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left a">联系电话：</span><span class="right"><asp:TextBox ID="txtTel" runat="server" CssClass="txt"></asp:TextBox></span>
                             </div>
                             <div>
-                                <span class="left">专业：</span><span class="right"><asp:TextBox ID="TextBox7" runat="server" CssClass="txt"></asp:TextBox></span>
-                                <span class="left a">班级：</span><span class="right"><asp:TextBox ID="TextBox8" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left">专业：</span><span class="right"><asp:TextBox ID="txtMajor" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left a">班级：</span><span class="right"><asp:TextBox ID="txtClass" runat="server" CssClass="txt"></asp:TextBox></span>
                             </div>
                             <div>
-                                <span class="left">邮政编码</span><span class="right"><asp:TextBox ID="TextBox5" runat="server" CssClass="txt"></asp:TextBox></span>
-                                <span class="left a">家庭通讯地址：</span><span class="right"><asp:TextBox ID="TextBox6" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left">邮政编码</span><span class="right"><asp:TextBox ID="txtZipCode" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left a">家庭通讯地址：</span><span class="right"><asp:TextBox ID="txtAddress" runat="server" CssClass="txt"></asp:TextBox></span>
                             </div>
                             <div>
-                                <span class="left">联系人：</span><span class="right"><asp:TextBox ID="TextBox3" runat="server" CssClass="txt"></asp:TextBox></span>
-                                <span class="left a">联系人电话：</span><span class="right"><asp:TextBox ID="TextBox4" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left">联系人：</span><span class="right"><asp:TextBox ID="txtContacts" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left a">联系人电话：</span><span class="right"><asp:TextBox ID="txtContTel" runat="server" CssClass="txt"></asp:TextBox></span>
                             </div>
                             <div>
-                                <span class="left">E-mail：</span><span class="right"><asp:TextBox ID="TextBox9" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left">E-mail：</span><span class="right"><asp:TextBox ID="txtMail" runat="server" CssClass="txt"></asp:TextBox></span>
 
                             </div>
                         </div>
                     </fieldset>
                     <div style="padding-left: 590px; margin-top: 20px">
-                        <asp:Button runat="server" Text="确认提交" CssClass="button" />&nbsp;&nbsp;
-                         <asp:Button runat="server" Text="清除重置" CssClass="button" />
+                        <asp:Button runat="server" Text="确认提交" CssClass="button" />&nbsp;
+                         <asp:Button runat="server" Text="清除重置" CssClass="button" />&nbsp;
+                        <asp:Button runat="server" Text="返回" CssClass="button" OnClientClick="window.close();return false;" />
+
                     </div>
                 </li>
             </ul>

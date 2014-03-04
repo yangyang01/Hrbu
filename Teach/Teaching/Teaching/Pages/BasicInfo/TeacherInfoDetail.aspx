@@ -13,6 +13,13 @@
             margin-top: 110px;
         }
     </style>
+    <script type="text/javascript">
+        $(function () {
+            $("button:#resetButton").bind("click", function (e) {
+                $(this).find('input:text').val('');
+            });
+        })
+    </script>
 </head>
 <body style="background-color: #FAFBFC;">
     <form id="form1" runat="server" target="_right">
@@ -63,8 +70,9 @@
                     </fieldset>
                     <asp:PlaceHolder runat="server">
                         <div style="padding-left: 590px; margin-top: 20px">
-                            <asp:Button runat="server" Text="确认提交" CssClass="button" />&nbsp;&nbsp;
-                         <asp:Button runat="server" Text="清除重置" CssClass="button" />
+                            <asp:Button runat="server" Text="确认提交" CssClass="button" />&nbsp;
+                         <asp:Button runat="server" Text="清除重置" CssClass="button" ID="resetButton" />&nbsp;
+                            <asp:Button runat="server" Text="返回" CssClass="button" OnClientClick="window.close();return false;" />
                         </div>
                     </asp:PlaceHolder>
                 </li>

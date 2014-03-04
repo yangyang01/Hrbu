@@ -9,18 +9,30 @@ using Teaching.Model;
 
 namespace Teaching.DataAccess
 {
-   public class StudentBasicInfoContext:DBContext<StudentBasicInfo>
+    public class StudentBasicInfoContext : DBContext<StudentBasicInfo>
     {
-       public static List<StudentBasicInfo> GetStudentInfoByPage(int startPage, int pageSize, out int totalCount)
-       {
-           using (var ctx = CreateContext())
-           {
-               var sql = from s in ctx.Set<StudentBasicInfo>()
-                         orderby s.id
-                         select s;
-               totalCount = sql.Count();
-               return sql.ToList();
-           }
-       }
+        public static List<StudentBasicInfo> GetStudentInfoByPage(int startPage, int pageSize, out int totalCount)
+        {
+            using (var ctx = CreateContext())
+            {
+                var sql = from s in ctx.Set<StudentBasicInfo>()
+                          orderby s.id
+                          select s;
+                totalCount = sql.Count();
+                return sql.ToList();
+            }
+        }
+        public static StudentBasicInfo GetStudentInfoById(int Id)
+        {
+            using (var ctx = CreateContext())
+            {
+                var sql = from s in ctx.Set<StudentBasicInfo>()
+                          where s.id == Id
+                          select s;
+                return sql.FirstOrDefault();
+
+            }
+        }
+
     }
 }

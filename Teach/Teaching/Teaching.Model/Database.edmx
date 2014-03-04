@@ -55,6 +55,7 @@
           <Property Name="Photo" Type="nvarchar" MaxLength="500" />
           <Property Name="ZipCope" Type="nvarchar" MaxLength="50" />
           <Property Name="Contacts" Type="nvarchar" MaxLength="200" />
+          <Property Name="ConttactTel" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TeacherBasicInfo">
           <Key>
@@ -196,6 +197,7 @@
           <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="ZipCope" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Contacts" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ConttactTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -280,6 +282,7 @@
           <EntitySetMapping Name="StudentBasicInfo">
             <EntityTypeMapping TypeName="TCMGModel1.StudentBasicInfo">
               <MappingFragment StoreEntitySet="StudentBasicInfo">
+                <ScalarProperty Name="ConttactTel" ColumnName="ConttactTel" />
                 <ScalarProperty Name="Contacts" ColumnName="Contacts" />
                 <ScalarProperty Name="ZipCope" ColumnName="ZipCope" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />

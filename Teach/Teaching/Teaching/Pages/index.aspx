@@ -1,16 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="main.aspx.cs" Inherits="Teaching.Pages.main" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Teaching.Pages.index" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-    <script src="../Content/js/libs/jquery-1.8.3.min.js"></script>
-    <script src="../Content/js/lrtk.js"></script>
-    <link href="../Content/css/lrtk.css" rel="stylesheet" />
     <link href="../Content/css/index.css" rel="stylesheet" />
     <script src="../Content/js/global.js"></script>
+    <title></title>
     <script type="text/javascript">
 
         function change(ss) {
@@ -29,28 +26,7 @@
 </head>
 <body style="background-color: rgb(241, 232, 235)">
     <form id="Form2" runat="server" target="_middem">
-        <div style="width: 1100px; height: 200px; margin: -17px 0px 0px 110px">
-            <%--head picture --%>
-            <div class="head">
-                <img src=" /Content/Images/logo2.jpg" style="width: 1091px; height: 189px; margin-left: 4px;" />
-            </div>
-            <%-- navigater --%>
-            <div class="navi">
-                <ul>
-                    <a href="main.aspx">
-                        <li>首  页</li>
-                    </a>
-                    <li style="margin-left: -17px;">要 闻</li>
-                    <li>平安建设</li>
-                    <li>法制建设</li>
-                    <li>队伍建设</li>
-                    <li>部门动态</li>
-                    <li>政法文化</li>
-                    <li>安徽长安网</li>
-                </ul>
-            </div>
-        </div>
-        <div style="width: 1100px; height: 2900px; height: 2720px !important; background-color: white; margin: 24px 0px 0px 110px">
+        <div style="width: 1100px; height: 2900px; height: 2700px !important; background-color: white; margin: -17px 0px 0px 110px">
             <div style="width: 1100px; height: 50px; margin-left: 5px;">
                 <table style="margin: 16px 0 0  -2px;">
                     <tr>
@@ -85,77 +61,6 @@
                     <div style="width: 300px; height: 20px; background-color: rgb(201, 197, 197)">
                         <center><span class="newstitle">2013年10月份信息报送工作考核情况的通报</span></center>
                     </div>
-                    <script type="text/javascript">
-                        var p = $('#picplayer');
-                        var pics1 = [{ url: '/Content/Images/1.jpg', link: '', time: 5000 }, { url: '/Content/Images/2.jpg', link: '', time: 5000 }, { url: '/Content/Images/3.jpg', link: '', time: 5000 }, { url: '/Content/Images/4.jpg', link: '', time: 5000 }, { url: '/Content/Images/5.jpg', link: '', time: 5000 }];
-                        initPicPlayer(pics1, p.css('width').split('px')[0], p.css('height').split('px')[0]);
-                        // 
-                        function initPicPlayer(pics, w, h) {
-                            //选中的图片 
-                            var selectedItem;
-                            //选中的按钮 
-                            var selectedBtn;
-                            //自动播放的id 
-                            var playID;
-                            //选中图片的索引 
-                            var selectedIndex;
-                            //容器 
-                            var p = $('#picplayer');
-                            p.text('');
-                            p.append('<div id="piccontent"></div>');
-                            var c = $('#piccontent');
-                            for (var i = 0; i < pics.length; i++) {
-                                //添加图片到容器中 
-                                c.append('<a href="' + pics[i].link + '" target="_blank"><img id="picitem' + i + '" style="display: none;height: 329px;width:298.5px;z-index:' + i + '" src="' + pics[i].url + '" /></a>');
-                            }
-                            //按钮容器，绝对定位在右下角 
-                            p.append('<div id="picbtnHolder" style="position:absolute;top:' + (h - 25) + 'px;width:' + w + 'px;height:20px;z-index:10000;"></div>');
-                            // 
-                            var btnHolder = $('#picbtnHolder');
-                            btnHolder.append('<div id="picbtns" style="float:right; padding-right:1px;"></div>');
-                            var btns = $('#picbtns');
-                            // 
-                            for (var i = 0; i < pics.length; i++) {
-                                //增加图片对应的按钮 
-                                btns.append('<span id="picbtn' + i + '" style="cursor:pointer;background-color:#eee; display:inline-block;"> ' + (i + 1) + ' </span> ');
-                                $('#picbtn' + i).data('index', i);
-                                $('#picbtn' + i).click(
-                                    function (event) {
-                                        if (selectedItem.attr('src') == $('#picitem' + $(this).data('index')).attr('src')) {
-                                            return;
-                                        }
-                                        setSelectedItem($(this).data('index'));
-                                    }
-                                );
-                            }
-                            btns.append(' ');
-                            /// 
-                            setSelectedItem(0);
-                            //显示指定的图片index 
-                            function setSelectedItem(index) {
-                                selectedIndex = index;
-                                clearInterval(playID);
-                                //alert(index); 
-                                if (selectedItem) selectedItem.fadeOut('fast');
-                                selectedItem = $('#picitem' + index);
-                                selectedItem.fadeIn('slow');
-                                // 
-                                if (selectedBtn) {
-                                    selectedBtn.css('backgroundColor', '#eee');
-                                    selectedBtn.css('color', '#000');
-                                }
-                                selectedBtn = $('#picbtn' + index);
-                                selectedBtn.css('backgroundColor', '#000');
-                                selectedBtn.css('color', '#fff');
-                                //自动播放 
-                                playID = setInterval(function () {
-                                    var index = selectedIndex + 1;
-                                    if (index > pics.length - 1) index = 0;
-                                    setSelectedItem(index);
-                                }, pics[index].time);
-                            }
-                        }
-                    </script>
                 </div>
 
                 <div class="a" style="margin: 5px 2px 5px -13px;">
@@ -163,8 +68,8 @@
                         <div class="c">&nbsp;</div>
                         <div class="d" style="padding: 0 8px 0px 10px; width: 265px;">要&nbsp;闻 <span class="more" style="margin-left: 175px"><a href="ListDetail.aspx">更多>></a></span></div>
                     </div>
-                    <div id="inform" class="inform cont">
-                        <ul id="top" style="width: 50px;">
+                    <div id="inform" class="inform cont" style="height: 303px">
+                        <ul id="top" style="width: 50px; margin-left: -32px">
                             <a href="NewsDetial.aspx">
                                 <li>县委政法委召开“整顿作风，提升效能，优化环境”主题教育实</li>
                             </a>
@@ -362,18 +267,6 @@
                         <div class="cont" style="width: 240px;"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div style="width: 1100px; height: 100px; margin: -60px 0px 0px 110px">
-            <div class="footer">
-            </div>
-            <div style="font-size: 15px; text-align: center; color: gray;">
-                友情链接：<a class="hint">aaaaaa</a> |<a class="hint">bbbbbb</a>| <a class="hint">cccccc</a>| <a class="hint">dddddd</a><br />
-                <div style="height: 20px; margin-top: 30px; font-size: 12px">
-                    铜陵平安网 版权所有
-                </div>
-                <div style="font-size: 12px">建议使用 1024 X 768 分辨率，IE9.0 或以上版本浏览本网站</div>
             </div>
         </div>
     </form>

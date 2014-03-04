@@ -35,6 +35,11 @@ namespace Hrbu.Teaching.Interface
         /// <param name="Id"></param>
         /// <returns></returns>
         TeacherBasicInfoUI GetTeacherInfoById(int Id);
-
+        /// <summary>
+        /// 根据学生Id获取学生的详细信息
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        StudentBasicInfoUI GetStudengInfoById(int Id);
     }
 }

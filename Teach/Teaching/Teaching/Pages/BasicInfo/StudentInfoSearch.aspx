@@ -16,14 +16,14 @@
         <div class="content_title"><span>学生信息查询</span></div>
         <div style="padding-left: 100px; font-size: 18px; height: 27px">
             姓名：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
-            工号：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
+            学号：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
             <asp:Button runat="server" Text="查询" CssClass="button" />
             <asp:Button runat="server" Text="查询所有" CssClass="button" />
         </div>
         <div style="padding-top: 20px;">
             <table class="table" border="0" style="padding-left: 100px; border-collapse: collapse; margin-left: 100px;">
                 <tr class="table_title">
-                    <td style="width: 100px">工号</td>
+                    <td style="width: 100px">学号</td>
                     <td style="width: 100px">姓名</td>
                     <td style="width: 150px">专业</td>
                     <td style="width: 150px">班级</td>
@@ -43,7 +43,7 @@
                             <td title="<%#Eval("Major") %>"><%#Eval("Major") %></td>
                             <td title="<%#Eval("Class") %>"><%#Eval("Class") %></td>
                             <td>
-                                <a onclick="openDialog('StudentInfoDetail.aspx?Id=<%#Eval("Id") %>')" href="#"
+                                <a onclick="openDialog('StudentInfoDetail.aspx?StudentId=<%#Eval("Id") %>')" href="#"
                                     title="教师信息详情">
                                     <asp:Button Text="详情" runat="server" CssClass="button" /></a>
                             </td>

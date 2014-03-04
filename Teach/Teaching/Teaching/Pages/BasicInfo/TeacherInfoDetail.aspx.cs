@@ -44,8 +44,6 @@ namespace Teaching.Pages.BasicInfo
             this.txtTel.Text = teacherInfo.Tel;
             this.txtMail.Text = teacherInfo.Mail;
             this.txtCurriculumVitae.Value = teacherInfo.IndividualResume;
-            
-            
         }
     }
 }

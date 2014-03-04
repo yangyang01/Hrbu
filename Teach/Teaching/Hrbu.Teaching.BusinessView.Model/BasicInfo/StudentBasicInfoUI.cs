@@ -35,5 +35,8 @@ namespace Hrbu.Teaching.BusinessView.Model.BasicInfo
         public string ZipCope { get; set; }
         [DataMember]
         public string Contacts { get; set; }
+        [DataMember]
+        public string ConttactTel { get; set; }
+
     }
 }

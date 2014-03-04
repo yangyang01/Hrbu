@@ -18,8 +18,6 @@ namespace Hrbu.Teaching.WebUI
             ObjectFactory.BuildUp(this);
         }
 
-        public int MyProperty { get; set; }
-
         public string GetQueryValue(string name)
         {
             if (string.IsNullOrWhiteSpace(Request.QueryString[name]))

@@ -16,18 +16,18 @@
         <div>
             <div style="padding-left: 100px; font-size: 18px; height: 27px">
                 姓名：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
-                工号：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
+                学号：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
                 <asp:Button runat="server" Text="查询" CssClass="button" />
                 <%--</div>
             <div style="padding-left: 100px;">--%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a onclick="openDialog('StudentInfoDetail.aspx')" href="#"
-                    title="教师信息详情">
+                    title="添加学生信息">
                     <asp:Button Text="添加" runat="server" CssClass="button" ID="AddInfo" /></a>
                 <asp:Button runat="server" Text="批量数据信息导入" CssClass="button" Style="width: 125px;" ID="AddInfoList" />
             </div>
             <table class="table" border="0" style="padding-left: 100px; border-collapse: collapse; margin: 10px 100px;">
                 <tr class="table_title">
-                    <td style="width: 100px">工号</td>
+                    <td style="width: 100px">学号</td>
                     <td style="width: 100px">姓名</td>
                     <td style="width: 150px">专业</td>
                     <td style="width: 150px">班级</td>
@@ -47,8 +47,8 @@
                             <td title="<%#Eval("Major") %>"><%#Eval("Major") %></td>
                             <td title="<%#Eval("Class") %>"><%#Eval("Class") %></td>
                             <td>
-                                <a onclick="openDialog('StudentInfoDetail.aspx')" href="#"
-                                    title="教师信息详情">
+                                <a onclick="openDialog('StudentInfoDetail.aspx?StudentId=<%#Eval("id") %>')" href="#"
+                                    title="修改学生信息">
                                     <asp:Button Text="修改" runat="server" CssClass="button" /></a>
                                 <asp:Button Text="删除" runat="server" CssClass="button" />
                             </td>

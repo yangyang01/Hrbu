@@ -33,5 +33,11 @@ namespace Hrbu.Teaching.Business
        {
            return EntityMapping.Auto<TeacherBasicInfo, TeacherBasicInfoUI>(TeacherBasicInfoContext.GetTeacherInfoById(Id));
        }
+
+
+       public StudentBasicInfoUI GetStudengInfoById(int Id)
+       {
+           return EntityMapping.Auto<StudentBasicInfo, StudentBasicInfoUI>(StudentBasicInfoContext.GetStudentInfoById(Id));
+       }
     }
 }

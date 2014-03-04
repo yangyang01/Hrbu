@@ -21,7 +21,5 @@ namespace Hrbu.Teaching.Interface
         [OperationContract]
         List<string> GetAllRole();
 
-        UserUI GetUserInfoByNo(string No);
-
     }
 }

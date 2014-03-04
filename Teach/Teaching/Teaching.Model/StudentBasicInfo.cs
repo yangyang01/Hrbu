@@ -26,5 +26,6 @@ namespace Teaching.Model
         public string Photo { get; set; }
         public string ZipCope { get; set; }
         public string Contacts { get; set; }
+        public string ConttactTel { get; set; }
     }
 }

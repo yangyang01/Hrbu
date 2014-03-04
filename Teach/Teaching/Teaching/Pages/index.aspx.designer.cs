@@ -10,7 +10,7 @@
 namespace Teaching.Pages {
     
     
-    public partial class main {
+    public partial class index {
         
         /// <summary>
         /// Form2 控件。

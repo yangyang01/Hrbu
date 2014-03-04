@@ -159,8 +159,11 @@
     <Content Include="Contact.aspx" />
     <Content Include="Content\css\basicInfo.css" />
     <Content Include="Content\css\global.css" />
+    <Content Include="Content\css\index.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\lrtk.css" />
+    <Content Include="Content\css\mailbox.css" />
+    <Content Include="Content\css\picnews.css" />
     <Content Include="Content\css\power.css" />
     <Content Include="Content\css\sliderIMG.css" />
     <Content Include="Content\Images\1.jpg" />
@@ -186,6 +189,10 @@
     <Content Include="Content\Images\icon.png" />
     <Content Include="Content\Images\icon_ie6.png" />
     <Content Include="Content\Images\li.gif" />
+    <Content Include="Content\Images\logo.jpg" />
+    <Content Include="Content\Images\logo1.jpg" />
+    <Content Include="Content\Images\logo2.jpg" />
+    <Content Include="Content\Images\logo3.jpg" />
     <Content Include="Content\Images\navi.gif" />
     <Content Include="Content\Images\personal.jpg" />
     <Content Include="Content\Images\search_box.jpg" />
@@ -198,6 +205,8 @@
     <Content Include="Content\js\libs\jquery-1.8.3.min.js" />
     <Content Include="Content\js\libs\WdatePicker.js" />
     <Content Include="Content\js\lrtk.js" />
+    <Content Include="Content\js\mailbox.js" />
+    <Content Include="Content\js\picnews.js" />
     <Content Include="Content\js\sliderIMG.js" />
     <Content Include="Content\js\tween.js" />
     <Content Include="Content\js\Utility.js" />
@@ -209,6 +218,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="Pages\Error.aspx" />
+    <Content Include="Pages\Footer.aspx" />
+    <Content Include="Pages\index.aspx" />
     <Content Include="Pages\ListDetail.aspx" />
     <Content Include="Pages\MailBox.aspx" />
     <Content Include="Pages\main.aspx" />
@@ -222,7 +233,7 @@
     <Content Include="Pages\BasicInfo\TeacherInfoDetail.aspx" />
     <Content Include="Pages\BasicInfo\TeacherInfoMaintenance.aspx" />
     <Content Include="Pages\frame.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Power\DataAddUp.aspx" />
     <Content Include="Pages\Power\DataList.aspx" />
     <Content Include="Pages\Power\DateBasicInfo.aspx" />
@@ -262,6 +273,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\Top.aspx" />
     <Content Include="Site.Master" />
     <Content Include="UserControls\PagerControl.ascx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -403,12 +415,26 @@
     <Compile Include="Pages\Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Footer.aspx.cs">
+      <DependentUpon>Footer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Footer.aspx.designer.cs">
+      <DependentUpon>Footer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\frame.aspx.cs">
       <DependentUpon>frame.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\frame.aspx.designer.cs">
       <DependentUpon>frame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ListDetail.aspx.cs">
       <DependentUpon>ListDetail.aspx</DependentUpon>
@@ -417,11 +443,11 @@
     <Compile Include="Pages\ListDetail.aspx.designer.cs">
       <DependentUpon>ListDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MailBox.aspx.cs">
@@ -493,6 +519,13 @@
     </Compile>
     <Compile Include="Pages\Power\RoleList.aspx.designer.cs">
       <DependentUpon>RoleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Top.aspx.cs">
+      <DependentUpon>Top.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Top.aspx.designer.cs">
+      <DependentUpon>Top.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -569,8 +602,6 @@
           <DevelopmentServerPort>40859</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:40859/</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:40859/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -36,7 +36,7 @@
                 date = (today.getFullYear()) + "年" + (today.getMonth() + 1) + "月" + today.getDate() + "日 " + day;
                 document.write("今天是&nbsp;" + date + "&nbsp;&nbsp;&nbsp;");
             </script>
-            当前用户：张三&nbsp;&nbsp;&nbsp;<a href='<%=ResolveUrl("Login.aspx") %>'><input type="button" id="btnLogout" value="注销" class="logout" /></a>
+            当前用户：<asp:Label ID="lblName" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;<a href='<%=ResolveUrl("Login.aspx") %>'><input type="button" id="btnLogout" value="注销" class="logout" /></a>
             <a href='<%=ResolveUrl("Power/PassWordUpdate.aspx") %>' target="_right">
                 <input type="button" id="btnpassword" value="修改密码" class="logout" /></a>
         </div>

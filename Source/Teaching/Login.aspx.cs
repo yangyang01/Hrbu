@@ -8,7 +8,6 @@ using Hrbu.Teaching.Utility;
 using Hrbu.Teachings.Utility;
 using Hrbu.Teaching.Interface;
 using Hrbu.Teaching.BusinessView.Model.Power;
-using StructureMap;
 using Hrbu.Teaching.WebUI;
 using System.Web.Security;
 
@@ -20,7 +19,10 @@ namespace Teaching
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+            }
         }
         protected void Login_Button(object sender, EventArgs e)
         {
@@ -60,6 +62,9 @@ namespace Teaching
                     //记录用户信息 生成票据
 
                     var user = login.GetUserInfoByNo(No);
+
+                    Session["currentUser"] = user;
+
                     FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(user.UserNo, false, 2000);
                     string formCookieValue = FormsAuthentication.Encrypt(ticket);
                     HttpCookie httpCookie = new HttpCookie(FormsAuthentication.FormsCookieName, formCookieValue);

@@ -18,6 +18,18 @@ namespace Hrbu.Teaching.WebUI
             ObjectFactory.BuildUp(this);
         }
 
+        public UserUI CurrentUser
+        {
+            get
+            {
+                if (Session["currentUser"] == null)
+                {
+                    Session["currentUser"] = new UserUI();
+                }
+                return Session["currentUser"] as UserUI;
+            }
+        }
+
         public string GetQueryValue(string name)
         {
             if (string.IsNullOrWhiteSpace(Request.QueryString[name]))

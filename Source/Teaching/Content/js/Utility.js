@@ -32,3 +32,23 @@ function showModuleDialog(url, width, height) {
     _h = height || _h;
     window.showModalDialog(url, window, "dialogWidth=" + _w + "px;dialogHeight=" + _h + "px");
 }
+function GetParentWindow() {
+    var opener = window.opener;
+    if (!opener) {
+        //for IE window.opener=undefined
+        opener = window.dialogArguments;
+    }
+    if (!opener) {
+        opener = window.parent;
+    }
+
+    return opener;
+}
+function RefreshParentAndCloseSelf() {
+    var opener = GetParentWindow();
+    if (typeof opener.location.href == 'string') {
+        opener.location.href = GetParentHref();
+    }
+    window.open('', '_self', '');
+    window.close();
+}

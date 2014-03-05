@@ -10,7 +10,7 @@
 namespace Teaching.Pages.Power {
     
     
-    public partial class PassWordUpdate {
+    public partial class UserList {
         
         /// <summary>
         /// form1 控件。
@@ -22,39 +22,30 @@ namespace Teaching.Pages.Power {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtOldPass 控件。
+        /// rptUserList 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOldPass;
+        protected global::System.Web.UI.WebControls.Repeater rptUserList;
         
         /// <summary>
-        /// txtNewPass 控件。
+        /// phNoData 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNewPass;
+        protected global::System.Web.UI.WebControls.PlaceHolder phNoData;
         
         /// <summary>
-        /// txtConfirmPass 控件。
+        /// PagerControl 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmPass;
-        
-        /// <summary>
-        /// lblErrorMeg 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorMeg;
+        protected global::Hrbu.Teaching.WebUI.UserControls.PagerControl PagerControl;
     }
 }

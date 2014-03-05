@@ -10,7 +10,7 @@
 namespace Teaching.Pages.Power {
     
     
-    public partial class PassWordUpdate {
+    public partial class UserAddUp {
         
         /// <summary>
         /// form1 控件。
@@ -22,39 +22,39 @@ namespace Teaching.Pages.Power {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtOldPass 控件。
+        /// txtUserNo 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOldPass;
+        protected global::System.Web.UI.WebControls.TextBox txtUserNo;
         
         /// <summary>
-        /// txtNewPass 控件。
+        /// txtUserName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNewPass;
+        protected global::System.Web.UI.WebControls.TextBox txtUserName;
         
         /// <summary>
-        /// txtConfirmPass 控件。
+        /// txtPassword 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmPass;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
-        /// lblErrorMeg 控件。
+        /// txt 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorMeg;
+        protected global::System.Web.UI.WebControls.TextBox txt;
     }
 }

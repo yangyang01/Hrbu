@@ -36,9 +36,9 @@ namespace Hrbu.Teaching.Business
         }
 
 
-        public List<DataDicInfoUI> GetDataDicInfoById(int Id)
+        public List<DataDicInfoUI> GetDataDicInfoListById(int Id)
         {
-            return EntityMapping.Auto<List<DataDicInfo>, List<DataDicInfoUI>>(DataDicinfoContext.GetDataDicInfoById(Id));
+            return EntityMapping.Auto<List<DataDicInfo>, List<DataDicInfoUI>>(DataDicinfoContext.GetDataDicListById(Id));
         }
 
         public void UpdateDataDic(DataDicInfoUI dataInfo)
@@ -52,6 +52,19 @@ namespace Hrbu.Teaching.Business
         {
             DataDicInfo dataInfoModel = EntityMapping.Auto<DataDicInfoUI, DataDicInfo>(dataInfo);
             DataDicinfoContext.Add(dataInfoModel);
+        }
+
+
+        public DataDicInfoUI GetDataDicInfoById(int Id)
+        {
+            return EntityMapping.Auto<DataDicInfo, DataDicInfoUI>(DataDicinfoContext.GetDataDicInfoById(Id));
+        }
+
+
+        public List<UserUI> GetUserInfoByPage(int startPage, int pageSize, out int totalCount)
+        {
+            return EntityMapping.Auto<List<User>, List<UserUI>>(UserContext.GetUserListByPage(startPage, pageSize, out totalCount));
+
         }
 
 

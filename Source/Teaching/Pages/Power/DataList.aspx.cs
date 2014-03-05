@@ -39,10 +39,10 @@ namespace Teaching.Pages.Power
             PagerControl.CurrentPageIndex = currentPageIndex;
             PagerControl.IntialProperties(totalCount);
         }
-        protected void NewData(Object sender, EventArgs e)
-        {
-            string jsStr = "openDialog(\"/Pages/Power/DataAddUp.aspx\",400,200); ";
-            ScriptManager.RegisterStartupScript(this, this.GetType(), Guid.NewGuid().ToString(), jsStr, true);
-        }
+        //protected void NewData(Object sender, EventArgs e)
+        //{
+        //    string jsStr = "openDialog(\"/Pages/Power/DataAddUp.aspx\",400,200); ";
+        //    ScriptManager.RegisterStartupScript(this, this.GetType(), Guid.NewGuid().ToString(), jsStr, true);
+        //}
     }
 }

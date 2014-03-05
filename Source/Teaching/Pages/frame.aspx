@@ -110,6 +110,7 @@
                         <li>
                             <dl class="gallery">
                                 <dt><a href="main.aspx">系统维护设置</a></dt>
+                                <dd><a href="Power/UserList.aspx" title="用户管理" target="_right">用户管理</a></dd>
                                 <dd><a href="Power/RoleList.aspx" title="角色维护" target="_right">权限维护</a></dd>
                                 <dd><a href="help0302.aspx" title="学期维护" target="_right">学期维护</a></dd>
                                 <dd><a href="help0303.aspx" title="数据备份" target="_right">数据备份</a></dd>

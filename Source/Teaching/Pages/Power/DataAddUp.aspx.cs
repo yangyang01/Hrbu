@@ -26,24 +26,19 @@ namespace Teaching.Pages.Power
             if (Request["DicId"] != null)
             {
                 var data = power.GetDataDicInfoById(DicId);
-                foreach (var dataInfo in data)
-                {
-                    this.txtDataName.Text = dataInfo.InfoName;
-                }
+
+                this.txtDataName.Text = data.InfoName;
             }
         }
         protected void btSure_Click(object sender, EventArgs e)
         {
             if (Request["DicId"] != null)
             {
-                var dataDicList = power.GetDataDicInfoById(DicId);
-                foreach (var dataInfo in dataDicList)
-                {
-                    dataInfo.Id = DicId;
-                    dataInfo.InfoName = this.txtDataName.Text;
-                    power.UpdateDataDic(dataInfo);
-                }
+                var dataDicInfo = power.GetDataDicInfoById(DicId);
 
+                dataDicInfo.Id = DicId;
+                dataDicInfo.InfoName = this.txtDataName.Text;
+                power.UpdateDataDic(dataDicInfo);
                 WebMessageBox(this.Page, string.Format("'操作成功!',RefreshParentAndCloseSelf"));
             }
             else

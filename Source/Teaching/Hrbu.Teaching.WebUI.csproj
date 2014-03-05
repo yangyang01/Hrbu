@@ -273,6 +273,8 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\Power\UserAddUp.aspx" />
+    <Content Include="Pages\Power\UserList.aspx" />
     <Content Include="Pages\Top.aspx" />
     <Content Include="Site.Master" />
     <Content Include="UserControls\PagerControl.ascx" />
@@ -519,6 +521,20 @@
     </Compile>
     <Compile Include="Pages\Power\RoleList.aspx.designer.cs">
       <DependentUpon>RoleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Power\UserAddUp.aspx.cs">
+      <DependentUpon>UserAddUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Power\UserAddUp.aspx.designer.cs">
+      <DependentUpon>UserAddUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Power\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Power\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Top.aspx.cs">
       <DependentUpon>Top.aspx</DependentUpon>

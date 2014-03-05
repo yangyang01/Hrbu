@@ -15,9 +15,9 @@
     <form id="form1" runat="server">
         <div class="content_title"><span>数据字典</span></div>
         <div style="padding-left: 100px;">
-            <span style="margin-left: 100px;">
+           <%-- <span style="margin-left: 100px;">
                 <asp:Button Text="添加" runat="server" CssClass="button" OnClick="NewData" CommandName="New" />
-            </span>
+            </span>--%>
             <table class="table" style="border-collapse: collapse; margin: 10px 100px;">
                 <tr class="table_title">
                     <td style="width: 200px">查看</td>

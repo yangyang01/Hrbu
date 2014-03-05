@@ -47,11 +47,35 @@ namespace Hrbu.Teaching.Interface
         /// <param name="id"></param>
         /// <returns></returns>
         [OperationContract]
-        List<DataDicInfoUI> GetDataDicInfoById(int Id);
+        List<DataDicInfoUI> GetDataDicInfoListById(int Id);
+        /// <summary>
+        /// 修改数据字典数据信息
+        /// </summary>
+        /// <param name="dataInfo"></param>
         [OperationContract]
         void UpdateDataDic(DataDicInfoUI dataInfo);
+        /// <summary>
+        /// 新增数据字典数据
+        /// </summary>
+        /// <param name="dataInfo"></param>
         [OperationContract]
         void AddDataDic(DataDicInfoUI dataInfo);
+        /// <summary>
+        /// 根据Id获取数据字典数据对象
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        [OperationContract]
+        DataDicInfoUI GetDataDicInfoById(int Id);
+        /// <summary>
+        /// 获取用户列表
+        /// </summary>
+        /// <param name="startPage"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="totalCount"></param>
+        /// <returns></returns>
+        [OperationContract]
+        List<UserUI> GetUserInfoByPage(int startPage, int pageSize, out int totalCount);
 
         bool RoleHasPermission(string menu, int roleId);
 

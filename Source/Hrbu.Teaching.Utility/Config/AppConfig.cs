@@ -17,7 +17,7 @@ namespace Hrbu.Teachings.Utility
                 }
                 catch
                 {
-                    return "data source=localhost;initial catalog=TCMG;persist security info=True;user id=sa;password=123;MultipleActiveResultSets=True";
+                    return "data source=jennyl-pc;initial catalog=TCMG;persist security info=True;user id=sa;password=123;MultipleActiveResultSets=True";
                 }
             }
         }

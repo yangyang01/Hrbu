@@ -47,6 +47,7 @@
     <Compile Include="BasicInfo\StudentBasicInfoUI.cs" />
     <Compile Include="BasicInfo\TeacherBasicInfoUI.cs" />
     <Compile Include="ModelExtendUI.cs" />
+    <Compile Include="Power\AuthorizationUI.cs" />
     <Compile Include="Power\DataDicInfoUI.cs" />
     <Compile Include="Power\DataDicUI.cs" />
     <Compile Include="Power\MenuUI.cs" />

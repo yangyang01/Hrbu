@@ -12,13 +12,12 @@ namespace Teaching.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Menu
+    public partial class Authorizations
     {
         public int Id { get; set; }
-        public string URL { get; set; }
-        public string NameCn { get; set; }
-        public string NameEn { get; set; }
-        public Nullable<int> ParentId { get; set; }
-        public Nullable<int> SeqNo { get; set; }
+        public Nullable<int> MenuId { get; set; }
+        public Nullable<int> RoleId { get; set; }
+        public string MenuName { get; set; }
+        public Nullable<bool> Enable { get; set; }
     }
 }

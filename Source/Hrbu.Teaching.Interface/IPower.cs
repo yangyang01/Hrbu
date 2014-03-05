@@ -52,6 +52,13 @@ namespace Hrbu.Teaching.Interface
         void UpdateDataDic(DataDicInfoUI dataInfo);
         [OperationContract]
         void AddDataDic(DataDicInfoUI dataInfo);
-       
+
+        bool RoleHasPermission(string menu, int roleId);
+
+        List<AuthorizationUI> GetRoleMenus(int roleId);
+        int GetMenuIdByName(string name);
+        AuthorizationUI GetAuthInfoByMenuAndRole(string menuName, int roleId);
+        void AddAuth(AuthorizationUI model);
+        void UpdateAuth(AuthorizationUI model);
     }
 }

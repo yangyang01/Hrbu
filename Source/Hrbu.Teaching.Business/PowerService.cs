@@ -11,11 +11,11 @@ using Teaching.Model;
 
 namespace Hrbu.Teaching.Business
 {
-    public class PowerService:IPower
+    public class PowerService : IPower
     {
         public List<DataDicUI> GetDataInfoByPage(int startPage, int pageSize, out int totalCount)
         {
-            return EntityMapping.Auto<List<DataDic>,List<DataDicUI>>(DataDicContext.GetDateListByPage(startPage,pageSize,out totalCount));
+            return EntityMapping.Auto<List<DataDic>, List<DataDicUI>>(DataDicContext.GetDateListByPage(startPage, pageSize, out totalCount));
         }
 
 
@@ -31,9 +31,8 @@ namespace Hrbu.Teaching.Business
         }
 
         public RoleUI GetRoleByRoleId(int Id)
-
         {
-           return EntityMapping.Auto<Role,RoleUI>( RoleContext.GetRoleByRoleId(Id));
+            return EntityMapping.Auto<Role, RoleUI>(RoleContext.GetRoleByRoleId(Id));
         }
 
 
@@ -54,5 +53,40 @@ namespace Hrbu.Teaching.Business
             DataDicInfo dataInfoModel = EntityMapping.Auto<DataDicInfoUI, DataDicInfo>(dataInfo);
             DataDicinfoContext.Add(dataInfoModel);
         }
+
+
+        public bool RoleHasPermission(string menu, int roleId)
+        {
+            return AuthorizationContext.CheckRoleHasPermission(menu, roleId);
+        }
+
+        public List<AuthorizationUI> GetRoleMenus(int roleId)
+        {
+            return EntityMapping.Auto<List<Authorizations>, List<AuthorizationUI>>(AuthorizationContext.GetRoleMenus(roleId));
+        }
+
+        public int GetMenuIdByName(string name)
+        {
+            return AuthorizationContext.GetMenuIdByName(name);
+        }
+
+        public AuthorizationUI GetAuthInfoByMenuAndRole(string menuName, int roleId)
+        {
+            return EntityMapping.Auto<Authorizations, AuthorizationUI>(AuthorizationContext.GetByConditions(x => x.MenuName == menuName &&
+                x.RoleId == roleId).FirstOrDefault());
+        }
+
+        public void AddAuth(AuthorizationUI model)
+        {
+            AuthorizationContext.Add(EntityMapping.Auto<AuthorizationUI, Authorizations>(model));
+        }
+
+        public void UpdateAuth(AuthorizationUI model)
+        {
+            AuthorizationContext.Update(EntityMapping.Auto<AuthorizationUI, Authorizations>(model));
+        }
+
+
+
     }
 }

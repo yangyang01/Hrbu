@@ -6,12 +6,13 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link type="text/css" rel="stylesheet" href="~/Content/css/global.css" />
+    <script src="../../Content/js/Utility.js"></script>
     <title>数据信息</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <a onclick="showModuleDialog('DataAddUp.aspx?DicId=<%#Eval("Id") %>')" href="#"
+            <a onclick="openDialog('DataAddUp.aspx?DicId=<%#Eval("Id") %>')" href="#"
                 title="添加数据详情" style="margin-left: 100px;">
                 <asp:Button Text="添加" runat="server" CssClass="button" />
             </a>
@@ -27,7 +28,7 @@
                             <td title="<%#Eval("InfoName") %>"><%#Eval("InfoName") %></td>
                             <td title=""></td>
                             <td>
-                                <a onclick="showModuleDialog('DataAddUp.aspx?DicId=<%#Eval("Id") %>')" href="#"
+                                <a onclick="openDialog('DataAddUp.aspx?DicId=<%#Eval("Id") %>')" href="#"
                                     title="添加数据详情"">
                                     <asp:Button Text="修改" runat="server" CssClass="button" />
                                 </a>

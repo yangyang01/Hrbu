@@ -38,5 +38,12 @@ namespace Hrbu.Teaching.Business
         {
             return EntityMapping.Auto<User, UserUI>(LoginContext.FirstOrDefault(x => x.UserNo == No));
         }
+
+        public void UpdatePass(UserUI user)
+        {
+            User userInfo = EntityMapping.Auto< UserUI,User>(user);
+            LoginContext.Update(userInfo);
+        }
+ 
     }
 }

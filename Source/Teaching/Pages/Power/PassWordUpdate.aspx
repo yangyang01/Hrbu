@@ -13,20 +13,22 @@
             padding-top: 10px;
             display: inline-block;
         }
-    </style> 
+    </style>
 </head>
 <body>
     <form id="form1" runat="server" target="_right">
-        <div style="padding-left:100px">
+        <div style="padding-left: 100px">
             <div>
-                &nbsp;&nbsp;<span>原密码：<asp:TextBox runat="server" TextMode="Password"></asp:TextBox></span><br />
-                &nbsp;&nbsp;<span>新密码：<asp:TextBox runat="server" TextMode="Password"></asp:TextBox></span><br />
-                <span>确认密码：<asp:TextBox runat="server" TextMode="Password"></asp:TextBox></span><br />
+                &nbsp;&nbsp;<span>原密码：<asp:TextBox runat="server" TextMode="Password" ID="txtOldPass"></asp:TextBox></span><br />
+                &nbsp;&nbsp;<span>新密码：<asp:TextBox runat="server" TextMode="Password" ID="txtNewPass"></asp:TextBox></span><br />
+                <span>确认密码：<asp:TextBox runat="server" TextMode="Password" ID="txtConfirmPass"></asp:TextBox></span><br />
             </div>
             <div style="padding: 10px 50px">
-                <asp:Button runat="server" Text="确认" CssClass="button" />&nbsp;
-            <asp:Button runat="server" Text="返回" CssClass="button" />
+                <asp:Button runat="server" Text="确认" CssClass="button" OnClick="Confirm_Button" />&nbsp;
+            <asp:Button runat="server" Text="返回" CssClass="button" OnClientClick="window.close();return false;" />
             </div>
+            <asp:Label ID="lblErrorMeg" ClientIDMode="Static" runat="server" CssClass="errorTip" Visible="false" Style="top: -34px;margin-left: 70px;color:red"></asp:Label>
+
         </div>
     </form>
 </body>

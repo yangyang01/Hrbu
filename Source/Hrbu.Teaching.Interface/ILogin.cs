@@ -20,8 +20,10 @@ namespace Hrbu.Teaching.Interface
         bool GetRoleByNo(string No);
         [OperationContract]
         List<string> GetAllRole();
-
+        [OperationContract]
         UserUI GetUserInfoByNo(string No);
+        [OperationContract]
+         void UpdatePass(UserUI user);
 
     }
 }

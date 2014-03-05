@@ -26,7 +26,7 @@ namespace Teaching.Pages.Power
         }
         protected void BindDataDicInfoList()
         {
-            var studentList = DataInfo.GetDataDicInfoById(Id);
+            var studentList = DataInfo.GetDataDicInfoListById(Id);
             this.rptDataDicList.DataSource = studentList;
             this.rptDataDicList.DataBind();
         }

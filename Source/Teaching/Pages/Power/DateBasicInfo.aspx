@@ -12,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <a onclick="openDialog('DataAddUp.aspx?DicId=<%#Eval("Id") %>')" href="#"
+            <a onclick="openDialog('DataAddUp.aspx')" href="#"
                 title="添加数据详情" style="margin-left: 100px;">
                 <asp:Button Text="添加" runat="server" CssClass="button" />
             </a>

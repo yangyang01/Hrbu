@@ -60,5 +60,12 @@ namespace Hrbu.Teaching.Business
         {
             return EntityMapping.Auto<DataDicInfo, DataDicInfoUI>(DataDicinfoContext.GetDataDicInfoById(Id));
         }
+
+
+        public List<UserUI> GetUserInfoByPage(int startPage, int pageSize, out int totalCount)
+        {
+            return EntityMapping.Auto<List<User>, List<UserUI>>(UserContext.GetUserListByPage(startPage, pageSize, out totalCount));
+
+        }
     }
 }

@@ -57,6 +57,7 @@
     <Compile Include="RoleContext.cs" />
     <Compile Include="StudentBasicInfoContext.cs" />
     <Compile Include="TeacherBasicInfoContext.cs" />
+    <Compile Include="UserContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

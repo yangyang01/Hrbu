@@ -67,6 +67,15 @@ namespace Hrbu.Teaching.Interface
         /// <returns></returns>
         [OperationContract]
         DataDicInfoUI GetDataDicInfoById(int Id);
+        /// <summary>
+        /// 获取用户列表
+        /// </summary>
+        /// <param name="startPage"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="totalCount"></param>
+        /// <returns></returns>
+        [OperationContract]
+        List<UserUI> GetUserInfoByPage(int startPage, int pageSize, out int totalCount);
 
     }
 }

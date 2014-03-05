@@ -28,10 +28,10 @@
             <table class="table" border="1" style="border-bottom-color: gray; text-align: center; margin-left: 100px; border-collapse: collapse" id="TeacherInfoListTable">
                 <tr class="table_title">
                     <td style="width: 100px">工号</td>
-                    <td style="width: 100px">姓名</td>
-                    <td style="width: 150px">学院</td>
-                    <td style="width: 150px">专业</td>
-                    <td style="width: 250px">操作</td>
+                    <td style="width: 50px">姓名</td>
+                    <td style="width: 50px">学院</td>
+                    <td style="width: 50px">专业</td>
+                    <td style="width: 50px">操作</td>
                 </tr>
                 <asp:PlaceHolder ID="phNoData" runat="server" Visible="false">
                     <tr>

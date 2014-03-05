@@ -12,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <a onclick="openDialog('DataAddUp.aspx')" href="#"
+            <a onclick="openDialog('DataAddUp.aspx',400,200)" href="#"
                 title="添加数据详情" style="margin-left: 100px;">
                 <asp:Button Text="添加" runat="server" CssClass="button" />
             </a>
@@ -28,9 +28,9 @@
                             <td title="<%#Eval("InfoName") %>"><%#Eval("InfoName") %></td>
                             <td title=""></td>
                             <td>
-                                <a onclick="openDialog('DataAddUp.aspx?DicId=<%#Eval("Id") %>')" href="#"
+                                <a onclick="openDialog('DataAddUp.aspx?DicId=<%#Eval("Id") %>',400,200)" href="#"
                                     title="添加数据详情"">
-                                    <asp:Button Text="修改" runat="server" CssClass="button" />
+                                    <asp:Button Text="修改" runat="server" CssClass="button"/>
                                 </a>
                                 <asp:Button Text="删除" runat="server" CssClass="button" />
                             </td>

@@ -24,10 +24,10 @@
             <table class="table" border="0" style="padding-left: 100px; border-collapse: collapse; margin-left: 100px;">
                 <tr class="table_title">
                     <td style="width: 100px">学号</td>
-                    <td style="width: 100px">姓名</td>
-                    <td style="width: 150px">专业</td>
-                    <td style="width: 150px">班级</td>
-                    <td style="width: 250px">操作</td>
+                    <td style="width: 50px">姓名</td>
+                    <td style="width: 50px">专业</td>
+                    <td style="width: 50px">班级</td>
+                    <td style="width: 50px">操作</td>
                 </tr>
                 <asp:PlaceHolder ID="phNoData" runat="server" Visible="false">
                     <tr>

@@ -8,14 +8,17 @@
     <link type="text/css" rel="stylesheet" href="~/Content/css/global.css" />
     <%@ Register Src="~/UserControls/PagerControl.ascx" TagPrefix="uc1" TagName="PagerControl" %>
     <script src="../../Content/js/Utility.js"></script>
-    <title>角色列表</title>
+    <title>用户列表</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="content_title"><span>用户管理</span></div>
         <div style="padding-left: 100px">
-            <div style="margin-bottom:4px">
-                <a onclick="openDialog('UserAddUpdate.aspx') " href="#"
+            <div style="font-size: 18px; height: 27px; margin-bottom: 8px">
+                用户名：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
+                姓名：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
+                <asp:Button runat="server" Text="查询" CssClass="button" />
+                <a onclick="openDialog('UserAddUp.aspx',500,400) " href="#"
                     title="权限信息详情">
                     <asp:Button Text="添加" runat="server" CssClass="button" />
                 </a>
@@ -34,7 +37,7 @@
                             <td title="<%# Eval("UserName") %>"><%# Eval("UserName") %></td>
                             <td title="<%# Eval("RoleId") %>"><%# Eval("RoleId") %></td>
                             <td>
-                                <a onclick="openDialog('UserAddUpdate.aspx?Id=<%#Eval("Id")%>') " href="#"
+                                <a onclick="openDialog('UserAddUp.aspx',500,400) " href="#"
                                     title="权限信息详情">
                                     <asp:Button Text="修改" runat="server" CssClass="button" /></a>
                                 <asp:Button Text="删除" runat="server" CssClass="button" />
@@ -42,6 +45,12 @@
                         </tr>
                     </ItemTemplate>
                 </asp:Repeater>
+                <asp:PlaceHolder ID="phNoData" runat="server" Visible="false">
+                    <tr>
+                        <td colspan='8' style="text-align: left;">当前查询条件没有数据！
+                </td>
+                    </tr>
+                </asp:PlaceHolder>
                 <tr class="page_list">
                     <td colspan='4'>
                         <div class="page_list_menu">

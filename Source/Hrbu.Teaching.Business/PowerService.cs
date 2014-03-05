@@ -72,5 +72,40 @@ namespace Hrbu.Teaching.Business
         {
             DataDicinfoContext.Delete(x => x.Id == Id);
         }
+
+
+        public bool RoleHasPermission(string menu, int roleId)
+        {
+            return AuthorizationContext.CheckRoleHasPermission(menu, roleId);
+        }
+
+        public List<AuthorizationUI> GetRoleMenus(int roleId)
+        {
+            return EntityMapping.Auto<List<Authorizations>, List<AuthorizationUI>>(AuthorizationContext.GetRoleMenus(roleId));
+        }
+
+        public int GetMenuIdByName(string name)
+        {
+            return AuthorizationContext.GetMenuIdByName(name);
+        }
+
+        public AuthorizationUI GetAuthInfoByMenuAndRole(string menuName, int roleId)
+        {
+            return EntityMapping.Auto<Authorizations, AuthorizationUI>(AuthorizationContext.GetByConditions(x => x.MenuName == menuName &&
+                x.RoleId == roleId).FirstOrDefault());
+        }
+
+        public void AddAuth(AuthorizationUI model)
+        {
+            AuthorizationContext.Add(EntityMapping.Auto<AuthorizationUI, Authorizations>(model));
+        }
+
+        public void UpdateAuth(AuthorizationUI model)
+        {
+            AuthorizationContext.Update(EntityMapping.Auto<AuthorizationUI, Authorizations>(model));
+        }
+
+
+
     }
 }

@@ -15,17 +15,26 @@ namespace Teaching.Pages.Power
         public IPower powerInfo { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkAuth();
             PagerControl.PageChange += new PagerControl.PageRefresh(BindRoleList);
             if (!IsPostBack)
             {
                 BindRoleList();
             }
         }
+
+        public override string PageName
+        {
+            get
+            {
+                return "权限维护";
+            }
+        }
         protected void BindRoleList(int currentPageIndex = 0)
         {
             int totalCount = 0;
             var RoleList = powerInfo.GetRoleInfoByPage(currentPageIndex + 1, 2, out totalCount);
-            this.rptRoleList.DataSource = RoleList                                 ;
+            this.rptRoleList.DataSource = RoleList;
             this.rptRoleList.DataBind();
             PagerControl.CurrentPageIndex = currentPageIndex;
             PagerControl.IntialProperties(totalCount);

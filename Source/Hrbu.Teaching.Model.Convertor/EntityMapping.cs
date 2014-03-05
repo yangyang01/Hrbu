@@ -46,6 +46,8 @@ namespace Hrbu.Teaching.Model.Convertor
             Mapper.CreateMap<StudentBasicInfo, StudentBasicInfoUI>();
             Mapper.CreateMap<StudentBasicInfoUI, StudentBasicInfo>();
             #endregion
+            Mapper.CreateMap<Authorizations, AuthorizationUI>();
+            Mapper.CreateMap<AuthorizationUI, Authorizations>();
 
         }
     }

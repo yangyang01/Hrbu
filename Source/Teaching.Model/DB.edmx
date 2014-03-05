@@ -4,14 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="TCMGModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Authrizations">
+    <Schema Namespace="TCMGModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Authorizations">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MenuId" Type="int" />
           <Property Name="RoleId" Type="int" />
+          <Property Name="MenuName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Enable" Type="bit" />
         </EntityType>
         <EntityType Name="DataDic">
           <Key>
@@ -32,12 +34,12 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="URL" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="URL" Type="nvarchar" MaxLength="500" />
           <Property Name="NameCn" Type="nvarchar" MaxLength="200" />
-          <Property Name="NameEn" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="ParentId" Type="int" Nullable="false" />
-          <Property Name="SeqNo" Type="int" Nullable="false" />
+          <Property Name="NameEn" Type="nvarchar" MaxLength="200" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="SeqNo" Type="int" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -63,6 +65,7 @@
           <Property Name="Photo" Type="nvarchar" MaxLength="500" />
           <Property Name="ZipCope" Type="nvarchar" MaxLength="50" />
           <Property Name="Contacts" Type="nvarchar" MaxLength="200" />
+          <Property Name="ConttactTel" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TeacherBasicInfo">
           <Key>
@@ -92,14 +95,14 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="UserNo" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="TCMGModel1StoreContainer">
-          <EntitySet Name="Authrizations" EntityType="Self.Authrizations" Schema="dbo" store:Type="Tables" />
+        <EntityContainer Name="TCMGModel2StoreContainer">
+          <EntitySet Name="Authorizations" EntityType="Self.Authorizations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DataDic" EntityType="Self.DataDic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DataDicInfo" EntityType="Self.DataDicInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
@@ -111,7 +114,7 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="TCMGModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="TCMGModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="DataDic">
           <Key>
             <PropertyRef Name="id" />
@@ -132,11 +135,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="URL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="URL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="NameCn" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="NameEn" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ParentId" Type="Int32" Nullable="false" />
-          <Property Name="SeqNo" Type="Int32" Nullable="false" />
+          <Property Name="NameEn" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="SeqNo" Type="Int32" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -145,6 +148,24 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="roleName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="describe" Type="String" MaxLength="200" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="StudentBasicInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="StudentNo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sex" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Major" Type="Int32" />
+          <Property Name="Class" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCope" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Contacts" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ConttactTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TeacherBasicInfo">
           <Key>
@@ -180,58 +201,42 @@
           <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RoleId" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="DataDic" EntityType="Self.DataDic" />
-          <EntitySet Name="DataDicInfo" EntityType="Self.DataDicInfo" />
-          <EntitySet Name="Menu" EntityType="Self.Menu" />
-          <EntitySet Name="Role" EntityType="Self.Role" />
-          <EntitySet Name="TeacherBasicInfo" EntityType="Self.TeacherBasicInfo" />
-          <EntitySet Name="User" EntityType="Self.User" />
-          <EntitySet Name="StudentBasicInfo" EntityType="TCMGModel1.StudentBasicInfo" />
-          <EntitySet Name="Authrizations" EntityType="TCMGModel1.Authrizations" />
+        <EntityContainer Name="TCMGEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DataDics" EntityType="Self.DataDic" />
+          <EntitySet Name="DataDicInfoes" EntityType="Self.DataDicInfo" />
+          <EntitySet Name="Menus" EntityType="Self.Menu" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="StudentBasicInfoes" EntityType="Self.StudentBasicInfo" />
+          <EntitySet Name="TeacherBasicInfoes" EntityType="Self.TeacherBasicInfo" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Authorizations" EntityType="TCMGModel2.Authorization" />
         </EntityContainer>
-        <EntityType Name="StudentBasicInfo">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="StudentNo" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Sex" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-          <Property Name="Major" Type="Int32" />
-          <Property Name="Class" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="ZipCope" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Contacts" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="ConttactTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Authrizations">
+        <EntityType Name="Authorization">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MenuId" Type="Int32" />
           <Property Name="RoleId" Type="Int32" />
+          <Property Name="MenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Enable" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TCMGModel1StoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="DataDic">
-            <EntityTypeMapping TypeName="TCMGModel1.DataDic">
+        <EntityContainerMapping StorageEntityContainer="TCMGModel2StoreContainer" CdmEntityContainer="TCMGEntities2">
+          <EntitySetMapping Name="DataDics">
+            <EntityTypeMapping TypeName="TCMGModel2.DataDic">
               <MappingFragment StoreEntitySet="DataDic">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="DataName" ColumnName="DataName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DataDicInfo">
-            <EntityTypeMapping TypeName="TCMGModel1.DataDicInfo">
+          <EntitySetMapping Name="DataDicInfoes">
+            <EntityTypeMapping TypeName="TCMGModel2.DataDicInfo">
               <MappingFragment StoreEntitySet="DataDicInfo">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="InfoName" ColumnName="InfoName" />
@@ -239,8 +244,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Menu">
-            <EntityTypeMapping TypeName="TCMGModel1.Menu">
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="TCMGModel2.Menu">
               <MappingFragment StoreEntitySet="Menu">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="URL" ColumnName="URL" />
@@ -251,8 +256,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Role">
-            <EntityTypeMapping TypeName="TCMGModel1.Role">
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="TCMGModel2.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="roleName" ColumnName="roleName" />
@@ -260,8 +265,27 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TeacherBasicInfo">
-            <EntityTypeMapping TypeName="TCMGModel1.TeacherBasicInfo">
+          <EntitySetMapping Name="StudentBasicInfoes">
+            <EntityTypeMapping TypeName="TCMGModel2.StudentBasicInfo">
+              <MappingFragment StoreEntitySet="StudentBasicInfo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="StudentNo" ColumnName="StudentNo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="ZipCope" ColumnName="ZipCope" />
+                <ScalarProperty Name="Contacts" ColumnName="Contacts" />
+                <ScalarProperty Name="ConttactTel" ColumnName="ConttactTel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeacherBasicInfoes">
+            <EntityTypeMapping TypeName="TCMGModel2.TeacherBasicInfo">
               <MappingFragment StoreEntitySet="TeacherBasicInfo">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="EmpNo" ColumnName="EmpNo" />
@@ -285,8 +309,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="TCMGModel1.User">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TCMGModel2.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -296,27 +320,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="StudentBasicInfo">
-            <EntityTypeMapping TypeName="TCMGModel1.StudentBasicInfo">
-              <MappingFragment StoreEntitySet="StudentBasicInfo">
-                <ScalarProperty Name="Contacts" ColumnName="Contacts" />
-                <ScalarProperty Name="ZipCope" ColumnName="ZipCope" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="Mail" ColumnName="Mail" />
-                <ScalarProperty Name="Tel" ColumnName="Tel" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="Major" ColumnName="Major" />
-                <ScalarProperty Name="Sex" ColumnName="Sex" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="StudentNo" ColumnName="StudentNo" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Authrizations">
-            <EntityTypeMapping TypeName="TCMGModel1.Authrizations">
-              <MappingFragment StoreEntitySet="Authrizations">
+          <EntitySetMapping Name="Authorizations">
+            <EntityTypeMapping TypeName="TCMGModel2.Authorization">
+              <MappingFragment StoreEntitySet="Authorizations">
+                <ScalarProperty Name="Enable" ColumnName="Enable" />
+                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="MenuId" ColumnName="MenuId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -337,23 +345,23 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram DiagramId="4138b580f1d843eba24cf21b2d4ea746" Name="Diagram1">
-        <EntityTypeShape EntityType="TCMGModel1.DataDic" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TCMGModel1.DataDicInfo" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TCMGModel1.Menu" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TCMGModel1.Role" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TCMGModel1.TeacherBasicInfo" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TCMGModel1.User" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TCMGModel1.StudentBasicInfo" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TCMGModel1.Authrizations" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+      <Diagram DiagramId="bd679388cfd943beb6a508fb5ea810ca" Name="Diagram1">
+        <EntityTypeShape EntityType="TCMGModel2.DataDic" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMGModel2.DataDicInfo" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMGModel2.Menu" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMGModel2.Role" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMGModel2.StudentBasicInfo" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMGModel2.TeacherBasicInfo" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMGModel2.User" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMGModel2.Authorization" Width="1.5" PointX="7.375" PointY="6.75" />
       </Diagram>
     </Diagrams>
   </Designer>

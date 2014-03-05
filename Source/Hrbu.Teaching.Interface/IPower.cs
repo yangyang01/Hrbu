@@ -83,5 +83,12 @@ namespace Hrbu.Teaching.Interface
         [OperationContract]
         void DeleteDataDicInfo(int Id);
 
+        bool RoleHasPermission(string menu, int roleId);
+
+        List<AuthorizationUI> GetRoleMenus(int roleId);
+        int GetMenuIdByName(string name);
+        AuthorizationUI GetAuthInfoByMenuAndRole(string menuName, int roleId);
+        void AddAuth(AuthorizationUI model);
+        void UpdateAuth(AuthorizationUI model);
     }
 }

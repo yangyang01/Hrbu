@@ -1,4 +1,5 @@
 ﻿using Hrbu.Teaching.BusinessView.Model.Power;
+using Hrbu.Teaching.Interface;
 using Hrbu.Teaching.Utility;
 using Microsoft.AspNet.Identity;
 using StructureMap;
@@ -12,10 +13,29 @@ namespace Hrbu.Teaching.WebUI
 {
     public partial class BasePage : System.Web.UI.Page
     {
-
         public BasePage()
         {
             ObjectFactory.BuildUp(this);
+        }
+
+        public void checkAuth()
+        {
+            if (CurrentUser != null && !PowerService.RoleHasPermission(this.PageName, CurrentUser.RoleId))
+            {
+                Response.Write("对不起，你没有访问该站点的权限，如有疑问，请联系管理员！");
+                Response.End();
+            }
+        }
+
+        public IPower PowerService
+        { get; set; }
+
+        public virtual string PageName
+        {
+            get
+            {
+                return "basepage";
+            }
         }
 
         public UserUI CurrentUser
@@ -62,9 +82,9 @@ namespace Hrbu.Teaching.WebUI
         public void WebMessageBox(System.Web.UI.Page page, string msg, string callback = null)
         {
             if (string.IsNullOrEmpty(callback))
-                PageRegisterStartupScript(page, string.Format("<script type=\"text/javascript\">ShowMessage('{0}')</script>", msg));
+                PageRegisterStartupScript(page, string.Format("<script type=\"text/javascript\">alert('{0}')</script>", msg));
             else
-                PageRegisterStartupScript(page, string.Format("<script type=\"text/javascript\">ShowMessage('{0}',{1})</script>", msg, callback));
+                PageRegisterStartupScript(page, string.Format("<script type=\"text/javascript\">alert('{0}',{1})</script>", msg, callback));
         }
     }
 }

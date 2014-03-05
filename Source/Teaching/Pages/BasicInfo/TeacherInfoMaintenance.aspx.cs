@@ -12,9 +12,17 @@ namespace Teaching.Pages.BasicInfo
 {
     public partial class TeacherInfoMaintenance : BasePage
     {
-       public IBasicInfo TeacherInfo { get; set; }
+        public IBasicInfo TeacherInfo { get; set; }
+        public override string PageName
+        {
+            get
+            {
+                return "教工信息维护";
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkAuth();
             PagerControl.PageChange += new PagerControl.PageRefresh(BindTeacherList);
             if (!IsPostBack)
             {

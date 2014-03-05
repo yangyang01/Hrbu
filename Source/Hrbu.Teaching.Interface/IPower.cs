@@ -76,6 +76,12 @@ namespace Hrbu.Teaching.Interface
         /// <returns></returns>
         [OperationContract]
         List<UserUI> GetUserInfoByPage(int startPage, int pageSize, out int totalCount);
+        /// <summary>
+        /// 删除数据字典数据
+        /// </summary>
+        /// <param name="DataInfo"></param>
+        [OperationContract]
+        void DeleteDataDicInfo(int Id);
 
     }
 }

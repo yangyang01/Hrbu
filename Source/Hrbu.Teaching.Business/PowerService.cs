@@ -11,11 +11,11 @@ using Teaching.Model;
 
 namespace Hrbu.Teaching.Business
 {
-    public class PowerService:IPower
+    public class PowerService : IPower
     {
         public List<DataDicUI> GetDataInfoByPage(int startPage, int pageSize, out int totalCount)
         {
-            return EntityMapping.Auto<List<DataDic>,List<DataDicUI>>(DataDicContext.GetDateListByPage(startPage,pageSize,out totalCount));
+            return EntityMapping.Auto<List<DataDic>, List<DataDicUI>>(DataDicContext.GetDateListByPage(startPage, pageSize, out totalCount));
         }
 
 
@@ -31,9 +31,8 @@ namespace Hrbu.Teaching.Business
         }
 
         public RoleUI GetRoleByRoleId(int Id)
-
         {
-           return EntityMapping.Auto<Role,RoleUI>( RoleContext.GetRoleByRoleId(Id));
+            return EntityMapping.Auto<Role, RoleUI>(RoleContext.GetRoleByRoleId(Id));
         }
 
 
@@ -66,6 +65,12 @@ namespace Hrbu.Teaching.Business
         {
             return EntityMapping.Auto<List<User>, List<UserUI>>(UserContext.GetUserListByPage(startPage, pageSize, out totalCount));
 
+        }
+
+
+        public void DeleteDataDicInfo(int Id)
+        {
+            DataDicinfoContext.Delete(x => x.Id == Id);
         }
     }
 }

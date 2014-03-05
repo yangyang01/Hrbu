@@ -44,6 +44,7 @@ function GetParentWindow() {
 
     return opener;
 }
+//关闭本页面并刷新父页面
 function RefreshParentAndCloseSelf() {
     var opener = GetParentWindow();
     if (typeof opener.location.href == 'string') {
@@ -51,4 +52,24 @@ function RefreshParentAndCloseSelf() {
     }
     window.open('', '_self', '');
     window.close();
+}
+
+function RefreshParentAndSelf(href) {
+    var parent = GetParentWindow();
+    if (parent != null) {
+        parent.location.href = GetParentHref();
+    }
+    window.location.href = href;
+}
+
+function RefreshParent() {
+    var opener = GetParentWindow();
+
+    opener.location.href = GetParentHref();
+
+    window.open('', '_self', '');
+}
+
+function RefreshSelf() {
+    window.location.href = window.location.href + "?" + Math.random();
 }

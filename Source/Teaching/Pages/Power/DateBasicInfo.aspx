@@ -28,11 +28,12 @@
                             <td title="<%#Eval("InfoName") %>"><%#Eval("InfoName") %></td>
                             <td title=""></td>
                             <td>
+                                <asp:HiddenField runat="server" ID="hfDataDicInfoId" Value='<%# Eval("Id") %>' />
                                 <a onclick="openDialog('DataAddUp.aspx?DicId=<%#Eval("Id") %>',400,200)" href="#"
                                     title="添加数据详情"">
                                     <asp:Button Text="修改" runat="server" CssClass="button"/>
                                 </a>
-                                <asp:Button Text="删除" runat="server" CssClass="button" />
+                                <asp:Button Text="删除" runat="server" CssClass="button" CommandName="Delete" />
                             </td>
                         </tr>
                     </ItemTemplate>

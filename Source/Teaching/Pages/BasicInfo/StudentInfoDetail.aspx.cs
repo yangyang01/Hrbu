@@ -13,7 +13,13 @@ namespace Teaching.Pages.BasicInfo
     public partial class StudentInfoDetail : BasePage
     {
         public IBasicInfo StudentService { get; set; }
-
+        public string Status
+        {
+            get
+            {
+                return GetQueryValue("Status");
+            }
+        }
         public int StudentId
         {
             get

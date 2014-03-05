@@ -219,12 +219,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="Pages\Error.aspx" />
-    <Content Include="Pages\Footer.aspx" />
-    <Content Include="Pages\index.aspx" />
-    <Content Include="Pages\ListDetail.aspx" />
-    <Content Include="Pages\MailBox.aspx" />
-    <Content Include="Pages\main.aspx" />
-    <Content Include="Pages\NewsDetial.aspx" />
     <None Include="Content\js\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Pages\BasicInfo\BasicBatch.aspx" />
     <Content Include="Pages\BasicInfo\StudentInfoDetail.aspx" />
@@ -275,7 +269,6 @@
     <Content Include="Global.asax" />
     <Content Include="Pages\Power\UserAddUp.aspx" />
     <Content Include="Pages\Power\UserList.aspx" />
-    <Content Include="Pages\Top.aspx" />
     <Content Include="Site.Master" />
     <Content Include="UserControls\PagerControl.ascx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -424,54 +417,12 @@
     <Compile Include="Pages\Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Footer.aspx.cs">
-      <DependentUpon>Footer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Footer.aspx.designer.cs">
-      <DependentUpon>Footer.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\frame.aspx.cs">
       <DependentUpon>frame.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\frame.aspx.designer.cs">
       <DependentUpon>frame.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ListDetail.aspx.cs">
-      <DependentUpon>ListDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\ListDetail.aspx.designer.cs">
-      <DependentUpon>ListDetail.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MailBox.aspx.cs">
-      <DependentUpon>MailBox.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\MailBox.aspx.designer.cs">
-      <DependentUpon>MailBox.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\main.aspx.cs">
-      <DependentUpon>main.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\main.aspx.designer.cs">
-      <DependentUpon>main.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\NewsDetial.aspx.cs">
-      <DependentUpon>NewsDetial.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\NewsDetial.aspx.designer.cs">
-      <DependentUpon>NewsDetial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Power\DataAddUp.aspx.cs">
       <DependentUpon>DataAddUp.aspx</DependentUpon>
@@ -535,13 +486,6 @@
     </Compile>
     <Compile Include="Pages\Power\UserList.aspx.designer.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Top.aspx.cs">
-      <DependentUpon>Top.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Top.aspx.designer.cs">
-      <DependentUpon>Top.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

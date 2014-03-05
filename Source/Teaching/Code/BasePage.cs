@@ -27,7 +27,7 @@ namespace Hrbu.Teaching.WebUI
             }
         }
 
-        protected IPower PowerService
+        public IPower PowerService
         { get; set; }
 
         public virtual string PageName

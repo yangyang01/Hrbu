@@ -99,7 +99,7 @@ namespace Teaching.Pages.Power
                 var data = powerInfo.GetAuthInfoByMenuAndRole(obj.Text, RoleId);
                 if (data == null)
                 {
-                    AuthorizationUI auth = new AuthorizationUI()
+                    AuthorizationsUI auth = new AuthorizationsUI()
                     {
                         MenuId = powerInfo.GetMenuIdByName(obj.Text),
                         MenuName = obj.Text,
@@ -122,7 +122,7 @@ namespace Teaching.Pages.Power
                 var data = powerInfo.GetAuthInfoByMenuAndRole(obj.Text, RoleId);
                 if (data == null)
                 {
-                    AuthorizationUI auth = new AuthorizationUI()
+                    AuthorizationsUI auth = new AuthorizationsUI()
                     {
                         MenuId = powerInfo.GetMenuIdByName(obj.Text),
                         MenuName = obj.Text,

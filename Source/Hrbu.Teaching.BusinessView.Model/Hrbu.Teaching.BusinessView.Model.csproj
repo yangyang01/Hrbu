@@ -47,13 +47,14 @@
     <Compile Include="BasicInfo\StudentBasicInfoUI.cs" />
     <Compile Include="BasicInfo\TeacherBasicInfoUI.cs" />
     <Compile Include="ModelExtendUI.cs" />
-    <Compile Include="Power\AuthorizationUI.cs" />
+    <Compile Include="Power\AuthorizationsUI.cs" />
     <Compile Include="Power\DataDicInfoUI.cs" />
     <Compile Include="Power\DataDicUI.cs" />
     <Compile Include="Power\MenuUI.cs" />
     <Compile Include="Power\RoleUI.cs" />
     <Compile Include="Power\UserUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeachDocument\CourseInfoUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hrbu.Teaching.Utility\Hrbu.Teaching.Utility.csproj">

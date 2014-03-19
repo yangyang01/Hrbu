@@ -16,8 +16,8 @@
         <div class="content_title"><span>教工信息维护</span></div>
         <div>
             <div style="padding-left: 100px; font-size: 18px; height: 27px">
-                姓名：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
-                工号：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
+                姓名：<asp:TextBox runat="server" Width="100px" Height="25px" ID="txtSearchName"></asp:TextBox>
+                工号：<asp:TextBox runat="server" Width="100px" Height="25px" ID="txtSearchNo"></asp:TextBox>
                 <asp:Button runat="server" Text="查询" CssClass="button" />
                 <%--<div>
             <div style="margin-left: 100px">--%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -28,8 +28,8 @@
             </div>
             <table class="table" border="1" style="border-bottom-color: gray; text-align: center; margin: 10px 100px; border-collapse: collapse;" id="TeacherInfoListTable">
                 <tr class="table_title">
-                    <td style="width: 100px">工号</td>
-                    <td style="width: 100px">姓名</td>
+                    <td style="width: 150px">工号</td>
+                    <td style="width: 150px">姓名</td>
                     <td style="width: 150px">学院</td>
                     <td style="width: 150px">专业</td>
                     <td style="width: 250px">操作</td>
@@ -40,17 +40,21 @@
                         </td>
                     </tr>
                 </asp:PlaceHolder>
-                <asp:Repeater runat="server" ID="rptTeacherList">
+                <asp:Repeater runat="server" ID="rptTeacherList" OnItemCommand="repPend_ItemCommand">
                     <ItemTemplate>
                         <tr>
-                            <td title="<%#Eval("EmpNo") %>"><%#Eval("EmpNo")%></td>
-                            <td title="<%#Eval("Name") %>"><%#Eval("Name")%></td>
-                            <td title="<%#Eval("Collage") %>"><%#Eval("Collage")%></td>
-                            <td title="<%#Eval("Major") %>"><%#Eval("Major")%></td>
+                            <asp:HiddenField ID="hfTeacherInfoID" runat="server" Value='<%#Eval("TeacherBasicInfo.Id") %>'
+                                ClientIDMode="Static" />
+                            <td title="<%#Eval("TeacherBasicInfo.EmpNo") %>"><%#Eval("TeacherBasicInfo.EmpNo")%></td>
+                            <td title="<%#Eval("TeacherBasicInfo.Name") %>"><%#Eval("TeacherBasicInfo.Name")%></td>
+                            <td title="<%#Eval("CollageName") %>"><%#Eval("CollageName")%></td>
+                            <td title="<%#Eval("MajorName") %>"><%#Eval("MajorName")%></td>
                             <td>
-                                <a onclick="openDialog('TeacherInfoDetail.aspx?TeacherId=<%#Eval("Id") %>')" href="#"
-                                    title="教师信息详情">
-                                    <asp:Button Text="详情" runat="server" CssClass="button" /></a>
+                                <a onclick="openDialog('TeacherInfoDetail.aspx?TeacherId=<%#Eval("TeacherBasicInfo.id") %>')" href="#"
+                                    title="修改学生信息">
+                                    <asp:Button Text="修改" runat="server" CssClass="button" /></a>
+                                <asp:Button ID="lbtnDetele" Text="删除" runat="server" CssClass="button" CommandName="Delete"
+                                    OnClientClick="if(confirm('是否删除记录？')==false)return false;"></asp:Button>
                             </td>
                         </tr>
                     </ItemTemplate>

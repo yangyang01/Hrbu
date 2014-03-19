@@ -21,22 +21,31 @@ namespace Teaching.Pages.Power
                 return GetQueryValue("DicId").ToInt();
             }
         }
-        protected void Page_Load(object sender, EventArgs e)
+        public int Id
         {
-            if (Request["DicId"] != null)
+            get
             {
-                var data = power.GetDataDicInfoById(DicId);
-
-                this.txtDataName.Text = data.InfoName;
+                return GetQueryValue("Id").ToInt();
             }
         }
-        protected void btSure_Click(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request["DicId"] != null)
+            if (!IsPostBack)
             {
-                var dataDicInfo = power.GetDataDicInfoById(DicId);
+                if (Request["Id"] != null)
+                {
+                    var data = power.GetDataDicInfoById(Id, DicId);
 
-                dataDicInfo.Id = DicId;
+                    this.txtDataName.Text = data.InfoName;
+                }
+            }
+        }
+        protected void btClickSubmit(object sender, EventArgs e)
+        {
+            if (Request["DicId"] != null && Request["Id"] != null)
+            {
+                var dataDicInfo = power.GetDataDicInfoById(Id, DicId);
+
                 dataDicInfo.InfoName = this.txtDataName.Text;
                 power.UpdateDataDic(dataDicInfo);
                 WebMessageBox(this.Page, string.Format("'操作成功!',RefreshParentAndCloseSelf"));
@@ -45,11 +54,21 @@ namespace Teaching.Pages.Power
             {
                 DataDicInfoUI dataInfo = new DataDicInfoUI();
                 dataInfo.InfoName = this.txtDataName.Text;
+                dataInfo.DataDicId = DicId;
                 power.AddDataDic(dataInfo);
                 WebMessageBox(this.Page, string.Format("'操作成功!',RefreshParentAndCloseSelf"));
 
             }
         }
+        private void RefreshParentAndCloseSelf()
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), Guid.NewGuid().ToString(), "RefreshParentAndCloseSelf();", true);
+        }
 
+        private void RefreshParentAndSelf(string idstr)
+        {
+            string js = "RefreshParentAndSelf(" + idstr + ")";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), Guid.NewGuid().ToString(), js, true);
+        }
     }
 }

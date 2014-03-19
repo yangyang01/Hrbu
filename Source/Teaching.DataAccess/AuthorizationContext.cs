@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Teaching.Model;
-using System.Linq;
 
 namespace Teaching.DataAccess
 {
-    public class AuthorizationContext : DBContext<Authorizations>
+    public class AuthorizationsContext : DBContext<Authorizations>
     {
         public static bool CheckRoleHasPermission(string menu, int roleId)
         {

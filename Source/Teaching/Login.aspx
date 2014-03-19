@@ -33,14 +33,6 @@
             <div class="login_window">
                 <span class="login_title">登录</span>
                 <span class="login_txt">用户类型：
-       <%--          <select data-parameter="Role">
-                     <option value="">==请选择==</option>
-                     <asp:Repeater ID="rptType" runat="server">
-                         <ItemTemplate>
-                             <option value="<%# Eval("enumValue") %>"><%#Eval("DisplayValue") %></option>
-                         </ItemTemplate>
-                     </asp:Repeater>
-                 </select>--%>
                     <asp:DropDownList ID="ddlUsertype" runat="server" CssClass="type">
                         <asp:ListItem Text="==请选择==" Value="" Selected="true"></asp:ListItem>
                         <asp:ListItem Text="管理员" Value="1"></asp:ListItem>

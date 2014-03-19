@@ -32,6 +32,7 @@ namespace Hrbu.Teaching.DataAccess
         public DbSet<DataDicInfo> DataDicInfo { get; set; }
         public DbSet<StudentBasicInfo> StudentBasicInfo { get; set; }
         public DbSet<TeacherBasicInfo> TeacherBasicInfo { get; set; }
+        public DbSet<CourseInfo> CourseInfo { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -67,49 +67,67 @@ namespace Teaching.Pages.BasicInfo {
         protected global::System.Web.UI.WebControls.TextBox txtsex;
         
         /// <summary>
-        /// txtPost 控件。
+        /// ddlPATP 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPost;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPATP;
         
         /// <summary>
-        /// txtCourseOne 控件。
+        /// ddlCollage 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseOne;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCollage;
         
         /// <summary>
-        /// txtCourseTwo 控件。
+        /// ddlMajor 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseTwo;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMajor;
         
         /// <summary>
-        /// txtCoursethree 控件。
+        /// ddlCourse1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCoursethree;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCourse1;
         
         /// <summary>
-        /// txtCourseFour 控件。
+        /// ddlCourse2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseFour;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCourse2;
+        
+        /// <summary>
+        /// ddlCourse3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCourse3;
+        
+        /// <summary>
+        /// ddlCourse4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCourse4;
         
         /// <summary>
         /// txtHighBackground 控件。
@@ -157,12 +175,21 @@ namespace Teaching.Pages.BasicInfo {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txtCurriculumVitae;
         
         /// <summary>
-        /// resetButton 控件。
+        /// btnSubmit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button resetButton;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        
+        /// <summary>
+        /// btnReset 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReset;
     }
 }

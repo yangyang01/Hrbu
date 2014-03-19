@@ -15,10 +15,18 @@ namespace Teaching.Pages.BasicInfo
         public IBasicInfo studentInfo { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkAuth();
             PagerControl.PageChange += new PagerControl.PageRefresh(BindStudentList);
             if (!IsPostBack)
             {
                 BindStudentList();
+            }
+        }
+        public override string PageName
+        {
+            get
+            {
+                return "学生信息查询";
             }
         }
         protected void BindStudentList(int currentPageIndex = 0)

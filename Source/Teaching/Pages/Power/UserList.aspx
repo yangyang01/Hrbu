@@ -14,7 +14,7 @@
     <form id="form1" runat="server">
         <div class="content_title"><span>用户管理</span></div>
         <div style="padding-left: 100px">
-            <div style="font-size: 18px; height: 27px; margin-bottom: 8px">
+            <div style="font-size: 18px; height: 27px; margin: 8px">
                 用户名：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
                 姓名：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
                 <asp:Button runat="server" Text="查询" CssClass="button" />
@@ -30,17 +30,20 @@
                     <td style="width: 200px">用户类型</td>
                     <td style="width: 200px">操&nbsp;作</td>
                 </tr>
-                <asp:Repeater ID="rptUserList" runat="server">
+                <asp:Repeater ID="rptUserList" runat="server" OnItemCommand="repPend_ItemCommand">
                     <ItemTemplate>
                         <tr>
-                            <td title="<%# Eval("UserNo") %>"><%# Eval("UserNo") %></td>
-                            <td title="<%# Eval("UserName") %>"><%# Eval("UserName") %></td>
-                            <td title="<%# Eval("RoleId") %>"><%# Eval("RoleId") %></td>
+                             <asp:HiddenField ID="hfUserID" runat="server" Value='<%#Eval("User.Id") %>'
+                                        ClientIDMode="Static" />
+                            <td title="<%# Eval("User.UserNo") %>"><%# Eval("User.UserNo") %></td>
+                            <td title="<%# Eval("User.UserName") %>"><%# Eval("User.UserName") %></td>
+                            <td title="<%# Eval("RoleName") %>"><%# Eval("RoleName") %></td>
                             <td>
-                                <a onclick="openDialog('UserAddUp.aspx',500,400) " href="#"
+                                <a onclick="openDialog('UserAddUp.aspx?Id=<%#Eval("User.Id") %>',500,400) " href="#"
                                     title="权限信息详情">
                                     <asp:Button Text="修改" runat="server" CssClass="button" /></a>
-                                <asp:Button Text="删除" runat="server" CssClass="button" />
+                                <asp:Button ID="lbtnDetele" Text="删除" runat="server" CssClass="button"  CommandName="Delete"
+                                    OnClientClick="if(confirm('是否删除记录？')==false)return false;"></asp:Button>
                             </td>
                         </tr>
                     </ItemTemplate>

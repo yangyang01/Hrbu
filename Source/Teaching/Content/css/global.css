@@ -55,3 +55,62 @@ td {
     border: 1px solid #6A6775;
     height: 25px;
 }
+
+table {
+    border-collapse: collapse;
+    margin: 4px 10px;
+    width: 780px;
+}
+/*page*/
+tr.page_list {
+    background: white;
+}
+
+    tr.page_list div.page_list_menu {
+        text-align: right;
+        padding-right: 20px;
+        height: 50px;
+    }
+
+        tr.page_list div.page_list_menu a {
+            margin: 10px 0;
+            background: url('/Content/images/page_button_bg.png') 0 0 repeat-x;
+            height: 30px;
+            display: inline-block;
+            line-height: 30px;
+            padding: 0 10px;
+            border-radius: 5px;
+            border: solid 1px #808080;
+            cursor: pointer;
+            -webkit-user-select: none; /* for Chrome */
+            -moz-user-select: none; /* for Firefox */
+            -o-user-select: none; /* for Opera */
+        }
+
+        tr.page_list div.page_list_menu .search_area {
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            margin: 10px 0;
+            padding: 0 10px;
+        }
+
+        tr.page_list div.page_list_menu input {
+            width: 50px;
+            height: 24px;
+            line-height: 24px;
+        }
+
+        tr.page_list div.page_list_menu .currentPage {
+            font-size: 15px;
+            color: #00F;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            margin: 10px 0;
+            padding: 0 10px;
+        }
+
+        tr.page_list div.page_list_menu .page_index {
+            color: red;
+        }

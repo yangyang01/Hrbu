@@ -49,11 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractSingleton.cs" />
     <Compile Include="CommonEqualityComparer.cs" />
     <Compile Include="CommonString.cs" />
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Config\ConfigFactory.cs" />
     <Compile Include="Config\IConfig.cs" />
+    <Compile Include="CookieManager.cs" />
     <Compile Include="CreatePw.cs" />
     <Compile Include="EncryptTool.cs" />
     <Compile Include="ExcelHelper.cs" />

@@ -50,7 +50,7 @@ namespace Hrbu.Teaching.WebUI.UserControls
         }
 
         /// <summary>
-        /// Default Size 10
+        /// Default Size 8
         /// </summary>
         public int PageSize
         {
@@ -58,7 +58,7 @@ namespace Hrbu.Teaching.WebUI.UserControls
             {
                 if (ViewState["PageSize"] == null)
                 {
-                    return 10;
+                    return 8;
                 }
                 else
                 {
@@ -71,7 +71,7 @@ namespace Hrbu.Teaching.WebUI.UserControls
             }
         }
 
-        public void IntialProperties(int totalCount, int pageSize = 10)
+        public void IntialProperties(int totalCount, int pageSize = 8)
         {
             this.TotalCount = totalCount;
             PageSize = pageSize;

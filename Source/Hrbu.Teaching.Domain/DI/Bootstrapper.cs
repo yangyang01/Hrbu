@@ -30,20 +30,20 @@ namespace Hrbu.Teaching.Domain
             });
             ObjectFactory.Initialize(x =>
             {
-                x.For<IPower>().Use<PowerService>();
-
-                x.SetAllProperties(y =>
-                {
-                    y.OfType<IPower>();
-                });
-            });
-            ObjectFactory.Initialize(x =>
-            {
                 x.For<IBasicInfo>().Use<BasicInfoService>();
 
                 x.SetAllProperties(y =>
                 {
                     y.OfType<IBasicInfo>();
+                });
+            });
+            ObjectFactory.Initialize(x =>
+            {
+                x.For<ITeachDocument>().Use<TeachDocumentService>();
+
+                x.SetAllProperties(y =>
+                {
+                    y.OfType<ITeachDocument>();
                 });
             });
             //ControllerBuilder.Current.SetControllerFactory(new StructureMapControllerFactory());

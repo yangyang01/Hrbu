@@ -48,57 +48,12 @@ namespace Hrbu.Teachings.Utility
         //        return ConfigurationManager.AppSettings["IsValidationAD"].ToBool();
         //    }
         //}
-        public string ADService
-        {
-            get
-            {
-                return ConfigurationManager.AppSettings["ADService"];
-            }
-        }
-        public string JobChangeService
-        {
-            get
-            {
-                return ConfigurationManager.AppSettings["JobChangeService"];
-            }
-        }
-        public string ADKey
-        {
-            get
-            {
-                return ConfigurationManager.AppSettings["ADKey"];
-            }
-        }
 
-        public string SalaryQueryKey
+        public string TeacherInfoExcelPath
         {
             get
             {
-                return ConfigurationManager.AppSettings["SalaryQueryKey"];
-            }
-        }
-
-        //public int SalaryResetTimes
-        //{
-        //    get
-        //    {
-        //        return ConfigurationManager.AppSettings["SalaryPwResetTimes"].ToInt();
-        //    }
-        //}
-
-        public string LastLevel3Depart
-        {
-            get
-            {
-                return ConfigurationManager.AppSettings["LastLevel3StructureID"];
-            }
-        }
-
-        public string HotelEntryExcelPath
-        {
-            get
-            {
-                return ConfigurationManager.AppSettings["HotelEntryExcelPath"];
+                return ConfigurationManager.AppSettings["TeacherInfoExcelPath"];
             }
         }
 
@@ -123,14 +78,6 @@ namespace Hrbu.Teachings.Utility
             get
             {
                 return ConfigurationManager.AppSettings["HrNewsImages"];
-            }
-        }
-
-        public string IsCreatPMSAccount
-        {
-            get
-            {
-                return ConfigurationManager.AppSettings["CreatPMSAccount"];
             }
         }
 

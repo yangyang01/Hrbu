@@ -1,4 +1,5 @@
-﻿using Hrbu.Teaching.Interface;
+﻿using Hrbu.Teaching.BusinessView.Model;
+using Hrbu.Teaching.Interface;
 using Hrbu.Teaching.WebUI;
 using Hrbu.Teaching.WebUI.UserControls;
 using System;
@@ -15,16 +16,31 @@ namespace Teaching.Pages.BasicInfo
         public IBasicInfo TeacherInfo { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkAuth();
             PagerControl.PageChange += new PagerControl.PageRefresh(BindTeacherList);
             if (!IsPostBack)
             {
                 BindTeacherList();
             }
         }
+        public override string PageName
+        {
+            get
+            {
+                return "教工信息查询";
+            }
+        }
         protected void BindTeacherList(int currentPageIndex = 0)
         {
             int totalCount = 0;
-            var teacherList = TeacherInfo.GetTeacherInfoByPage(currentPageIndex + 1, 2, out totalCount);
+            string UserNo = string.IsNullOrWhiteSpace(this.txtSearchNo.Text) ? null : this.txtSearchNo.Text.Trim();
+            string UserName = string.IsNullOrWhiteSpace(this.txtSearchName.Text) ? null : this.txtSearchName.Text.Trim();
+            var query = new QueryStringUI()
+            {
+                UserNo = UserNo,
+                UserName = UserName
+            };
+            var teacherList = TeacherInfo.GetTeacherInfoByPage(query,currentPageIndex + 1, PagerControl.PageSize, out totalCount);
             this.rptTeacherList.DataSource = teacherList;
             this.rptTeacherList.DataBind();
             if (totalCount == 0)
@@ -39,6 +55,10 @@ namespace Teaching.Pages.BasicInfo
             }
             PagerControl.CurrentPageIndex = currentPageIndex;
             PagerControl.IntialProperties(totalCount);
+        }
+        protected void SearchQuery(object sender, EventArgs e)
+        {
+            BindTeacherList(0);
         }
     }
 }

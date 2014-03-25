@@ -12,6 +12,7 @@ namespace Hrbu.Teaching.Domain
             For<ILogin>().Use<LoginService>();
             For<IPower>().Use<PowerService>();
             For<IBasicInfo>().Use<BasicInfoService>();
+            For<ITeachDocument>().Use<TeachDocumentService>();
             //RegisterInDifferentMode();
         }
 

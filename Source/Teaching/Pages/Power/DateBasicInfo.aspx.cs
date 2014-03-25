@@ -13,11 +13,18 @@ namespace Teaching.Pages.Power
     public partial class DateBasicInfo : BasePage
     {
         public IPower DataInfo{get;set;}
-        protected int Id
+        public int Id
         {
             get
             {
                 return GetQueryValue("Id").ToInt();
+            }
+        }
+        protected int DicId
+        {
+            get
+            {
+                return GetQueryValue("DicId").ToInt();
             }
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -29,6 +36,24 @@ namespace Teaching.Pages.Power
             var DataList = DataInfo.GetDataDicInfoListById(Id);
             this.rptDataDicList.DataSource = DataList;
             this.rptDataDicList.DataBind();
+        }
+        protected void repPend_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+             if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
+            {
+                HiddenField hfDataDicInfoID = (HiddenField)e.Item.FindControl("hfDataDicInfoID");
+                switch (e.CommandName.ToLower())
+                {
+                    case "delete":
+                        DataInfo.DeleteDataDicInfo(hfDataDicInfoID.Value.ToInt());
+                        break;
+                }
+                BindDataDicInfoList();
+            }
+        }
+            private void RefreshSelf()
+        {
+            PageRegisterStartupScript(this.Page, string.Format("<script type=\"text/javascript\">{0}</script>", "RefreshSelf()"));
         }
 
     }

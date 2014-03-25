@@ -20,9 +20,9 @@ namespace Hrbu.Teaching.BusinessView.Model.BasicInfo
         [DataMember]
         public string Sex { get; set; }
         [DataMember]
-        public string Collage { get; set; }
+        public Nullable<int> Collage { get; set; }
         [DataMember]
-        public string Major { get; set; }
+        public Nullable<int> Major { get; set; }
         [DataMember]
         public string Address { get; set; }
         [DataMember]
@@ -32,15 +32,16 @@ namespace Hrbu.Teaching.BusinessView.Model.BasicInfo
         [DataMember]
         public string Photo { get; set; }
         [DataMember]
-        public string Course1 { get; set; }
+        public Nullable<int> Course1 { get; set; }
         [DataMember]
-        public string Course2 { get; set; }
+        public Nullable<int> Course2 { get; set; }
         [DataMember]
-        public string Course3 { get; set; }
+        public Nullable<int> Course3 { get; set; }
         [DataMember]
-        public string Course4 { get; set; }
+        public Nullable<int> Course4 { get; set; }
         [DataMember]
-        public string PATP { get; set; }
+        public Nullable<int> PATP { get; set; }
+
         [DataMember]
         public string HightestDegree { get; set; }
         [DataMember]

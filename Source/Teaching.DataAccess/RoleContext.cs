@@ -34,5 +34,14 @@ namespace Teaching.DataAccess
                 return sql.FirstOrDefault();
             }
         }
+        public static List<Role> GetRoleNameList()
+        {
+            using (var ctx = CreateContext())
+            {
+                var sql = from r in ctx.Set<Role>()
+                          select r;
+                return sql.ToList();
+            }
+        }
     }
 }

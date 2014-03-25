@@ -15,19 +15,21 @@ namespace Teaching.Pages.Power
     public partial class Datalist : BasePage
     {
         public IPower powerInfo { get; set; }
-        protected int ID
-        {
-            get
-            {
-                return GetQueryValue("ID").ToInt();
-            }
-        }
+       
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkAuth();
             PagerControl.PageChange += new PagerControl.PageRefresh(BindDataList);
             if (!IsPostBack)
             {
                 BindDataList();
+            }
+        }
+        public override string PageName
+        {
+            get
+            {
+                return "数据字典";
             }
         }
         protected void BindDataList(int currentPageIndex = 0)

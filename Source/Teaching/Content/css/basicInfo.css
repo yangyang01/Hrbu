@@ -12,7 +12,7 @@
 }
 
 .title {
-    color:#728AC0;
+    color: #728AC0;
     font-weight: 600;
     font-size: 24px;
 }
@@ -64,10 +64,43 @@ span {
     margin-left: 85px;
     display: inline-block;
     float: left;
-    position:absolute;
+    position: absolute;
 }
 
 .personal_img {
     width: 100px;
     height: 130px;
+}
+
+.uploading {
+    width: auto;
+    padding: 0;
+    z-index: 19;
+}
+.uploading_button_img {
+    float: left;
+    width: 28px;
+    height: 28px;
+    display: block;
+    background: url('/Content/Images/uploading_bg.png') 0 0 no-repeat;
+}
+
+.uploading_button_title {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.uploading_title {
+    color: Green;
+}
+
+input.fileUpload {
+    cursor: pointer;
+    width: 96px !important;
+    position: relative;
+    z-index: 20;
+    margin: 0 0 -30px 0;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    opacity: 0;
 }

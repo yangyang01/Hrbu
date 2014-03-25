@@ -1,4 +1,5 @@
-﻿using Hrbu.Teaching.BusinessView.Model.Power;
+﻿using Hrbu.Teaching.BusinessView.Model;
+using Hrbu.Teaching.BusinessView.Model.Power;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,7 +67,7 @@ namespace Hrbu.Teaching.Interface
         /// <param name="Id"></param>
         /// <returns></returns>
         [OperationContract]
-        DataDicInfoUI GetDataDicInfoById(int Id);
+        DataDicInfoUI GetDataDicInfoById(int Id,int DicId);
         /// <summary>
         /// 获取用户列表
         /// </summary>
@@ -75,14 +76,65 @@ namespace Hrbu.Teaching.Interface
         /// <param name="totalCount"></param>
         /// <returns></returns>
         [OperationContract]
-        List<UserUI> GetUserInfoByPage(int startPage, int pageSize, out int totalCount);
+        List<UserInfoUI> GetUserInfoByPage(QueryStringUI query, int startPage, int pageSize, out int totalCount);
+        /// <summary>
+        /// 删除数据字典数据
+        /// </summary>
+        /// <param name="DataInfo"></param>
+        [OperationContract]
+        void DeleteDataDicInfo(int Id);
+        /// <summary>
+        /// 根据ID获取用户信息
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        [OperationContract]
+        UserInfoUI GetUserInfoById(int Id);
 
         bool RoleHasPermission(string menu, int roleId);
 
-        List<AuthorizationUI> GetRoleMenus(int roleId);
+        List<AuthorizationsUI> GetRoleMenus(int roleId);
         int GetMenuIdByName(string name);
-        AuthorizationUI GetAuthInfoByMenuAndRole(string menuName, int roleId);
-        void AddAuth(AuthorizationUI model);
-        void UpdateAuth(AuthorizationUI model);
+        AuthorizationsUI GetAuthInfoByMenuAndRole(string menuName, int roleId);
+        void AddAuth(AuthorizationsUI model);
+        void UpdateAuth(AuthorizationsUI model);
+        /// <summary>
+        /// 修改用户
+        /// </summary>
+        /// <param name="user"></param>
+        void UpdateUser(UserUI user);
+        /// <summary>
+        /// 添加用户
+        /// </summary>
+        /// <param name="user"></param>
+        void AddUser(UserUI user);
+        /// <summary>
+        /// 删除用户
+        /// </summary>   
+        /// <param name="id"></param>
+        void DeleteUser(int id);
+        /// <summary>
+        /// 根据数据字典类型获取数据项
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        List<DataDicInfoUI> GetDataDicByType(int type);
+
+        List<RoleUI> GetRoleNameList();
+        /// <summary>
+        /// 是否存在添加的用户名
+        /// </summary>
+        /// <param name="UserNo"></param>
+        /// <returns></returns>
+        bool IsExitUserNo(string UserNo);
+        /// <summary>
+        /// 是否是学生用户
+        /// </summary>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
+        bool IsStudentNo(int roleId);
+
+        UserUI GetUserInfoByNo(string stuNo);
+
     }
 }

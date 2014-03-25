@@ -20,7 +20,7 @@ namespace Hrbu.Teaching.Interface
         /// <param name="totalCount"></param>
         /// <returns></returns>
         [OperationContract]
-        List<StudentBasicInfoUI> GetStudentInfoByPage(int startPage, int pageSize, out int totalCount);
+        List<BasicInfoUI> GetStudentInfoByPage(QueryStringUI query,int startPage, int pageSize, out int totalCount);
         /// <summary>
         /// 获取教师信息的列表
         /// </summary>
@@ -28,7 +28,7 @@ namespace Hrbu.Teaching.Interface
         /// <param name="pageSize"></param>
         /// <param name="totalCount"></param>
         /// <returns></returns>
-        List<TeacherBasicInfoUI> GetTeacherInfoByPage(int startPage, int pageSize, out int totalCount);
+        List<BasicInfoUI> GetTeacherInfoByPage(QueryStringUI query,int startPage, int pageSize, out int totalCount);
         /// <summary>
         /// 根据教师Id获取教师详细信息
         /// </summary>
@@ -41,5 +41,60 @@ namespace Hrbu.Teaching.Interface
         /// <param name="Id"></param>
         /// <returns></returns>
         StudentBasicInfoUI GetStudengInfoById(int Id);
+        /// <summary>
+        /// 修改教师信息
+        /// </summary>
+        /// <param name="teacherInfo"></param>
+        void UpdateTeacherInfo(TeacherBasicInfoUI teacherInfo);
+        /// <summary>
+        /// 添加教师信息
+        /// </summary>
+        /// <param name="teacherInfo"></param>
+        void AddTeacherInfo(TeacherBasicInfoUI teacherInfo);
+        /// <summary>
+        /// 修改学生信息
+        /// </summary>
+        /// <param name="studentInfo"></param>
+        void UpdateStudentInfo(StudentBasicInfoUI studentInfo);
+        /// <summary>
+        /// 添加学生信息
+        /// </summary>
+        /// <param name="studentInfo"></param>
+        void AddStudentInfo(StudentBasicInfoUI studentInfo);
+        /// <summary>
+        /// 当非管理员进入时获取的教师列表
+        /// </summary>
+        /// <param name="No"></param>
+        /// <returns></returns>
+        List<BasicInfoUI> GetTeacherSelfInfoById(string No);
+        /// <summary>
+        /// 当非管理员进入时获取的学生列表
+        /// </summary>
+        /// <param name="No"></param>
+        /// <returns></returns>
+        List<BasicInfoUI> GetStudentSelfInfoById(string No);
+        /// <summary>
+        /// 删除教师信息
+        /// </summary>
+        /// <param name="Id"></param>
+        void DeleteTeacherInfo(int Id);
+        /// <summary>
+        /// 删除学生信息
+        /// </summary>
+        /// <param name="Id"></param>
+        void DeleteStudentInfo(int Id);
+        /// <summary>
+        /// 是否存在该学生信息
+        /// </summary>
+        /// <param name="UserNo"></param>
+        /// <returns></returns>
+        bool IsExitStudentNo(string StuNo);
+        /// <summary>
+        /// 是否存在该教师对象
+        /// </summary>
+        /// <param name="EmpNo"></param>
+        /// <returns></returns>
+        bool IsExitTeacherNo(string EmpNo);
+
     }
 }

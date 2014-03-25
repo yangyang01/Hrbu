@@ -1,5 +1,7 @@
-﻿using Hrbu.Teaching.BusinessView.Model.Power;
+﻿using Hrbu.Teaching.BusinessView.Model;
+using Hrbu.Teaching.BusinessView.Model.Power;
 using Hrbu.Teaching.Interface;
+using Hrbu.Teaching.Model;
 using Hrbu.Teaching.Model.Convertor;
 using System;
 using System.Collections.Generic;
@@ -55,51 +57,113 @@ namespace Hrbu.Teaching.Business
         }
 
 
-        public DataDicInfoUI GetDataDicInfoById(int Id)
+        public DataDicInfoUI GetDataDicInfoById(int Id, int DicId)
         {
-            return EntityMapping.Auto<DataDicInfo, DataDicInfoUI>(DataDicinfoContext.GetDataDicInfoById(Id));
+            return EntityMapping.Auto<DataDicInfo, DataDicInfoUI>(DataDicinfoContext.GetDataDicInfoById(Id,DicId));
         }
 
 
-        public List<UserUI> GetUserInfoByPage(int startPage, int pageSize, out int totalCount)
+        public List<UserInfoUI> GetUserInfoByPage(QueryStringUI query,int startPage, int pageSize, out int totalCount)
         {
-            return EntityMapping.Auto<List<User>, List<UserUI>>(UserContext.GetUserListByPage(startPage, pageSize, out totalCount));
+            return EntityMapping.Auto<List<UserInfo>, List<UserInfoUI>>(UserContext.GetUserListByPage(EntityMapping.Auto<QueryStringUI, QueryString>(query),startPage,pageSize,out totalCount));
 
+        }
+
+
+        public void DeleteDataDicInfo(int Id)
+        {
+            DataDicinfoContext.Delete(x => x.Id == Id);
         }
 
 
         public bool RoleHasPermission(string menu, int roleId)
         {
-            return AuthorizationContext.CheckRoleHasPermission(menu, roleId);
+            return AuthorizationsContext.CheckRoleHasPermission(menu, roleId);
         }
 
-        public List<AuthorizationUI> GetRoleMenus(int roleId)
+        public List<AuthorizationsUI> GetRoleMenus(int roleId)
         {
-            return EntityMapping.Auto<List<Authorizations>, List<AuthorizationUI>>(AuthorizationContext.GetRoleMenus(roleId));
+            return EntityMapping.Auto<List<Authorizations>, List<AuthorizationsUI>>(AuthorizationsContext.GetRoleMenus(roleId));
         }
 
         public int GetMenuIdByName(string name)
         {
-            return AuthorizationContext.GetMenuIdByName(name);
+            return AuthorizationsContext.GetMenuIdByName(name);
         }
 
-        public AuthorizationUI GetAuthInfoByMenuAndRole(string menuName, int roleId)
+        public AuthorizationsUI GetAuthInfoByMenuAndRole(string menuName, int roleId)
         {
-            return EntityMapping.Auto<Authorizations, AuthorizationUI>(AuthorizationContext.GetByConditions(x => x.MenuName == menuName &&
+            return EntityMapping.Auto<Authorizations, AuthorizationsUI>(AuthorizationsContext.GetByConditions(x => x.MenuName == menuName &&
                 x.RoleId == roleId).FirstOrDefault());
         }
 
-        public void AddAuth(AuthorizationUI model)
+        public void AddAuth(AuthorizationsUI model)
         {
-            AuthorizationContext.Add(EntityMapping.Auto<AuthorizationUI, Authorizations>(model));
+            AuthorizationsContext.Add(EntityMapping.Auto<AuthorizationsUI, Authorizations>(model));
         }
 
-        public void UpdateAuth(AuthorizationUI model)
+        public void UpdateAuth(AuthorizationsUI model)
         {
-            AuthorizationContext.Update(EntityMapping.Auto<AuthorizationUI, Authorizations>(model));
+            AuthorizationsContext.Update(EntityMapping.Auto<AuthorizationsUI, Authorizations>(model));
+        }
+
+        public UserInfoUI GetUserInfoById(int Id)
+        {
+            return EntityMapping.Auto<UserInfo, UserInfoUI>(UserContext.GetUserInfoById(Id));
         }
 
 
+        public void UpdateUser(UserUI user)
+        {
+            var userInfo=EntityMapping.Auto<UserUI,User>(user);
+            UserContext.Update(userInfo);
+        }
 
+        public void AddUser(UserUI user)
+        {
+            var userInfo = EntityMapping.Auto<UserUI, User>(user);
+            UserContext.Add(userInfo);
+        }
+
+        public void DeleteUser(int id)
+        {
+            UserContext.Delete(x=>x.Id==id);
+        }
+
+
+        public List<DataDicInfoUI> GetDataDicByType(int type)
+        {
+            return EntityMapping.Auto<List<DataDicInfo>, List<DataDicInfoUI>>(DataDicinfoContext.GetDataDicByType(type));
+        }
+
+
+        public List<RoleUI> GetRoleNameList()
+        {
+            return EntityMapping.Auto<List<Role>, List<RoleUI>>(RoleContext.GetRoleNameList());
+        }
+
+
+        public bool IsExitUserNo(string UserNo)
+        {
+            return UserContext.IsExitUserNo(UserNo);
+        }
+
+
+        public List<UserUI> GetUserList()
+        {
+            return EntityMapping.Auto<List<User>, List<UserUI>>(UserContext.GetUserList());
+        }
+
+
+        public bool IsStudentNo(int roleId)
+        {
+            return UserContext.IsStudentNo(roleId);
+        }
+
+
+        public UserUI GetUserInfoByNo(string stuNo)
+        {
+            return EntityMapping.Auto<User, UserUI>(UserContext.GetUserInfoByNo(stuNo));
+        }
     }
 }

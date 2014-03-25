@@ -8,14 +8,42 @@
     <title>学生详细信息</title>
     <link type="text/css" rel="stylesheet" href="~/Content/css/global.css" />
     <link type="text/css" rel="stylesheet" href="~/Content/css/basicInfo.css" />
+    <script src="../../Content/js/Utility.js"></script>
+    <script src="../../Content/js/libs/jquery-1.8.3.min.js"></script>
     <style type="text/css">
         .info {
             margin-top: 110px;
         }
+
+        .ddl {
+            width: 155px;
+            height: 26px;
+        }
+
+        .r {
+            color: red;
+        }
     </style>
 </head>
 <body style="background-color: #FAFBFC;">
-    <form id="form1" runat="server" target="_right">
+    <script type="text/javascript">
+        $(function () {
+            $('#btnSubmit').click(function () {
+                var flag = $('#txtStuNo').val() && $('#txtSex').val() && $('#ddlMajor').val && $('#txtClass').val;
+                if (!flag) {
+                    if (!flag) {
+                        $('#rfvStudentNo').css('display', $('#txtStuNo').val() ? "none" : "");
+                        $('#rfvSex').css('display', $('#txtSex').val() ? "none" : "");
+                        $('#rfvMajor').css('display', $('#ddlMajor').val() ? "none" : "");
+                        $('#rfvClass').css('display', $('#txtClass').val() ? "none" : "");
+                    }
+                    return !!flag;
+                }
+            })
+        });
+    </script>
+    <form id="form1" runat="server">
+
         <div>
             <ul style="display: inline-block; list-style-type: none; margin-left: 100px">
                 <li class="title">
@@ -31,17 +59,13 @@
                         </div>
                         <div class="info">
                             <div>
-                                <span class="left">学号：</span> <span class="right">
+                                <span class="left">*学号：</span> <span class="right">
                                     <asp:TextBox ID="txtStuNo" runat="server" CssClass="txt" Style="margin-left: -10px;"></asp:TextBox></span>
-                                <span class="left a">姓名：</span><span class="right"><asp:TextBox ID="txtStuName" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left a">*性别：</span><span class="right"><asp:TextBox ID="txtSex" runat="server" CssClass="txt"></asp:TextBox></span>
                             </div>
                             <div>
-                                <span class="left">性别：</span><span class="right"><asp:TextBox ID="txtSex" runat="server" CssClass="txt"></asp:TextBox></span>
-                                <span class="left a">联系电话：</span><span class="right"><asp:TextBox ID="txtTel" runat="server" CssClass="txt"></asp:TextBox></span>
-                            </div>
-                            <div>
-                                <span class="left">专业：</span><span class="right"><asp:TextBox ID="txtMajor" runat="server" CssClass="txt"></asp:TextBox></span>
-                                <span class="left a">班级：</span><span class="right"><asp:TextBox ID="txtClass" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left">*专业：</span><span class="right"><asp:DropDownList ID="ddlMajor" runat="server" CssClass="txt ddl"></asp:DropDownList></span>
+                                <span class="left a">*班级：</span><span class="right"><asp:TextBox ID="txtClass" runat="server" CssClass="txt"></asp:TextBox></span>
                             </div>
                             <div>
                                 <span class="left">邮政编码</span><span class="right"><asp:TextBox ID="txtZipCode" runat="server" CssClass="txt"></asp:TextBox></span>
@@ -53,15 +77,21 @@
                             </div>
                             <div>
                                 <span class="left">E-mail：</span><span class="right"><asp:TextBox ID="txtMail" runat="server" CssClass="txt"></asp:TextBox></span>
-
+                                <span class="left a">联系电话：</span><span class="right"><asp:TextBox ID="txtTel" runat="server" CssClass="txt"></asp:TextBox></span>
                             </div>
                         </div>
                     </fieldset>
                     <div style="padding-left: 590px; margin-top: 20px">
-                        <asp:Button runat="server" Text="确认提交" CssClass="button" />&nbsp;
-                         <asp:Button runat="server" Text="清除重置" CssClass="button" />&nbsp;
+                        <asp:Button runat="server" ID="btnSubmit" Text="确认提交" CssClass="button" OnClick="ClickbtnSubmit" Visible="false" />&nbsp;
+                         <asp:Button runat="server" ID="btnReset" Text="清除重置" CssClass="button" Visible="false" />&nbsp;
                         <asp:Button runat="server" Text="返回" CssClass="button" OnClientClick="window.close();return false;" />
 
+                    </div>
+                    <div style="margin-left: -100px;">
+                        <span id="rfvStudentNo" class="errorTip" style="display: none; color: red;">请输入学号！</span><br />
+                        <span id="rfvSex" class="errorTip" style="display: none; color: red;">请输入性别！</span><br />
+                        <span id="rfvMajor" class="errorTip" style="display: none; color: red;">请输入专业！</span><br />
+                        <span id="rfvClass" class="errorTip" style="display: none; color: red;">请输入班级！</span>
                     </div>
                 </li>
             </ul>

@@ -78,7 +78,7 @@ em {
 .login_txt {
     display: inline-block;
     width: 570px;
-    margin: 10px 20px 10px 50px;
+    margin: 10px 20px 10px 30px;
     font-family: cursive;
     font-weight: 600;
 }
@@ -110,7 +110,7 @@ em {
 }
 
 .login_bt {
-    padding-left: 210px;
+    padding-left: 112px;
 }
 
 .footer {
@@ -120,13 +120,15 @@ em {
     font-size: 13px;
     color: #796F6F;
 }
-
 .errorTip {
     display: inline-block;
     position: relative;
-    left: 295px;
+   left: 295px; 
     z-index: 200;
-    width: 150px;
+    width: 135px;
     top: -30px;
     font-size: 13.5px;
+    margin-left: -25px;
+    color: red;
 }
+

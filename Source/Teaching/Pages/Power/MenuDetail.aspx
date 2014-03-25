@@ -32,8 +32,8 @@
                         <asp:CheckBox ID="Power" Text="系统设置维护" runat="server" /></td>
                     <td>
                         <asp:CheckBoxList runat="server" CssClass="box" ID="power_sub">
-                            <asp:ListItem Text="角色维护" Value="1"></asp:ListItem>
-                            <asp:ListItem Text="学期维护" Value="2"></asp:ListItem>
+                            <asp:ListItem Text="权限维护" Value="1"></asp:ListItem>
+                            <asp:ListItem Text="用户管理" Value="2"></asp:ListItem>
                             <asp:ListItem Text="数据备份" Value="3"></asp:ListItem>
                             <asp:ListItem Text="数据字典" Value="4"></asp:ListItem>
                         </asp:CheckBoxList>
@@ -61,6 +61,7 @@
                             <asp:ListItem Text="考核大纲" Value="3"></asp:ListItem>
                             <asp:ListItem Text="实验大纲" Value="4"></asp:ListItem>
                             <asp:ListItem Text="教学日历" Value="5"></asp:ListItem>
+                            <asp:ListItem Text="课程管理" Value="6"></asp:ListItem>
                         </asp:CheckBoxList>
                     </td>
                 </tr>

@@ -10,8 +10,18 @@
     <link type="text/css" rel="stylesheet" href="~/Content/css/global.css" />
     <link type="text/css" rel="stylesheet" href="~/Content/css/login.css" />
     <script src="../Content/js/libs/jquery-1.8.3.min.js"></script>
+    <style>
+        .e {
+            height: 50px;
+        }
+
+        .b {
+            height: 35px;
+            width: 127px;
+        }
+    </style>
 </head>
-<body style="background-color:#6989B7">
+<body style="background-color: #6989B7">
 
     <form id="form1" runat="server" class="login_form">
         <div style="width: 1000px; height: 620px; background-color: white; margin: -17px 0px 0px 170px;">
@@ -32,15 +42,8 @@
             </div>
             <div class="login_window">
                 <span class="login_title">登录</span>
-                <span class="login_txt">用户类型：
-       <%--          <select data-parameter="Role">
-                     <option value="">==请选择==</option>
-                     <asp:Repeater ID="rptType" runat="server">
-                         <ItemTemplate>
-                             <option value="<%# Eval("enumValue") %>"><%#Eval("DisplayValue") %></option>
-                         </ItemTemplate>
-                     </asp:Repeater>
-                 </select>--%>
+                <div class="e">
+                    <span class="login_txt">用户类型：
                     <asp:DropDownList ID="ddlUsertype" runat="server" CssClass="type">
                         <asp:ListItem Text="==请选择==" Value="" Selected="true"></asp:ListItem>
                         <asp:ListItem Text="管理员" Value="1"></asp:ListItem>
@@ -48,22 +51,29 @@
                         <asp:ListItem Text="教师" Value="3"></asp:ListItem>
                         <asp:ListItem Text="学生" Value="4"></asp:ListItem>
                     </asp:DropDownList></span>
-                <span id="rfvRolename" class="errorTip" style="display: none; color: red;">请选择用户类型！</span>
-                <span class="login_txt">用户名：<asp:TextBox ID="txtUsername" runat="server" CssClass="txt"></asp:TextBox></span>
-                <span id="rfvUsername" class="errorTip" style="display: none; color: red;">请输入用户名！</span>
-
-                <span class="login_txt">密&nbsp;&nbsp;&nbsp;码：<asp:TextBox ID="txtPassword" runat="server" CssClass="txt" TextMode="Password"></asp:TextBox></span>
-                <span id="rfvPassword" class="errorTip" style="display: none; color: red;">请输入密码！</span>
-
-                <span class="login_txt">验证码：<asp:TextBox ID="txtVeriCode" runat="server" CssClass="code"></asp:TextBox>
-                    <img id="CodeImg" onclick="ValiCode(this.id,'VerifyImageCode.ashx')" alt="验证码" />
-                    <a onclick="ValiCode('CodeImg','VerifyImageCode.ashx')">看不清,换一张</a>
-                </span>
-                <span id="rfvVeriCode" class="errorTip" style="display: none; color: red; top: -40px;">请输入验证码！</span>
-
-                <span class="login_bt">
-                    <asp:Button ID="btLogin" runat="server" Text="登录" CssClass="btn" OnClick="Login_Button" /></span>
-                <asp:Label ID="lblLoginMeg" ClientIDMode="Static" runat="server" CssClass="red errorTip" Visible="false" Style="top: -34px;"></asp:Label>
+                    <span id="rfvRolename" class="errorTip" style="display: none; color: red;">请选择用户类型！</span>
+                </div>
+                <div class="e">
+                    <span class="login_txt">用户名：<asp:TextBox ID="txtUsername" runat="server" CssClass="txt"></asp:TextBox></span>
+                    <span id="rfvUsername" class="errorTip" style="display: none; color: red;">请输入用户名！</span>
+                </div>
+                <div class="e">
+                    <span class="login_txt">密&nbsp;&nbsp;&nbsp;码：<asp:TextBox ID="txtPassword" runat="server" CssClass="txt" TextMode="Password"></asp:TextBox></span>
+                    <span id="rfvPassword" class="errorTip" style="display: none; color: red;">请输入密码！</span>
+                </div>
+                <div class="e">
+                    <span class="login_txt">验证码：<asp:TextBox ID="txtVeriCode" runat="server" CssClass="code"></asp:TextBox>
+                        <span style="margin-left: 3px">
+                            <img id="CodeImg" onclick="ValiCode(this.id,'VerifyImageCode.ashx')" alt="验证码" style="margin-bottom: -9px;" /></span>
+                        <a onclick="ValiCode('CodeImg','VerifyImageCode.ashx')"></a>
+                    </span>
+                    <span id="rfvVeriCode" class="errorTip" style="display: none; color: red; top: -40px;">请输入验证码！</span>
+                </div>
+                <div class="e">
+                    <span class="login_bt">
+                        <asp:Button ID="btLogin" runat="server" Text="登录" CssClass="button b" OnClick="Login_Button" /></span>
+                    <asp:Label ID="lblLoginMeg" ClientIDMode="Static" runat="server" CssClass="red errorTip" Visible="false" Style="top: 4px; margin-left: -284px;"></asp:Label>
+                </div>
             </div>
             <div class="footer">
                 <span>版权所有：哈尔滨学院软件学院　　地址： 哈尔滨市南岗区中兴大道109号<br />

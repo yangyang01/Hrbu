@@ -7,17 +7,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link type="text/css" rel="stylesheet" href="~/Content/css/power.css" />
     <link type="text/css" rel="stylesheet" href="~/Content/css/global.css" />
-
+    <script src="../Content/js/Scripts/jquery-1.10.2.min.js"></script>
     <title>系统框架</title>
     <style type="text/css">
     </style>
     <script type="text/javascript">
-        $(document).mousemove(function () {
-            $("li").text()
-        })
+        //$(document).mousemove(function () {
+        //    $("li").text()
+        //})
     </script>
 </head>
-<body style="background-color:#6989B7">
+<body style="background-color: #6989B7">
     <div style="width: 1200px; height: 620px; background-color: white; margin: -17px 0px -17px 75px;">
         <div id="top">
             <img src='<%=ResolveUrl("/Content/Images/teach_logo.jpg") %>' style="width: 1190px; height: 170px; margin: -4px 5px;" />
@@ -37,11 +37,11 @@
                 document.write("今天是&nbsp;" + date + "&nbsp;&nbsp;&nbsp;");
             </script>
             当前用户：<asp:Label ID="lblName" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;
-            <a href='<%=ResolveUrl("Login.aspx") %>'>
-                <input type="button" id="btnLogout" value="注销" class="logout" />
+            <a href='<%=ResolveUrl("~/Login.aspx") %>' style="text-decoration:none;">
+                <input type="button" id="btnLogout" value="注销" class="button" style="margin-top: -1px;"/>
             </a>
             <a href='<%=ResolveUrl("Power/PassWordUpdate.aspx") %>' target="_right">
-                <input type="button" id="btnpassword" value="修改密码" class="logout" /></a>
+                <input type="button" id="btnpassword" value="修改密码" class="button" style="margin-top: -1px;" /></a>
         </div>
         <%-- <div id="nav">
                     <ul>
@@ -61,6 +61,15 @@
                     <ul id="menu">
                         <li>
                             <dl class="gallery">
+                                <dt><a href="main.aspx">系统维护设置</a></dt>
+                                <dd><a href="Power/RoleList.aspx" title="权限维护" target="_right">权限维护</a></dd>
+                                <dd><a href="Power/UserList.aspx" title="用户管理" target="_right">用户管理</a></dd>
+                                <dd><a href="Power/BackUp.aspx" title="数据备份" target="_right">数据备份</a></dd>
+                                <dd><a href="Power/DataList.aspx" title="数据字典" target="_right">数据字典</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl class="gallery">
                                 <dt><a>人员信息维护</a></dt>
                                 <dd><a href="BasicInfo/TeacherInfoMaintenance.aspx" title="教工信息维护" target="_right">教工信息维护</a></dd>
                                 <dd><a href="BasicInfo/TeacherInfoSearch.aspx" title="教工信息查询" target="_right">教工信息查询</a></dd>
@@ -70,12 +79,13 @@
                         </li>
                         <li>
                             <dl class="gallery">
-                                <dt><a href="main.aspx" target="_right">教学文件管理</a></dt>
-                                <dd><a href="help0201.aspx" title="人才培养方案" target="_right">人才培养方案</a></dd>
-                                <dd><a href="help0202.aspx" title="教学大纲" target="_right">教学大纲</a></dd>
-                                <dd><a href="help0203.aspx" title="考核大纲" target="_right">考核大纲</a></dd>
-                                <dd><a href="help020103.aspx" title="实验大纲" target="_right">实验大纲</a></dd>
-                                <dd><a href="help0204.aspx" title="教学日历" target="_right">教学日历</a></dd>
+                                <dt><a>教学文件管理</a></dt>
+                                <dd><a href="TeachDocument/CourseInfoList.aspx" title="课程管理" target="_right">课程管理</a></dd>
+                                <dd><a href="TeachDocument/TrainingProgram.aspx" title="培养方案" target="_right">培养方案</a></dd>
+                                <dd><a href="TeachDocument/TeachingSyllabus.aspx" title="教学大纲" target="_right">教学大纲</a></dd>
+                                <dd><a href="TeachDocument/AssessmentSyllabus.aspx" title="考核大纲" target="_right">考核大纲</a></dd>
+                                <dd><a href="TeachDocument/ExperimentSyllabus.aspx" title="实验大纲" target="_right">实验大纲</a></dd>
+                                <dd><a href="TeachDocument/ExperimentDetail.aspx" title="教学日历" target="_right">教学日历</a></dd>
                             </dl>
                         </li>
                         <li>
@@ -107,16 +117,7 @@
                                 <dt><a href="main.aspx">教管规章制度</a></dt>
                             </dl>
                         </li>
-                        <li>
-                            <dl class="gallery">
-                                <dt><a href="main.aspx">系统维护设置</a></dt>
-                                <dd><a href="Power/UserList.aspx" title="用户管理" target="_right">用户管理</a></dd>
-                                <dd><a href="Power/RoleList.aspx" title="角色维护" target="_right">权限维护</a></dd>
-                                <dd><a href="help0302.aspx" title="学期维护" target="_right">学期维护</a></dd>
-                                <dd><a href="help0303.aspx" title="数据备份" target="_right">数据备份</a></dd>
-                                <dd><a href="Power/DataList.aspx" title="数据字典" target="_right">数据字典</a></dd>
-                            </dl>
-                        </li>
+
                     </ul>
                 </div>
             </div>

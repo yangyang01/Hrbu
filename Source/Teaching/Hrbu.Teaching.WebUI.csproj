@@ -196,6 +196,7 @@
     <Content Include="Content\Images\personal.jpg" />
     <Content Include="Content\Images\search_box.jpg" />
     <Content Include="Content\Images\search_button.jpg" />
+    <Content Include="Content\Images\uploading_bg.png" />
     <Content Include="Content\js\flash.js" />
     <Content Include="Content\js\libs\calendar.js" />
     <Content Include="Content\js\libs\colResizable-1.3.source.js" />
@@ -272,6 +273,8 @@
     <Content Include="Pages\TeachDocument\AssessmentDetailAdd.aspx" />
     <Content Include="Pages\TeachDocument\AssessmentSyllabus.aspx" />
     <Content Include="Pages\TeachDocument\AssessmentSyllabusAdd.aspx" />
+    <Content Include="Pages\TeachDocument\CourseAddUp.aspx" />
+    <Content Include="Pages\TeachDocument\CourseInfoList.aspx" />
     <Content Include="Pages\TeachDocument\ExperimentDetail.aspx" />
     <Content Include="Pages\TeachDocument\ExperimentDetailAdd.aspx" />
     <Content Include="Pages\TeachDocument\ExperimentSyllabus.aspx" />
@@ -292,6 +295,7 @@
     <Content Include="Content\js\Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
     <Content Include="VerifyImageCode.ashx" />
+    <Content Include="UserFiles\TeacherInfo.xls" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -548,6 +552,20 @@
     </Compile>
     <Compile Include="Pages\TeachDocument\AssessmentSyllabusAdd.aspx.designer.cs">
       <DependentUpon>AssessmentSyllabusAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TeachDocument\CourseAddUp.aspx.cs">
+      <DependentUpon>CourseAddUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TeachDocument\CourseAddUp.aspx.designer.cs">
+      <DependentUpon>CourseAddUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TeachDocument\CourseInfoList.aspx.cs">
+      <DependentUpon>CourseInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TeachDocument\CourseInfoList.aspx.designer.cs">
+      <DependentUpon>CourseInfoList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\TeachDocument\ExperimentDetail.aspx.cs">
       <DependentUpon>ExperimentDetail.aspx</DependentUpon>

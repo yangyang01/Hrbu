@@ -53,9 +53,23 @@ namespace Hrbu.Teaching.Model.Convertor
             #endregion
            
             #region TeachDocument
+            Mapper.CreateMap<Course, CourseUI>();
+            Mapper.CreateMap<CourseUI, Course>();
             Mapper.CreateMap<CourseInfo, CourseInfoUI>();
             Mapper.CreateMap<CourseInfoUI, CourseInfo>();
+            Mapper.CreateMap<TrainingProgramAim, TrainingProgramAimUI>();
+            Mapper.CreateMap<TrainingProgramAimUI, TrainingProgramAim>();
+            Mapper.CreateMap<TrainingProgramInfo, TrainingProgramInfoUI>();
+            Mapper.CreateMap<TrainingProgramInfoUI, TrainingProgramInfo>();
+            Mapper.CreateMap<TrainingProgramCourseInfo, TrainingProgramCourseInfoUI>();
+            Mapper.CreateMap<TrainingProgramCourseInfoUI, TrainingProgramCourseInfo>();
+            Mapper.CreateMap<TeachingSyllabusBasic, TeachingSyllabusBasicUI>();
+            Mapper.CreateMap<TeachingSyllabusBasicUI, TeachingSyllabusBasic>();
+            Mapper.CreateMap<TeachingSyllabusDetail, TeachingSyllabusDetailUI>();
+            Mapper.CreateMap<TeachingSyllabusDetailUI, TeachingSyllabusDetail>();
             #endregion
+            Mapper.CreateMap<QueryString, QueryStringUI>();
+            Mapper.CreateMap<QueryStringUI, QueryString>();
         }
     }
 }

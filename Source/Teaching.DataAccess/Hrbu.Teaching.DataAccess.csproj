@@ -59,6 +59,10 @@
     <Compile Include="RoleContext.cs" />
     <Compile Include="StudentBasicInfoContext.cs" />
     <Compile Include="TeacherBasicInfoContext.cs" />
+    <Compile Include="TeachingSyllabusBasicContext.cs" />
+    <Compile Include="TeachingSyllabusDetailContext.cs" />
+    <Compile Include="TrainingProgramAimContext.cs" />
+    <Compile Include="TrainingProgramInfoContext.cs" />
     <Compile Include="UserContext.cs" />
   </ItemGroup>
   <ItemGroup>

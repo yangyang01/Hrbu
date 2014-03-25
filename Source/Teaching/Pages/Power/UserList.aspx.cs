@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Hrbu.Teaching.Utility;
+using Hrbu.Teaching.BusinessView.Model;
 
 namespace Teaching.Pages.Power
 {
@@ -18,9 +19,9 @@ namespace Teaching.Pages.Power
         protected void Page_Load(object sender, EventArgs e)
         {
             checkAuth();
-            PagerControl.PageChange += new PagerControl.PageRefresh(BindUserist);
             if (!IsPostBack)
             {
+                PagerControl.PageChange += new PagerControl.PageRefresh(BindUserist);
                 BindUserist();
             }
         }
@@ -34,9 +35,26 @@ namespace Teaching.Pages.Power
         protected void BindUserist(int currentPageIndex = 0)
         {
             int totalCount = 0;
-            var UserList = powerService.GetUserInfoByPage(currentPageIndex + 1, 2, out totalCount);
+            string UserNo = string.IsNullOrWhiteSpace(this.txtSearchNo.Text) ? null : this.txtSearchNo.Text.Trim();
+            string UserName = string.IsNullOrWhiteSpace(this.txtSearchName.Text) ? null : this.txtSearchName.Text.Trim();
+            var query = new QueryStringUI()
+            {
+                UserNo = UserNo,
+                UserName = UserName
+            };
+            var UserList = powerService.GetUserInfoByPage(query, currentPageIndex + 1, PagerControl.PageSize, out totalCount);
             this.rptUserList.DataSource = UserList;
             this.rptUserList.DataBind();
+            if (totalCount == 0)
+            {
+                this.phNoData.Visible = true;
+                this.trPage.Visible = false;
+            }
+            else
+            {
+                this.phNoData.Visible = false;
+                this.trPage.Visible = true;
+            }
             PagerControl.CurrentPageIndex = currentPageIndex;
             PagerControl.IntialProperties(totalCount);
         }
@@ -53,6 +71,10 @@ namespace Teaching.Pages.Power
                 }
                 BindUserist(0);
             }
+        }
+        protected void SearchQuery(object sender, EventArgs e)
+        {
+            BindUserist(0);
         }
     }
 }

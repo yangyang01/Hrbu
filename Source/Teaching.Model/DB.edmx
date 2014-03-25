@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CourseCode" Type="int" />
           <Property Name="AssessmentPurpose" Type="nvarchar" MaxLength="200" />
           <Property Name="CourseFoundation" Type="nvarchar" MaxLength="200" />
@@ -20,10 +20,11 @@
           <Property Name="TopicProportion" Type="nvarchar" MaxLength="50" />
           <Property Name="DifficultyLevel" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6013: 表/视图“TCMG.dbo.AssessmentSyllabusDetail”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
         <EntityType Name="AssessmentSyllabusDetail">
-          <Property Name="id" Type="int" />
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CourseCode" Type="int" />
           <Property Name="Chapter" Type="nvarchar" MaxLength="50" />
           <Property Name="KnowledgePoint" Type="nvarchar" MaxLength="200" />
@@ -31,7 +32,7 @@
           <Property Name="Comprehend" Type="nvarchar" MaxLength="200" />
           <Property Name="Apply" Type="nvarchar" MaxLength="200" />
           <Property Name="SampleQuestion" Type="nvarchar" MaxLength="200" />
-        </EntityType>-->
+        </EntityType>
         <EntityType Name="Authorizations">
           <Key>
             <PropertyRef Name="Id" />
@@ -46,7 +47,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CourseCode" Type="int" />
           <Property Name="CourseName" Type="varchar" MaxLength="100" />
           <Property Name="CourseProperty" Type="int" />
@@ -73,7 +74,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CourseCode" Type="int" />
           <Property Name="TeachAim" Type="nvarchar" MaxLength="500" />
           <Property Name="TeachTask" Type="nvarchar" MaxLength="500" />
@@ -89,7 +90,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CourseCode" Type="int" />
           <Property Name="ExperimentCode" Type="int" />
           <Property Name="ExperimentName" Type="nvarchar" MaxLength="50" />
@@ -166,7 +167,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SchoolSemester" Type="int" />
           <Property Name="CourseCode" Type="int" />
           <Property Name="SemesterPeriod" Type="int" />
@@ -175,12 +176,13 @@
           <Property Name="Teacher" Type="nvarchar" MaxLength="200" />
           <Property Name="StaffRoomPrincipal" Type="nvarchar" MaxLength="200" />
           <Property Name="CollagePrincipal" Type="nvarchar" MaxLength="200" />
+          <Property Name="SchoolYear" Type="int" />
         </EntityType>
         <EntityType Name="TeachingCalendarDetail">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CourseCode" Type="int" />
           <Property Name="Week" Type="int" />
           <Property Name="IinstructionalMode" Type="nvarchar" MaxLength="50" />
@@ -193,7 +195,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CourseCode" Type="int" />
           <Property Name="TeachAim" Type="nvarchar" MaxLength="500" />
           <Property Name="TeachTask" Type="nvarchar" MaxLength="500" />
@@ -208,7 +210,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CourseCode" Type="int" />
           <Property Name="CourseContent" Type="nvarchar" MaxLength="500" />
           <Property Name="TheoreticalLessons" Type="int" />
@@ -224,25 +226,24 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SchoolSemester" Type="int" />
-          <Property Name="Grade" Type="nvarchar" MaxLength="50" />
+          <Property Name="Grade" Type="int" />
           <Property Name="TrainAim" Type="nvarchar" MaxLength="500" />
           <Property Name="SpecificationRequirements" Type="nvarchar" MaxLength="500" />
           <Property Name="LearningDegree" Type="nchar" MaxLength="50" />
           <Property Name="TeachingPlatform" Type="nchar" MaxLength="200" />
           <Property Name="ProfessionalPlatform" Type="nchar" MaxLength="200" />
           <Property Name="PracticalPlatform" Type="nchar" MaxLength="200" />
+          <Property Name="SchoolYear" Type="int" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6002: 表/视图“TCMG.dbo.TrainingProgramInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="TrainingProgramInfo">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SchoolSemester" Type="int" />
-          <Property Name="Grade" Type="nvarchar" MaxLength="50" />
+          <Property Name="Grade" Type="int" />
           <Property Name="ProfessionalEmphasis" Type="int" />
           <Property Name="CourseCode" Type="int" />
           <Property Name="TeachingPeriod" Type="int" />
@@ -250,6 +251,7 @@
           <Property Name="PracticeWeeks" Type="int" />
           <Property Name="EvaluationMode" Type="int" />
           <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="SchoolYear" Type="int" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -263,6 +265,7 @@
         </EntityType>
         <EntityContainer Name="TCMGModel2StoreContainer">
           <EntitySet Name="AssessmentSyllabusBasic" EntityType="Self.AssessmentSyllabusBasic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssessmentSyllabusDetail" EntityType="Self.AssessmentSyllabusDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Authorizations" EntityType="Self.Authorizations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CourseInfo" EntityType="Self.CourseInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DataDic" EntityType="Self.DataDic" Schema="dbo" store:Type="Tables" />
@@ -278,21 +281,8 @@
           <EntitySet Name="TeachingSyllabusBasic" EntityType="Self.TeachingSyllabusBasic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TeachingSyllabusDetail" EntityType="Self.TeachingSyllabusDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TrainingProgramAim" EntityType="Self.TrainingProgramAim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrainingProgramInfo" EntityType="Self.TrainingProgramInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TrainingProgramInfo" EntityType="Self.TrainingProgramInfo" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TrainingProgramInfo].[id] AS [id], 
-    [TrainingProgramInfo].[SchoolSemester] AS [SchoolSemester], 
-    [TrainingProgramInfo].[Grade] AS [Grade], 
-    [TrainingProgramInfo].[ProfessionalEmphasis] AS [ProfessionalEmphasis], 
-    [TrainingProgramInfo].[CourseCode] AS [CourseCode], 
-    [TrainingProgramInfo].[TeachingPeriod] AS [TeachingPeriod], 
-    [TrainingProgramInfo].[ExperimentPeriod] AS [ExperimentPeriod], 
-    [TrainingProgramInfo].[PracticeWeeks] AS [PracticeWeeks], 
-    [TrainingProgramInfo].[EvaluationMode] AS [EvaluationMode], 
-    [TrainingProgramInfo].[Remark] AS [Remark]
-    FROM [dbo].[TrainingProgramInfo] AS [TrainingProgramInfo]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -359,16 +349,17 @@
           <EntitySet Name="Users" EntityType="TCMGModel2.User" />
           <EntitySet Name="Authorizations" EntityType="TCMGModel2.Authorization" />
           <EntitySet Name="AssessmentSyllabusBasics" EntityType="TCMGModel2.AssessmentSyllabusBasic" />
-          <EntitySet Name="CourseInfoes" EntityType="TCMGModel2.CourseInfo" />
           <EntitySet Name="ExperimentSyllabusBasics" EntityType="TCMGModel2.ExperimentSyllabusBasic" />
           <EntitySet Name="ExperimentSyllabusDetails" EntityType="TCMGModel2.ExperimentSyllabusDetail" />
           <EntitySet Name="TeachingCalendarBasics" EntityType="TCMGModel2.TeachingCalendarBasic" />
           <EntitySet Name="TeachingCalendarDetails" EntityType="TCMGModel2.TeachingCalendarDetail" />
           <EntitySet Name="TeachingSyllabusBasics" EntityType="TCMGModel2.TeachingSyllabusBasic" />
           <EntitySet Name="TeachingSyllabusDetails" EntityType="TCMGModel2.TeachingSyllabusDetail" />
-          <EntitySet Name="TrainingProgramAims" EntityType="TCMGModel2.TrainingProgramAim" />
-          <EntitySet Name="TrainingProgramInfoes" EntityType="TCMGModel2.TrainingProgramInfo" />
           <EntitySet Name="TeacherBasicInfoes" EntityType="TCMGModel2.TeacherBasicInfo" />
+          <EntitySet Name="AssessmentSyllabusDetails" EntityType="TCMGModel2.AssessmentSyllabusDetail" />
+          <EntitySet Name="TrainingProgramInfoes" EntityType="TCMGModel2.TrainingProgramInfo" />
+          <EntitySet Name="CourseInfoes" EntityType="TCMGModel2.CourseInfo" />
+          <EntitySet Name="TrainingProgramAims" EntityType="TCMGModel2.TrainingProgramAim" />
         </EntityContainer>
         <EntityType Name="User">
           <Key>
@@ -404,18 +395,6 @@
           <Property Name="SOTopicProportion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TopicProportion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DifficultyLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="CourseInfo">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="CourseCode" Type="Int32" />
-          <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="CourseProperty" Type="Int32" />
-          <Property Name="CourseType" Type="Int32" />
-          <Property Name="Credit" Type="Int32" />
-          <Property Name="PeriodTotal" Type="Int32" />
         </EntityType>
         <EntityType Name="ExperimentSyllabusBasic">
           <Key>
@@ -462,6 +441,7 @@
           <Property Name="Teacher" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="StaffRoomPrincipal" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="CollagePrincipal" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SchoolYear" Type="Int32" />
         </EntityType>
         <EntityType Name="TeachingCalendarDetail">
           <Key>
@@ -507,35 +487,6 @@
           <Property Name="TeachKeyPoint" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="LessonReview" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="TrainingProgramAim">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="SchoolSemester" Type="Int32" />
-          <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TrainAim" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="SpecificationRequirements" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="LearningDegree" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="TeachingPlatform" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
-          <Property Name="ProfessionalPlatform" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
-          <Property Name="PracticalPlatform" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
-        </EntityType>
-        <EntityType Name="TrainingProgramInfo">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="SchoolSemester" Type="Int32" />
-          <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ProfessionalEmphasis" Type="Int32" />
-          <Property Name="CourseCode" Type="Int32" />
-          <Property Name="TeachingPeriod" Type="Int32" />
-          <Property Name="ExperimentPeriod" Type="Int32" />
-          <Property Name="PracticeWeeks" Type="Int32" />
-          <Property Name="EvaluationMode" Type="Int32" />
-          <Property Name="Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="TeacherBasicInfo">
           <Key>
             <PropertyRef Name="Id" />
@@ -559,6 +510,62 @@
           <Property Name="GraduationSchool" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="IndividualResume" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="IdentityType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AssessmentSyllabusDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="CourseCode" Type="Int32" />
+          <Property Name="Chapter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KnowledgePoint" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Memorization" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Comprehend" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Apply" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SampleQuestion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TrainingProgramInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SchoolSemester" Type="Int32" />
+          <Property Name="Grade" Type="Int32" />
+          <Property Name="ProfessionalEmphasis" Type="Int32" />
+          <Property Name="CourseCode" Type="Int32" />
+          <Property Name="TeachingPeriod" Type="Int32" />
+          <Property Name="ExperimentPeriod" Type="Int32" />
+          <Property Name="PracticeWeeks" Type="Int32" />
+          <Property Name="EvaluationMode" Type="Int32" />
+          <Property Name="Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SchoolYear" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CourseInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseCode" Type="Int32" />
+          <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CourseProperty" Type="Int32" />
+          <Property Name="CourseType" Type="Int32" />
+          <Property Name="Credit" Type="Int32" />
+          <Property Name="PeriodTotal" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TrainingProgramAim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SchoolSemester" Type="Int32" />
+          <Property Name="Grade" Type="Int32" />
+          <Property Name="TrainAim" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SpecificationRequirements" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LearningDegree" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="TeachingPlatform" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="ProfessionalPlatform" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="PracticalPlatform" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="SchoolYear" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -661,19 +668,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CourseInfoes">
-            <EntityTypeMapping TypeName="TCMGModel2.CourseInfo">
-              <MappingFragment StoreEntitySet="CourseInfo">
-                <ScalarProperty Name="PeriodTotal" ColumnName="PeriodTotal" />
-                <ScalarProperty Name="Credit" ColumnName="Credit" />
-                <ScalarProperty Name="CourseType" ColumnName="CourseType" />
-                <ScalarProperty Name="CourseProperty" ColumnName="CourseProperty" />
-                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
-                <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ExperimentSyllabusBasics">
             <EntityTypeMapping TypeName="TCMGModel2.ExperimentSyllabusBasic">
               <MappingFragment StoreEntitySet="ExperimentSyllabusBasic">
@@ -711,6 +705,7 @@
           <EntitySetMapping Name="TeachingCalendarBasics">
             <EntityTypeMapping TypeName="TCMGModel2.TeachingCalendarBasic">
               <MappingFragment StoreEntitySet="TeachingCalendarBasic">
+                <ScalarProperty Name="SchoolYear" ColumnName="SchoolYear" />
                 <ScalarProperty Name="CollagePrincipal" ColumnName="CollagePrincipal" />
                 <ScalarProperty Name="StaffRoomPrincipal" ColumnName="StaffRoomPrincipal" />
                 <ScalarProperty Name="Teacher" ColumnName="Teacher" />
@@ -770,37 +765,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TrainingProgramAims">
-            <EntityTypeMapping TypeName="TCMGModel2.TrainingProgramAim">
-              <MappingFragment StoreEntitySet="TrainingProgramAim">
-                <ScalarProperty Name="PracticalPlatform" ColumnName="PracticalPlatform" />
-                <ScalarProperty Name="ProfessionalPlatform" ColumnName="ProfessionalPlatform" />
-                <ScalarProperty Name="TeachingPlatform" ColumnName="TeachingPlatform" />
-                <ScalarProperty Name="LearningDegree" ColumnName="LearningDegree" />
-                <ScalarProperty Name="SpecificationRequirements" ColumnName="SpecificationRequirements" />
-                <ScalarProperty Name="TrainAim" ColumnName="TrainAim" />
-                <ScalarProperty Name="Grade" ColumnName="Grade" />
-                <ScalarProperty Name="SchoolSemester" ColumnName="SchoolSemester" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TrainingProgramInfoes">
-            <EntityTypeMapping TypeName="TCMGModel2.TrainingProgramInfo">
-              <MappingFragment StoreEntitySet="TrainingProgramInfo">
-                <ScalarProperty Name="Remark" ColumnName="Remark" />
-                <ScalarProperty Name="EvaluationMode" ColumnName="EvaluationMode" />
-                <ScalarProperty Name="PracticeWeeks" ColumnName="PracticeWeeks" />
-                <ScalarProperty Name="ExperimentPeriod" ColumnName="ExperimentPeriod" />
-                <ScalarProperty Name="TeachingPeriod" ColumnName="TeachingPeriod" />
-                <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
-                <ScalarProperty Name="ProfessionalEmphasis" ColumnName="ProfessionalEmphasis" />
-                <ScalarProperty Name="Grade" ColumnName="Grade" />
-                <ScalarProperty Name="SchoolSemester" ColumnName="SchoolSemester" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TeacherBasicInfoes">
             <EntityTypeMapping TypeName="TCMGModel2.TeacherBasicInfo">
               <MappingFragment StoreEntitySet="TeacherBasicInfo">
@@ -823,6 +787,66 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="EmpNo" ColumnName="EmpNo" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssessmentSyllabusDetails">
+            <EntityTypeMapping TypeName="TCMGModel2.AssessmentSyllabusDetail">
+              <MappingFragment StoreEntitySet="AssessmentSyllabusDetail">
+                <ScalarProperty Name="SampleQuestion" ColumnName="SampleQuestion" />
+                <ScalarProperty Name="Apply" ColumnName="Apply" />
+                <ScalarProperty Name="Comprehend" ColumnName="Comprehend" />
+                <ScalarProperty Name="Memorization" ColumnName="Memorization" />
+                <ScalarProperty Name="KnowledgePoint" ColumnName="KnowledgePoint" />
+                <ScalarProperty Name="Chapter" ColumnName="Chapter" />
+                <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrainingProgramInfoes">
+            <EntityTypeMapping TypeName="TCMGModel2.TrainingProgramInfo">
+              <MappingFragment StoreEntitySet="TrainingProgramInfo">
+                <ScalarProperty Name="SchoolYear" ColumnName="SchoolYear" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="EvaluationMode" ColumnName="EvaluationMode" />
+                <ScalarProperty Name="PracticeWeeks" ColumnName="PracticeWeeks" />
+                <ScalarProperty Name="ExperimentPeriod" ColumnName="ExperimentPeriod" />
+                <ScalarProperty Name="TeachingPeriod" ColumnName="TeachingPeriod" />
+                <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+                <ScalarProperty Name="ProfessionalEmphasis" ColumnName="ProfessionalEmphasis" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="SchoolSemester" ColumnName="SchoolSemester" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourseInfoes">
+            <EntityTypeMapping TypeName="TCMGModel2.CourseInfo">
+              <MappingFragment StoreEntitySet="CourseInfo">
+                <ScalarProperty Name="PeriodTotal" ColumnName="PeriodTotal" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="CourseType" ColumnName="CourseType" />
+                <ScalarProperty Name="CourseProperty" ColumnName="CourseProperty" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrainingProgramAims">
+            <EntityTypeMapping TypeName="TCMGModel2.TrainingProgramAim">
+              <MappingFragment StoreEntitySet="TrainingProgramAim">
+                <ScalarProperty Name="SchoolYear" ColumnName="SchoolYear" />
+                <ScalarProperty Name="PracticalPlatform" ColumnName="PracticalPlatform" />
+                <ScalarProperty Name="ProfessionalPlatform" ColumnName="ProfessionalPlatform" />
+                <ScalarProperty Name="TeachingPlatform" ColumnName="TeachingPlatform" />
+                <ScalarProperty Name="LearningDegree" ColumnName="LearningDegree" />
+                <ScalarProperty Name="SpecificationRequirements" ColumnName="SpecificationRequirements" />
+                <ScalarProperty Name="TrainAim" ColumnName="TrainAim" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="SchoolSemester" ColumnName="SchoolSemester" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -857,16 +881,17 @@
         <EntityTypeShape EntityType="TCMGModel2.User" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="TCMGModel2.Authorization" Width="1.5" PointX="7.375" PointY="6.75" />
         <EntityTypeShape EntityType="TCMGModel2.AssessmentSyllabusBasic" Width="1.5" PointX="3.75" PointY="8.75" />
-        <EntityTypeShape EntityType="TCMGModel2.CourseInfo" Width="1.5" PointX="9.75" PointY="0.75" />
         <EntityTypeShape EntityType="TCMGModel2.ExperimentSyllabusBasic" Width="1.5" PointX="0.75" PointY="9.75" />
         <EntityTypeShape EntityType="TCMGModel2.ExperimentSyllabusDetail" Width="1.5" PointX="9.75" PointY="4.75" />
         <EntityTypeShape EntityType="TCMGModel2.TeachingCalendarBasic" Width="1.5" PointX="5.75" PointY="9.75" />
         <EntityTypeShape EntityType="TCMGModel2.TeachingCalendarDetail" Width="1.5" PointX="7.75" PointY="9.75" />
         <EntityTypeShape EntityType="TCMGModel2.TeachingSyllabusBasic" Width="1.5" PointX="9.75" PointY="8.75" />
         <EntityTypeShape EntityType="TCMGModel2.TeachingSyllabusDetail" Width="1.5" PointX="11.75" PointY="0.75" />
-        <EntityTypeShape EntityType="TCMGModel2.TrainingProgramAim" Width="1.5" PointX="12.375" PointY="4.75" />
-        <EntityTypeShape EntityType="TCMGModel2.TrainingProgramInfo" Width="1.5" PointX="12.375" PointY="8.75" />
         <EntityTypeShape EntityType="TCMGModel2.TeacherBasicInfo" Width="1.5" PointX="10.375" PointY="12.75" />
+        <EntityTypeShape EntityType="TCMGModel2.AssessmentSyllabusDetail" Width="1.5" PointX="12.375" PointY="12.75" />
+        <EntityTypeShape EntityType="TCMGModel2.TrainingProgramInfo" Width="2.5" PointX="12.375" PointY="8.75" />
+        <EntityTypeShape EntityType="TCMGModel2.CourseInfo" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TCMGModel2.TrainingProgramAim" Width="1.5" PointX="12.375" PointY="4.75" />
       </Diagram>
     </Diagrams>
   </Designer>

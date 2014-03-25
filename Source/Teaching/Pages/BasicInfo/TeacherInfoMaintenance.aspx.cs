@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Hrbu.Teaching.Utility;
+using Hrbu.Teaching.BusinessView.Model;
 
 namespace Teaching.Pages.BasicInfo
 {
@@ -25,11 +26,11 @@ namespace Teaching.Pages.BasicInfo
         protected void Page_Load(object sender, EventArgs e)
         {
             checkAuth();
-            PagerControl.PageChange += new PagerControl.PageRefresh(BindTeacherList);
             if (!IsPostBack)
             {
                 if (this.CurrentUser.RoleId == 1)
                 {
+                    PagerControl.PageChange += new PagerControl.PageRefresh(BindTeacherList);
                     BindTeacherList();
                 }
                 else
@@ -41,7 +42,14 @@ namespace Teaching.Pages.BasicInfo
         protected void BindTeacherList(int currentPageIndex = 0)
         {
             int totalCount = 0;
-            var teacherList = TeacherInfo.GetTeacherInfoByPage(currentPageIndex + 1, 3, out totalCount);
+            string UserNo = string.IsNullOrWhiteSpace(this.txtSearchNo.Text) ? null : this.txtSearchNo.Text.Trim();
+            string UserName = string.IsNullOrWhiteSpace(this.txtSearchName.Text) ? null : this.txtSearchName.Text.Trim();
+            var query = new QueryStringUI()
+            {
+                UserNo = UserNo,
+                UserName = UserName
+            };
+            var teacherList = TeacherInfo.GetTeacherInfoByPage(query, currentPageIndex + 1, 3, out totalCount);
             this.rptTeacherList.DataSource = teacherList;
             this.rptTeacherList.DataBind();
             if (totalCount == 0)
@@ -84,6 +92,10 @@ namespace Teaching.Pages.BasicInfo
                     BindSelf();
                 }
             }
+        }
+        protected void SearchQuery(object sender, EventArgs e)
+        {
+            BindTeacherList(0);
         }
     }
 }

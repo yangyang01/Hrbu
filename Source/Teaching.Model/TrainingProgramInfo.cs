@@ -16,7 +16,7 @@ namespace Teaching.Model
     {
         public int id { get; set; }
         public Nullable<int> SchoolSemester { get; set; }
-        public string Grade { get; set; }
+        public Nullable<int> Grade { get; set; }
         public Nullable<int> ProfessionalEmphasis { get; set; }
         public Nullable<int> CourseCode { get; set; }
         public Nullable<int> TeachingPeriod { get; set; }
@@ -24,5 +24,6 @@ namespace Teaching.Model
         public Nullable<int> PracticeWeeks { get; set; }
         public Nullable<int> EvaluationMode { get; set; }
         public string Remark { get; set; }
+        public Nullable<int> SchoolYear { get; set; }
     }
 }

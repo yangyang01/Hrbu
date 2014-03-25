@@ -10,16 +10,20 @@
     <%--<link type="text/css" rel="stylesheet" href="~/Content/css/basicInfo.css" />--%>
     <script src="../../Content/js/Utility.js"></script>
     <%@ Register Src="~/UserControls/PagerControl.ascx" TagPrefix="uc1" TagName="PagerControl" %>
-
+    <style>
+        .b {
+            margin-top: -1px;
+        }
+    </style>
 </head>
 <body style="background-color: #FAFBFC;">
     <form id="form1" runat="server">
         <div class="content_title"><span>教工信息查询</span></div>
         <div style="padding-left: 100px; font-size: 18px; height: 27px; margin-bottom: -14px;">
-            姓名：<asp:TextBox ID="searchName" runat="server" Width="100px" Height="25px"></asp:TextBox>
-            工号：<asp:TextBox ID="searchNo" runat="server" Width="100px" Height="25px"></asp:TextBox>
-            <asp:Button runat="server" ID="SearchId" Text="查询" CssClass="button" />
-            <asp:Button runat="server" ID="SearchAll" Text="查询所有" CssClass="button" />
+            工号：<asp:TextBox runat="server" Width="100px" Height="25px" ID="txtSearchNo"></asp:TextBox>
+            姓名：<asp:TextBox runat="server" Width="100px" Height="25px" ID="txtSearchName"></asp:TextBox>
+            <asp:Button runat="server" ID="SearchId" Text="查询" CssClass="button b" OnClick="SearchQuery" />
+            <asp:Button runat="server" ID="SearchAll" Text="查询所有" CssClass="button b" />
         </div>
         <%--<div style="padding-top: 20px;border-bottom:1px solid black;width:500px;padding-left:500px">--%>
 

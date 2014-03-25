@@ -22,6 +22,24 @@ namespace Teaching.Pages.Power {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// txtSearchNo 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSearchNo;
+        
+        /// <summary>
+        /// txtSearchName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSearchName;
+        
+        /// <summary>
         /// rptUserList 控件。
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace Teaching.Pages.Power {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phNoData;
+        
+        /// <summary>
+        /// trPage 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trPage;
         
         /// <summary>
         /// PagerControl 控件。

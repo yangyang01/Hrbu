@@ -61,6 +61,7 @@
                             <asp:ListItem Text="考核大纲" Value="3"></asp:ListItem>
                             <asp:ListItem Text="实验大纲" Value="4"></asp:ListItem>
                             <asp:ListItem Text="教学日历" Value="5"></asp:ListItem>
+                            <asp:ListItem Text="课程管理" Value="6"></asp:ListItem>
                         </asp:CheckBoxList>
                     </td>
                 </tr>

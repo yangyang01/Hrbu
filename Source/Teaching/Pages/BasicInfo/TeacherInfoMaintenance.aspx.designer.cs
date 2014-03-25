@@ -22,15 +22,6 @@ namespace Teaching.Pages.BasicInfo {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtSearchName 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearchName;
-        
-        /// <summary>
         /// txtSearchNo 控件。
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace Teaching.Pages.BasicInfo {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSearchNo;
+        
+        /// <summary>
+        /// txtSearchName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSearchName;
         
         /// <summary>
         /// phNoData 控件。

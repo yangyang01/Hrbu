@@ -16,15 +16,15 @@ namespace Hrbu.Teaching.Business
     public class BasicInfoService : IBasicInfo
     {
 
-        public List<BasicInfoUI> GetStudentInfoByPage(int startPage, int pageSize, out int totalCount)
+        public List<BasicInfoUI> GetStudentInfoByPage(QueryStringUI query,int startPage, int pageSize, out int totalCount)
         {
-            return EntityMapping.Auto<List<BasicInfo>, List<BasicInfoUI>>(StudentBasicInfoContext.GetStudentInfoByPage(startPage, pageSize, out totalCount));
+            return EntityMapping.Auto<List<BasicInfo>, List<BasicInfoUI>>(StudentBasicInfoContext.GetStudentInfoByPage(EntityMapping.Auto<QueryStringUI, QueryString>(query),startPage, pageSize, out totalCount));
         }
 
 
-        public List<BasicInfoUI> GetTeacherInfoByPage(int startPage, int pageSize, out int totalCount)
+        public List<BasicInfoUI> GetTeacherInfoByPage(QueryStringUI query,int startPage, int pageSize, out int totalCount)
         {
-            return EntityMapping.Auto<List<BasicInfo>, List<BasicInfoUI>>(TeacherBasicInfoContext.GetTeacherInfoByPage(startPage, pageSize, out totalCount));
+            return EntityMapping.Auto<List<BasicInfo>, List<BasicInfoUI>>(TeacherBasicInfoContext.GetTeacherInfoByPage(EntityMapping.Auto<QueryStringUI, QueryString>(query), startPage, pageSize, out totalCount));
 
         }
 
@@ -90,6 +90,18 @@ namespace Hrbu.Teaching.Business
         public void DeleteStudentInfo(int Id)
         {
             StudentBasicInfoContext.Delete(x => x.id == Id);
+        }
+
+
+        public bool IsExitStudentNo(string StuNo)
+        {
+            return StudentBasicInfoContext.IsExitStudentNo(StuNo);
+        }
+
+
+        public bool IsExitTeacherNo(string EmpNo)
+        {
+            return TeacherBasicInfoContext.IsExitTeacherNo(EmpNo);
         }
     }
 }

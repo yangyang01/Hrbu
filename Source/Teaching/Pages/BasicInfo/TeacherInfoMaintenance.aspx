@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TeacherInfoMaintenance.aspx.cs" Inherits="Teaching.Pages.BasicInfo.TeacherInfoMaintenance" %>
 
+<%@ Register Src="~/UserControls/PagerControl.ascx" TagPrefix="uc1" TagName="PagerControl" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,23 +10,30 @@
     <title>教工信息列表</title>
     <link type="text/css" rel="stylesheet" href="~/Content/css/global.css" />
     <script src="../../Content/js/Utility.js"></script>
-    <%@ Register Src="~/UserControls/PagerControl.ascx" TagPrefix="uc1" TagName="PagerControl" %>
 
+    <link href="../../Content/css/basicInfo.css" rel="stylesheet" />
+    <style>
+        .b {
+            margin-top: -1px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server" target="_right">
         <div class="content_title"><span>教工信息维护</span></div>
         <div>
             <div style="padding-left: 100px; font-size: 18px; height: 27px">
-                姓名：<asp:TextBox runat="server" Width="100px" Height="25px" ID="txtSearchName"></asp:TextBox>
                 工号：<asp:TextBox runat="server" Width="100px" Height="25px" ID="txtSearchNo"></asp:TextBox>
-                <asp:Button runat="server" Text="查询" CssClass="button" />
-                <%--<div>
-            <div style="margin-left: 100px">--%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                姓名：<asp:TextBox runat="server" Width="100px" Height="25px" ID="txtSearchName"></asp:TextBox>
+                <asp:Button runat="server" Text="查询" CssClass="button b" OnClick="SearchQuery" />
+
                 <a onclick="openDialog('TeacherInfoDetail.aspx')" href="#"
                     title="教师信息详情">
-                    <asp:Button Text="添加" runat="server" CssClass="button" /></a>
-                <asp:Button runat="server" Text="批量数据信息导入" CssClass="button" Style="width: 125px;" />
+                    <asp:Button Text="添加" runat="server" CssClass="button b" /></a>
+
+                <asp:Button runat="server" Text="批量数据信息导入" CssClass="button b" Style="width: 125px;" />
+                <%--  <asp:FileUpload ID="fileUpload" runat="server" ClientIDMode="Static" Style="*margin-top: -20px;width:138px;" />
+                <a href="/../../UserFiles/TeacherInfo.xls" class="button b">下载模板</a>--%>
             </div>
             <table class="table" border="1" style="border-bottom-color: gray; text-align: center; margin: 10px 100px; border-collapse: collapse;" id="TeacherInfoListTable">
                 <tr class="table_title">

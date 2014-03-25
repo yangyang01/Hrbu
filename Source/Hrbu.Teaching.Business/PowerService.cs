@@ -63,9 +63,9 @@ namespace Hrbu.Teaching.Business
         }
 
 
-        public List<UserInfoUI> GetUserInfoByPage(int startPage, int pageSize, out int totalCount)
+        public List<UserInfoUI> GetUserInfoByPage(QueryStringUI query,int startPage, int pageSize, out int totalCount)
         {
-            return EntityMapping.Auto<List<UserInfo>, List<UserInfoUI>>(UserContext.GetUserListByPage(startPage,pageSize,out totalCount));
+            return EntityMapping.Auto<List<UserInfo>, List<UserInfoUI>>(UserContext.GetUserListByPage(EntityMapping.Auto<QueryStringUI, QueryString>(query),startPage,pageSize,out totalCount));
 
         }
 
@@ -141,6 +141,29 @@ namespace Hrbu.Teaching.Business
         {
             return EntityMapping.Auto<List<Role>, List<RoleUI>>(RoleContext.GetRoleNameList());
         }
-       
+
+
+        public bool IsExitUserNo(string UserNo)
+        {
+            return UserContext.IsExitUserNo(UserNo);
+        }
+
+
+        public List<UserUI> GetUserList()
+        {
+            return EntityMapping.Auto<List<User>, List<UserUI>>(UserContext.GetUserList());
+        }
+
+
+        public bool IsStudentNo(int roleId)
+        {
+            return UserContext.IsStudentNo(roleId);
+        }
+
+
+        public UserUI GetUserInfoByNo(string stuNo)
+        {
+            return EntityMapping.Auto<User, UserUI>(UserContext.GetUserInfoByNo(stuNo));
+        }
     }
 }

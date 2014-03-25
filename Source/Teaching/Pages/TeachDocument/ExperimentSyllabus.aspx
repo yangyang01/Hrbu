@@ -25,7 +25,7 @@
             <div class="content_title"><span>实验大纲</span></div>
             <a onclick="openDialog('ExperimentSyllabusAdd.aspx')" href="#"
                 title="添加教学大纲">
-                <asp:Button runat="server" ID="btnAddSyllabus" Text="添加" CssClass="btnadd" /></a>
+                <asp:Button runat="server" ID="btnAddSyllabus" Text="添加" CssClass="btnadd button" /></a>
             <table class="table">
                 <tr class="table_title">
                     <td>课程<br />
@@ -69,7 +69,7 @@
                     <td></td>
                     <td><a onclick="openDialog('ExperimentDetail.aspx')" href="#"
                         title="大纲详情">
-                        <asp:Button runat="server" Text="详细" /></a></td>
+                        <asp:Button runat="server" Text="详细" CssClass="button" /></a></td>
                 </tr>
             </table>
         </div>

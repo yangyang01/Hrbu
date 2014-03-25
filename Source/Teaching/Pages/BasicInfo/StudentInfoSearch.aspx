@@ -10,16 +10,20 @@
     <%--<link type="text/css" rel="stylesheet" href="~/Content/css/basicInfo.css" />--%>
     <script src="../../Content/js/Utility.js"></script>
     <%@ Register Src="~/UserControls/PagerControl.ascx" TagPrefix="uc1" TagName="PagerControl" %>
-
+    <style>
+        .b {
+            margin-top: -1px;
+        }
+    </style>
 </head>
 <body style="background-color: #FAFBFC;">
     <form id="form1" runat="server">
         <div class="content_title"><span>学生信息查询</span></div>
         <div style="padding-left: 100px; font-size: 18px; height: 27px; margin-bottom: -14px;">
-            姓名：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
-            学号：<asp:TextBox runat="server" Width="100px" Height="25px"></asp:TextBox>
-            <asp:Button runat="server" Text="查询" CssClass="button" />
-            <asp:Button runat="server" Text="查询所有" CssClass="button" />
+            学号：<asp:TextBox runat="server" Width="100px" Height="25px" ID="txtSearchNo"></asp:TextBox>
+            姓名：<asp:TextBox runat="server" Width="100px" Height="25px" ID="txtSearchName"></asp:TextBox>
+            <asp:Button runat="server" Text="查询" CssClass="button b" OnClick="SearchQuery" />
+            <asp:Button runat="server" Text="查询所有" CssClass="button b" />
         </div>
         <div style="padding-top: 20px;">
             <table class="table" border="0" style="padding-left: 100px; border-collapse: collapse; margin-left: 100px;">

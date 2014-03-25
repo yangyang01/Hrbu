@@ -16,12 +16,13 @@ namespace Teaching.Model
     {
         public int id { get; set; }
         public Nullable<int> SchoolSemester { get; set; }
-        public string Grade { get; set; }
+        public Nullable<int> Grade { get; set; }
         public string TrainAim { get; set; }
         public string SpecificationRequirements { get; set; }
         public string LearningDegree { get; set; }
         public string TeachingPlatform { get; set; }
         public string ProfessionalPlatform { get; set; }
         public string PracticalPlatform { get; set; }
+        public Nullable<int> SchoolYear { get; set; }
     }
 }

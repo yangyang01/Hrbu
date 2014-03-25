@@ -54,7 +54,12 @@
     <Compile Include="Power\RoleUI.cs" />
     <Compile Include="Power\UserUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryStringUI.cs" />
     <Compile Include="TeachDocument\CourseInfoUI.cs" />
+    <Compile Include="TeachDocument\TeachingSyllabusBasicUI.cs" />
+    <Compile Include="TeachDocument\TeachingSyllabusDetailUI.cs" />
+    <Compile Include="TeachDocument\TrainingProgramAimUI.cs" />
+    <Compile Include="TeachDocument\TrainingProgramInfoUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hrbu.Teaching.Utility\Hrbu.Teaching.Utility.csproj">

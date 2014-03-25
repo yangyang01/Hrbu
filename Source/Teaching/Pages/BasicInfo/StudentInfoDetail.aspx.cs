@@ -15,6 +15,7 @@ namespace Teaching.Pages.BasicInfo
     public partial class StudentInfoDetail : BasePage
     {
         public IBasicInfo StudentService { get; set; }
+        public IPower UserService { get; set; }
         public string Status
         {
             get
@@ -57,7 +58,6 @@ namespace Teaching.Pages.BasicInfo
         {
             var studentInfo = StudentService.GetStudengInfoById(StudentId);
             this.txtStuNo.Text = studentInfo.StudentNo;
-            this.txtStuName.Text = studentInfo.Name;
             this.txtSex.Text = studentInfo.Sex;
             this.txtTel.Text = studentInfo.Tel;
             this.ddlMajor.SelectedValue = studentInfo.Major.NullToString();
@@ -74,7 +74,6 @@ namespace Teaching.Pages.BasicInfo
             {
                 var studentInfo = StudentService.GetStudengInfoById(StudentId);
                 studentInfo.StudentNo = this.txtStuNo.Text;
-                studentInfo.Name = this.txtStuName.Text;
                 studentInfo.Sex = this.txtSex.Text;
                 studentInfo.Tel = this.txtTel.Text;
                 studentInfo.Major = this.ddlMajor.SelectedValue.ToInt();
@@ -89,20 +88,42 @@ namespace Teaching.Pages.BasicInfo
             }
             else
             {
-                StudentBasicInfoUI studentInfo = new StudentBasicInfoUI();
-                studentInfo.StudentNo = this.txtStuNo.Text;
-                studentInfo.Name = this.txtStuName.Text;
-                studentInfo.Sex = this.txtSex.Text;
-                studentInfo.Tel = this.txtTel.Text;
-                studentInfo.Major = this.ddlMajor.SelectedValue.ToInt();
-                studentInfo.Class = this.txtClass.Text;
-                studentInfo.ZipCope = this.txtZipCode.Text;
-                studentInfo.Address = this.txtAddress.Text;
-                studentInfo.Contacts = this.txtContacts.Text;
-                studentInfo.ConttactTel = this.txtContTel.Text;
-                studentInfo.Mail = this.txtMail.Text;
-                StudentService.AddStudentInfo(studentInfo);
-                WebMessageBox(this.Page, string.Format("'操作成功!',RefreshParentAndCloseSelf"));
+                if (!UserService.IsExitUserNo(this.txtStuNo.Text))
+                {
+                    WebMessageBox(this.Page, "'请确定存在该用户！'");
+                }
+                else
+                {
+                    var user = UserService.GetUserInfoByNo(this.txtStuNo.Text);
+                    if (!UserService.IsStudentNo(user.RoleId))
+                    {
+                        WebMessageBox(this.Page, "'请确定该用户为学生用户！'");
+                    }
+                    else
+                    {
+                        if (!StudentService.IsExitStudentNo(this.txtStuNo.Text))
+                        {
+                            StudentBasicInfoUI studentInfo = new StudentBasicInfoUI();
+                            studentInfo.StudentNo = this.txtStuNo.Text;
+                            studentInfo.Name = user.UserName;
+                            studentInfo.Sex = this.txtSex.Text;
+                            studentInfo.Tel = this.txtTel.Text;
+                            studentInfo.Major = this.ddlMajor.SelectedValue.ToInt();
+                            studentInfo.Class = this.txtClass.Text;
+                            studentInfo.ZipCope = this.txtZipCode.Text;
+                            studentInfo.Address = this.txtAddress.Text;
+                            studentInfo.Contacts = this.txtContacts.Text;
+                            studentInfo.ConttactTel = this.txtContTel.Text;
+                            studentInfo.Mail = this.txtMail.Text;
+                            StudentService.AddStudentInfo(studentInfo);
+                            WebMessageBox(this.Page, string.Format("'保存成功!',RefreshParentAndCloseSelf"));
+                        }
+                        else
+                        {
+                            WebMessageBox(this.Page, "'已存在该学生信息'");
+                        }
+                    }
+                }
             }
         }
     }

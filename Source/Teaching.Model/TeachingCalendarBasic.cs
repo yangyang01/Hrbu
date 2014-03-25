@@ -23,5 +23,6 @@ namespace Teaching.Model
         public string Teacher { get; set; }
         public string StaffRoomPrincipal { get; set; }
         public string CollagePrincipal { get; set; }
+        public Nullable<int> SchoolYear { get; set; }
     }
 }

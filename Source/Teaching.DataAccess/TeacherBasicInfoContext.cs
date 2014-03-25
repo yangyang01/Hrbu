@@ -11,7 +11,7 @@ namespace Teaching.DataAccess
 {
     public class TeacherBasicInfoContext:DBContext<TeacherBasicInfo>
     {
-        public static List<BasicInfo> GetTeacherInfoByPage(int startPage, int pageSize, out int totalCount)
+        public static List<BasicInfo> GetTeacherInfoByPage(QueryString query,int startPage, int pageSize, out int totalCount)
         {
             using (var ctx = CreateContext())
             {
@@ -21,13 +21,21 @@ namespace Teaching.DataAccess
                           from d2 in d1.DefaultIfEmpty()
                           join dd in ctx.Set<DataDicInfo>() on t.Major equals dd.Id
                           into dd1
-                          from dd2 in d1.DefaultIfEmpty()
+                          from dd2 in dd1.DefaultIfEmpty()
                           orderby t.Id
                           select new BasicInfo { 
                           TeacherBasicInfo=t,
                           CollageName=d2.InfoName,
                           MajorName=dd2.InfoName
                           };
+                if (!string.IsNullOrWhiteSpace(query.UserNo))
+                {
+                    sql = sql.Where(x => x.TeacherBasicInfo.EmpNo.Contains(query.UserNo));
+                }
+                if (!string.IsNullOrWhiteSpace(query.UserName))
+                {
+                    sql = sql.Where(x => x.TeacherBasicInfo.Name.Contains(query.UserName));
+                }
                 totalCount = sql.Count();
                 return sql.ToList();
             }
@@ -63,5 +71,17 @@ namespace Teaching.DataAccess
                 return sql.ToList();
             }
         }
+        public static bool IsExitTeacherNo(string EmpNo)
+        {
+            using (var ctx = CreateContext())
+            {
+                var sql = from s in ctx.Set<TeacherBasicInfo>()
+                          where s.EmpNo == EmpNo
+                          select s;
+                return sql.Count() > 0;
+
+            }
+        }
+
     }
 }

@@ -29,7 +29,7 @@
         <div>
             <a onclick="openDialog('ExperimentDetailAdd.aspx')" href="#"
                 title="添加实验大纲">
-                <asp:Button runat="server" ID="btnAddSyllabus" Text="添加" CssClass="btnadd" /></a>
+                <asp:Button runat="server" ID="btnAddSyllabus" Text="添加" CssClass="btnadd button" /></a>
             <table class="table">
                 <tr class="title_sty">
                     <td colspan="2">课程编码</td>

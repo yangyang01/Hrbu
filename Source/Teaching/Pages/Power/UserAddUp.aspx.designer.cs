@@ -40,6 +40,15 @@ namespace Teaching.Pages.Power {
         protected global::System.Web.UI.WebControls.TextBox txtUserName;
         
         /// <summary>
+        /// txtPassword 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        
+        /// <summary>
         /// ddlRoleName 控件。
         /// </summary>
         /// <remarks>
@@ -47,5 +56,14 @@ namespace Teaching.Pages.Power {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlRoleName;
+        
+        /// <summary>
+        /// btSubmit 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btSubmit;
     }
 }

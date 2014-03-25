@@ -37,11 +37,11 @@
                 document.write("今天是&nbsp;" + date + "&nbsp;&nbsp;&nbsp;");
             </script>
             当前用户：<asp:Label ID="lblName" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;
-            <a href='<%=ResolveUrl("~/Login.aspx") %>'>
-                <input type="button" id="btnLogout" value="注销" class="logout" />
+            <a href='<%=ResolveUrl("~/Login.aspx") %>' style="text-decoration:none;">
+                <input type="button" id="btnLogout" value="注销" class="button" style="margin-top: -1px;"/>
             </a>
             <a href='<%=ResolveUrl("Power/PassWordUpdate.aspx") %>' target="_right">
-                <input type="button" id="btnpassword" value="修改密码" class="logout" /></a>
+                <input type="button" id="btnpassword" value="修改密码" class="button" style="margin-top: -1px;" /></a>
         </div>
         <%-- <div id="nav">
                     <ul>
@@ -80,7 +80,8 @@
                         <li>
                             <dl class="gallery">
                                 <dt><a>教学文件管理</a></dt>
-                                <dd><a href="TeachDocument/TrainingProgram.aspx" title="人才培养方案" target="_right">人才培养方案</a></dd>
+                                <dd><a href="TeachDocument/CourseInfoList.aspx" title="课程管理" target="_right">课程管理</a></dd>
+                                <dd><a href="TeachDocument/TrainingProgram.aspx" title="培养方案" target="_right">培养方案</a></dd>
                                 <dd><a href="TeachDocument/TeachingSyllabus.aspx" title="教学大纲" target="_right">教学大纲</a></dd>
                                 <dd><a href="TeachDocument/AssessmentSyllabus.aspx" title="考核大纲" target="_right">考核大纲</a></dd>
                                 <dd><a href="TeachDocument/ExperimentSyllabus.aspx" title="实验大纲" target="_right">实验大纲</a></dd>

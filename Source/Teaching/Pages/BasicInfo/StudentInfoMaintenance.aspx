@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudentInfoMaintenance.aspx.cs" Inherits="Teaching.Pages.BasicInfo.StudentInfoMaintenance" %>
 
+<%@ Register Src="~/UserControls/PagerControl.ascx" TagPrefix="uc1" TagName="PagerControl" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,22 +10,26 @@
     <title>学生信息列表</title>
     <link type="text/css" rel="stylesheet" href="~/Content/css/global.css" />
     <script src="../../Content/js/Utility.js"></script>
-    <%@ Register Src="~/UserControls/PagerControl.ascx" TagPrefix="uc1" TagName="PagerControl" %>
+    <style>
+        .b {
+            margin-top: -1px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="content_title"><span>学生信息维护</span></div>
         <div>
             <div style="padding-left: 100px; font-size: 18px; height: 27px">
-                姓名：<asp:TextBox runat="server" Width="100px" Height="25px" ID="txtSearchName"></asp:TextBox>
                 学号：<asp:TextBox runat="server" Width="100px" Height="25px" ID="txtSearchNo"></asp:TextBox>
-                <asp:Button runat="server" Text="查询" CssClass="button" />
+                姓名：<asp:TextBox runat="server" Width="100px" Height="25px" ID="txtSearchName"></asp:TextBox>
+                <asp:Button runat="server" Text="查询" CssClass="button b" OnClick="SearchQuery" />
                 <%--</div>
             <div style="padding-left: 100px;">--%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a onclick="openDialog('StudentInfoDetail.aspx')" href="#"
                     title="添加学生信息">
-                    <asp:Button Text="添加" runat="server" CssClass="button" ID="btnAddInfo" Visible="false" /></a>
-                <asp:Button runat="server" Text="批量数据信息导入" CssClass="button" Style="width: 125px;" ID="btnAddInfoList" Visible="false" />
+                    <asp:Button Text="添加" runat="server" CssClass="button b" ID="btnAddInfo" Visible="false" /></a>
+                <asp:Button runat="server" Text="批量数据信息导入" CssClass="button b" Style="width: 125px;" ID="btnAddInfoList" Visible="false" />
             </div>
             <table class="table" border="0" style="padding-left: 100px; border-collapse: collapse; margin: 10px 100px;">
                 <tr class="table_title">
@@ -42,7 +48,7 @@
                 <asp:Repeater runat="server" ID="rptStudentInfoList" OnItemCommand="repPend_ItemCommand">
                     <ItemTemplate>
                         <tr>
-                             <asp:HiddenField ID="hfStudentInfoID" runat="server" Value='<%#Eval("StudentBasicInfo.Id") %>'
+                            <asp:HiddenField ID="hfStudentInfoID" runat="server" Value='<%#Eval("StudentBasicInfo.Id") %>'
                                 ClientIDMode="Static" />
                             <td title="<%#Eval("StudentBasicInfo.StudentNo") %>"><%#Eval("StudentBasicInfo.StudentNo") %></td>
                             <td title="<%#Eval("StudentBasicInfo.Name") %>"><%#Eval("StudentBasicInfo.Name") %></td>

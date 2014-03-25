@@ -76,7 +76,7 @@ namespace Hrbu.Teaching.Interface
         /// <param name="totalCount"></param>
         /// <returns></returns>
         [OperationContract]
-        List<UserInfoUI> GetUserInfoByPage(int startPage, int pageSize, out int totalCount);
+        List<UserInfoUI> GetUserInfoByPage(QueryStringUI query, int startPage, int pageSize, out int totalCount);
         /// <summary>
         /// 删除数据字典数据
         /// </summary>
@@ -121,6 +121,20 @@ namespace Hrbu.Teaching.Interface
         List<DataDicInfoUI> GetDataDicByType(int type);
 
         List<RoleUI> GetRoleNameList();
+        /// <summary>
+        /// 是否存在添加的用户名
+        /// </summary>
+        /// <param name="UserNo"></param>
+        /// <returns></returns>
+        bool IsExitUserNo(string UserNo);
+        /// <summary>
+        /// 是否是学生用户
+        /// </summary>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
+        bool IsStudentNo(int roleId);
+
+        UserUI GetUserInfoByNo(string stuNo);
 
     }
 }

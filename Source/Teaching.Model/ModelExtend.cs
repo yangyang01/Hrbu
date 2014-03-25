@@ -18,4 +18,24 @@ namespace Hrbu.Teaching.Model
         public User User { get; set; }
         public string RoleName { get; set; }
     }
+
+    public partial class Course 
+    {
+        public CourseInfo CourseInfo { get; set; }
+        public string CoursePropertyCn { get; set; }
+        public string CourseTypeCn { get; set; }
+    }
+    public partial class TrainingProgramCourseInfo
+    {
+        public TrainingProgramInfo TrainingProgramInfo { get; set; }
+        public string CourseName { get; set; }
+        public string CoursePropertyCn { get; set; }
+        public string CourseTypeCn { get; set; }
+        public Nullable<int> Credit { get; set; }
+        public Nullable<int> PeriodTotal { get; set; }
+        public string SchoolYear { set; get; }
+        public string SchoolSemester { set; get; }
+        public string ProfessionalEmphasis { set; get; }
+        public string EvaluationMode { set; get; }
+    }
 }

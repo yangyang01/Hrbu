@@ -38,6 +38,7 @@ namespace Teaching.Pages.Power
             var userInfo = UserService.GetUserInfoById(Id);
             this.txtUserNo.Text = userInfo.User.UserNo;
             this.txtUserName.Text = userInfo.User.UserName;
+            this.txtPassword.Text = userInfo.User.Password;
             this.ddlRoleName.SelectedValue = userInfo.User.RoleId.ToString();
         }
         protected void ClickbtnSure(object sender, EventArgs e)
@@ -48,18 +49,27 @@ namespace Teaching.Pages.Power
 
                 userInfo.User.UserNo = this.txtUserNo.Text;
                 userInfo.User.UserName = this.txtUserName.Text;
+                userInfo.User.Password = this.txtPassword.Text;
                 userInfo.User.RoleId = this.ddlRoleName.SelectedValue.ToInt();
                 UserService.UpdateUser(userInfo.User);
                 WebMessageBox(this.Page, string.Format("'操作成功!',RefreshParentAndCloseSelf"));
             }
             else
             {
-                UserUI user = new UserUI();
-                user.UserNo = this.txtUserNo.Text;
-                user.UserName = this.txtUserName.Text;
-                user.RoleId = this.ddlRoleName.SelectedValue.ToInt();
-                UserService.AddUser(user);
-                WebMessageBox(this.Page, string.Format("'操作成功!',RefreshParentAndCloseSelf"));
+                if (!UserService.IsExitUserNo(this.txtUserNo.Text))
+                {
+                    UserUI user = new UserUI();
+                    user.UserNo = this.txtUserNo.Text;
+                    user.UserName = this.txtUserName.Text;
+                    user.Password = this.txtPassword.Text;
+                    user.RoleId = this.ddlRoleName.SelectedValue.ToInt();
+                    UserService.AddUser(user);
+                    WebMessageBox(this.Page, string.Format("'添加成功!',RefreshParentAndCloseSelf"));
+                }
+                else
+                {
+                    WebMessageBox(this.Page, "'该用户已存在!'");
+                }
             }
         }
     }

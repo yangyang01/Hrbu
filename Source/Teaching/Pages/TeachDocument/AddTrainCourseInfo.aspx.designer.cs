@@ -22,111 +22,102 @@ namespace Teaching.Pages.TeachDocument {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtStuNo 控件。
+        /// ddlYear 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStuNo;
+        protected global::System.Web.UI.WebControls.DropDownList ddlYear;
         
         /// <summary>
-        /// txtStuName 控件。
+        /// ddlGrade 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStuName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGrade;
         
         /// <summary>
-        /// txtSex 控件。
+        /// txtCourseCode 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSex;
+        protected global::System.Web.UI.WebControls.TextBox txtCourseCode;
         
         /// <summary>
-        /// txtTel 控件。
+        /// ddlMarjor 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTel;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMarjor;
         
         /// <summary>
-        /// txtMajor 控件。
+        /// ddlSemester 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMajor;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSemester;
         
         /// <summary>
-        /// txtClass 控件。
+        /// ddlEvaluation 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtClass;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEvaluation;
         
         /// <summary>
-        /// txtZipCode 控件。
+        /// txtTestPeriod 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtZipCode;
+        protected global::System.Web.UI.WebControls.TextBox txtTestPeriod;
         
         /// <summary>
-        /// txtAddress 控件。
+        /// txtTeachPeriod 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAddress;
+        protected global::System.Web.UI.WebControls.TextBox txtTeachPeriod;
         
         /// <summary>
-        /// txtContacts 控件。
+        /// txtPracticeWeeks 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContacts;
+        protected global::System.Web.UI.WebControls.TextBox txtPracticeWeeks;
         
         /// <summary>
-        /// txtContTel 控件。
+        /// txtaRemark 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContTel;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtaRemark;
         
         /// <summary>
-        /// txtMail 控件。
+        /// btnSubmit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMail;
-        
-        /// <summary>
-        /// TextBox1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

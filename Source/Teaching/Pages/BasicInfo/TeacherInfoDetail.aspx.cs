@@ -15,6 +15,7 @@ namespace Teaching.Pages.BasicInfo
     public partial class TeacherInfoDetail : BasePage
     {
         public IBasicInfo TeacherService { get; set; }
+        public IPower UserService { get; set; }
 
         public int TeacherId
         {
@@ -67,7 +68,6 @@ namespace Teaching.Pages.BasicInfo
         {
             var teacherInfo = TeacherService.GetTeacherInfoById(TeacherId);
             this.txtEmpNo.Text = teacherInfo.EmpNo;
-            this.txtEmpName.Text = teacherInfo.Name;
             this.txtsex.Text = teacherInfo.Sex;
             this.ddlMajor.SelectedValue = teacherInfo.Major.NullToString();
             this.ddlCollage.SelectedValue = teacherInfo.Collage.NullToString();
@@ -90,7 +90,6 @@ namespace Teaching.Pages.BasicInfo
                 var teacherInfo = TeacherService.GetTeacherInfoById(TeacherId);
 
                 teacherInfo.EmpNo = this.txtEmpNo.Text;
-                teacherInfo.Name = this.txtEmpName.Text;
                 teacherInfo.Sex = this.txtsex.Text;
                 teacherInfo.PATP = this.ddlPATP.SelectedValue.ToNullableInt();
                 teacherInfo.Collage = this.ddlCollage.SelectedValue.ToNullableInt();
@@ -109,24 +108,42 @@ namespace Teaching.Pages.BasicInfo
             }
             else
             {
-                TeacherBasicInfoUI teacherInfo = new TeacherBasicInfoUI();
-                teacherInfo.EmpNo = this.txtEmpNo.Text;
-                teacherInfo.Name = this.txtEmpName.Text;
-                teacherInfo.Sex = this.txtsex.Text;
-                teacherInfo.Collage = this.ddlCollage.SelectedValue.ToNullableInt();
-                teacherInfo.Major = this.ddlMajor.SelectedValue.ToNullableInt();
-                teacherInfo.PATP = this.ddlPATP.SelectedValue.ToNullableInt();
-                teacherInfo.Course1 = this.ddlCourse1.SelectedValue.ToNullableInt();
-                teacherInfo.Course2 = this.ddlCourse2.SelectedValue.ToNullableInt();
-                teacherInfo.Course3 = this.ddlCourse3.SelectedValue.ToNullableInt();
-                teacherInfo.Course4 = this.ddlCourse4.SelectedValue.ToNullableInt();
-                teacherInfo.HightestDegree = this.txtHighBackground.Text;
-                teacherInfo.GraduationSchool = this.txtFinishSchool.Text;
-                teacherInfo.Tel = this.txtTel.Text;
-                teacherInfo.Mail = this.txtMail.Text;
-                teacherInfo.IndividualResume = this.txtCurriculumVitae.Value;
-                TeacherService.AddTeacherInfo(teacherInfo);
-                WebMessageBox(this.Page, string.Format("'操作成功!',RefreshParentAndCloseSelf"));
+                if (!UserService.IsExitUserNo(this.txtEmpNo.Text))
+                {
+                    WebMessageBox(this.Page, "'请确定存在该用户！'");
+                }
+                else
+                {
+                    var user = UserService.GetUserInfoByNo(this.txtEmpNo.Text);
+                    if (UserService.IsStudentNo(user.RoleId))
+                    {
+                        WebMessageBox(this.Page, "'请确定该用户为教工用户！'");
+                    }
+                    else
+                    {
+                        if (!TeacherService.IsExitTeacherNo(this.txtEmpNo.Text))
+                        {
+                            TeacherBasicInfoUI teacherInfo = new TeacherBasicInfoUI();
+                            teacherInfo.EmpNo = this.txtEmpNo.Text;
+                            teacherInfo.Name = user.UserName;
+                            teacherInfo.Sex = this.txtsex.Text;
+                            teacherInfo.Collage = this.ddlCollage.SelectedValue.ToNullableInt();
+                            teacherInfo.Major = this.ddlMajor.SelectedValue.ToNullableInt();
+                            teacherInfo.PATP = this.ddlPATP.SelectedValue.ToNullableInt();
+                            teacherInfo.Course1 = this.ddlCourse1.SelectedValue.ToNullableInt();
+                            teacherInfo.Course2 = this.ddlCourse2.SelectedValue.ToNullableInt();
+                            teacherInfo.Course3 = this.ddlCourse3.SelectedValue.ToNullableInt();
+                            teacherInfo.Course4 = this.ddlCourse4.SelectedValue.ToNullableInt();
+                            teacherInfo.HightestDegree = this.txtHighBackground.Text;
+                            teacherInfo.GraduationSchool = this.txtFinishSchool.Text;
+                            teacherInfo.Tel = this.txtTel.Text;
+                            teacherInfo.Mail = this.txtMail.Text;
+                            teacherInfo.IndividualResume = this.txtCurriculumVitae.Value;
+                            TeacherService.AddTeacherInfo(teacherInfo);
+                            WebMessageBox(this.Page, string.Format("'操作成功!',RefreshParentAndCloseSelf"));
+                        }
+                    }
+                }
             }
         }
     }

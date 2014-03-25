@@ -18,7 +18,7 @@ namespace Teaching.DataAccess
                 var query = from a in ctx.Set<Authorizations>()
                             join b in ctx.Set<Menu>() on a.MenuId equals b.Id
                             join c in ctx.Set<Role>() on a.RoleId equals c.Id
-                            where b.NameCn == menu && c.Id == roleId
+                            where b.NameCn == menu && c.Id == roleId && a.Enable == true
                             select a;
                 return query.Any();
             }

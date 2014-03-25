@@ -94,7 +94,7 @@ namespace Teaching.Pages.Power
         }
         private void ChangeMenuAuth(ListItem obj)
         {
-            if (obj != null && obj.Selected)
+            if (obj != null)
             {
                 var data = powerInfo.GetAuthInfoByMenuAndRole(obj.Text, RoleId);
                 if (data == null)
@@ -103,14 +103,28 @@ namespace Teaching.Pages.Power
                     {
                         MenuId = powerInfo.GetMenuIdByName(obj.Text),
                         MenuName = obj.Text,
-                        RoleId = RoleId,
-                        Enable = true
+                        RoleId = RoleId
                     };
+                    if (obj.Selected)
+                    {
+                        auth.Enable = true;
+                    }
+                    else
+                    {
+                        auth.Enable = false;
+                    }
                     powerInfo.AddAuth(auth);
                 }
                 else
                 {
-                    data.Enable = true;
+                    if (obj.Selected)
+                    {
+                        data.Enable = true;
+                    }
+                    else
+                    {
+                        data.Enable = false;
+                    }
                     powerInfo.UpdateAuth(data);
                 }
             }

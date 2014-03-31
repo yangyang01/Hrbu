@@ -8,7 +8,7 @@
     <link type="text/css" rel="stylesheet" href="~/Content/css/power.css" />
     <link type="text/css" rel="stylesheet" href="~/Content/css/global.css" />
     <script src="../Content/js/Scripts/jquery-1.10.2.min.js"></script>
-    <title>系统框架</title>
+    <title>软件学院教务管理平台</title>
     <style type="text/css">
     </style>
     <script type="text/javascript">
@@ -17,10 +17,10 @@
         //})
     </script>
 </head>
-<body style="background-color: #6989B7">
-    <div style="width: 1200px; height: 620px; background-color: white; margin: -17px 0px -17px 75px;">
-        <div id="top">
-            <img src='<%=ResolveUrl("/Content/Images/teach_logo.jpg") %>' style="width: 1190px; height: 170px; margin: -4px 5px;" />
+<body style="background-color: #ebebeb">
+    <div style="width: 1200px; height: 620px; background-color: #F0EEEE; margin: -17px 0px -17px 75px;">
+        <div id="top" style="background-color: #ebebeb">
+            <img src='<%=ResolveUrl("/Content/Images/teach_logo.jpg") %>' style="width: 1196px; height: 160px; margin: -4px 0;" />
         </div>
         <div class="js user">
             <script type="text/javascript">
@@ -55,6 +55,7 @@
                         <li>系统设置维护</li>
                     </ul>
                 </div>--%>
+
         <div id="content">
             <div id="left">
                 <div>

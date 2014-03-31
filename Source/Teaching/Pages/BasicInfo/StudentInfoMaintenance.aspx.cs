@@ -51,7 +51,7 @@ namespace Teaching.Pages.BasicInfo
                 UserNo = UserNo,
                 UserName = UserName
             };
-            var studentInfoList = studentInfo.GetStudentInfoByPage(query,currentPageIndex + 1, 2, out totalCount);
+            var studentInfoList = studentInfo.GetStudentInfoByPage(query,currentPageIndex + 1, PagerControl.PageSize, out totalCount);
             this.rptStudentInfoList.DataSource = studentInfoList;
             this.rptStudentInfoList.DataBind();
 

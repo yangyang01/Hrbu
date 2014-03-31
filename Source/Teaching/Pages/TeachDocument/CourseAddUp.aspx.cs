@@ -26,12 +26,12 @@ namespace Teaching.Pages.TeachDocument
         {
             if (!IsPostBack)
             {
+                this.ddlCourseType.BindDropDownListWithDefault(6);
+                this.ddlCourseProperty.BindDropDownListWithDefault(7);
                 if (Request["Id"] != null)
                 {
                     BindModel();
                 }
-                this.ddlCourseType.BindDropDownListWithDefault(6);
-                this.ddlCourseProperty.BindDropDownListWithDefault(7);
             }
         }
         protected void BindModel()

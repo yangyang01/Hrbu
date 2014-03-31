@@ -217,3 +217,99 @@ a {
             background: #ADC2DD;
             color: #fff;
         }
+/*************nav-list**********/
+
+.navleft {
+    height: 500px;
+    width: 200px;
+    float: left;
+    background: #3467ab; /* Old browsers */
+    background: -moz-linear-gradient(top, #3467ab 1%, #81aae1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#3467ab), color-stop(100%,#81aae1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #3467ab 1%,#81aae1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #3467ab 1%,#81aae1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #3467ab 1%,#81aae1 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #3467ab 1%,#81aae1 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3467ab', endColorstr='#81aae1',GradientType=0 ); /* IE6-9 */
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0 0 0 5px;
+    list-style: none;
+    width: 190px;
+    float: left;
+    margin-top: 40px;
+}
+
+    .nav-list > li {
+        display: block;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        border-top: 1px solid #fcfcfc;
+        border-bottom: 1px solid #e5e5e5;
+        position: relative;
+    }
+
+        .nav-list > li > a {
+            display: block;
+            height: 38px;
+            line-height: 36px;
+            padding: 0 16px 0 7px;
+            background-color: #f9f9f9;
+            color: #585858;
+            text-shadow: none !important;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+            .nav-list > li > a > [class*="icon-"]:first-child {
+                display: inline-block;
+                vertical-align: middle;
+                min-width: 30px;
+                text-align: center;
+                font-size: 18px;
+                font-weight: normal;
+            }
+
+        .nav-list > li > a {
+            line-height: 36px;
+            color: #585858;
+            text-shadow: none !important;
+            font-size: 13px;
+            background: #F3F3F3;
+        }
+
+            .nav-list > li > a:hover {
+                background-color: #FFF;
+                color: #1963aa;
+            }
+
+                .nav-list > li > a:hover:before {
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    top: -1px;
+                    bottom: 0;
+                    left: 0;
+                    width: 3px;
+                    max-width: 3px;
+                    overflow: hidden;
+                    background-color: #3382af;
+                }
+
+
+.navleft > span {
+    display: block;
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    width: 185px;
+}
+
+    .navleft > span > span {
+        float: right;
+    }

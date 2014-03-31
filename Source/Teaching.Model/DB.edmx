@@ -19,6 +19,7 @@
           <Property Name="SOTopicProportion" Type="nvarchar" MaxLength="50" />
           <Property Name="TopicProportion" Type="nvarchar" MaxLength="50" />
           <Property Name="DifficultyLevel" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssessmentType" Type="int" />
         </EntityType>
         <EntityType Name="AssessmentSyllabusDetail">
           <Key>
@@ -221,6 +222,9 @@
           <Property Name="Synopsis" Type="nvarchar" MaxLength="500" />
           <Property Name="TeachKeyPoint" Type="nvarchar" MaxLength="500" />
           <Property Name="LessonReview" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeachingAims" Type="nvarchar" MaxLength="500" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="SerialNo" Type="int" />
         </EntityType>
         <EntityType Name="TrainingProgramAim">
           <Key>
@@ -395,6 +399,7 @@
           <Property Name="SOTopicProportion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TopicProportion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DifficultyLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AssessmentType" Type="Int32" />
         </EntityType>
         <EntityType Name="ExperimentSyllabusBasic">
           <Key>
@@ -486,6 +491,9 @@
           <Property Name="Synopsis" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="TeachKeyPoint" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="LessonReview" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeachingAims" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNo" Type="Int32" />
         </EntityType>
         <EntityType Name="TeacherBasicInfo">
           <Key>
@@ -655,6 +663,7 @@
           <EntitySetMapping Name="AssessmentSyllabusBasics">
             <EntityTypeMapping TypeName="TCMGModel2.AssessmentSyllabusBasic">
               <MappingFragment StoreEntitySet="AssessmentSyllabusBasic">
+                <ScalarProperty Name="AssessmentType" ColumnName="AssessmentType" />
                 <ScalarProperty Name="DifficultyLevel" ColumnName="DifficultyLevel" />
                 <ScalarProperty Name="TopicProportion" ColumnName="TopicProportion" />
                 <ScalarProperty Name="SOTopicProportion" ColumnName="SOTopicProportion" />
@@ -751,6 +760,9 @@
           <EntitySetMapping Name="TeachingSyllabusDetails">
             <EntityTypeMapping TypeName="TCMGModel2.TeachingSyllabusDetail">
               <MappingFragment StoreEntitySet="TeachingSyllabusDetail">
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TeachingAims" ColumnName="TeachingAims" />
                 <ScalarProperty Name="LessonReview" ColumnName="LessonReview" />
                 <ScalarProperty Name="TeachKeyPoint" ColumnName="TeachKeyPoint" />
                 <ScalarProperty Name="Synopsis" ColumnName="Synopsis" />

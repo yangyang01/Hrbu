@@ -35,7 +35,7 @@ namespace Teaching.DataAccess
                     sql = sql.Where(x => x.StudentBasicInfo.Name.Contains(query.UserName));
                 }
                 totalCount = sql.Count();
-                return sql.ToList();
+                return sql.Skip(pageSize * (startPage - 1)).Take(pageSize).ToList();
             }
         }
         public static StudentBasicInfo GetStudentInfoById(int Id)

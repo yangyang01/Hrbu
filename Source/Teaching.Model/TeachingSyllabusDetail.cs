@@ -25,5 +25,8 @@ namespace Teaching.Model
         public string Synopsis { get; set; }
         public string TeachKeyPoint { get; set; }
         public string LessonReview { get; set; }
+        public string TeachingAims { get; set; }
+        public string Title { get; set; }
+        public Nullable<int> SerialNo { get; set; }
     }
 }

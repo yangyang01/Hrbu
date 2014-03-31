@@ -37,7 +37,8 @@ namespace Hrbu.Teaching.DataAccess
         public DbSet<TrainingProgramInfo> TrainingProgramInfo { get; set; }
         public DbSet<TeachingSyllabusBasic> TeachingSyllabusBasic { get; set; }
         public DbSet<TeachingSyllabusDetail> TeachingSyllabusDetail { get; set; }
-
+        public DbSet<AssessmentSyllabusBasic> AssessmentSyllabusBasic { get; set; }
+        public DbSet<AssessmentSyllabusDetail> AssessmentSyllabusDetail { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

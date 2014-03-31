@@ -13,8 +13,8 @@
 
     <style>
         .ddl {
-            width: 152px;
-            height: 26px;
+            width: 155px;
+            height: 34px;
         }
 
         .i {
@@ -53,18 +53,18 @@
                                 <span class="left">学年：</span> <span class="right">
                                     <asp:DropDownList ID="ddlYear" runat="server" CssClass="txt ddl" Style="margin-left: -10px;"></asp:DropDownList></span>
                                 <span class="left a">年级：</span><span class="right" style="margin-left: 17px;">
-                                    <asp:DropDownList ID="ddlGrade" runat="server" CssClass="txt ddl"></asp:DropDownList></span>
+                                    <asp:DropDownList ID="ddlGrade" runat="server" CssClass="txt ddl" Style="margin-left: -6px;"></asp:DropDownList></span>
                                 <div>
                                     <span class="left">课程编码：</span> <span class="right">
                                         <asp:TextBox ID="txtCourseCode" runat="server" CssClass="txt" Style="margin-left: -10px;"></asp:TextBox></span>
                                     <span class="left a">专业方向：</span><span class="right">
-                                        <asp:DropDownList ID="ddlMarjor" runat="server" CssClass="txt ddl"></asp:DropDownList></span>
+                                        <asp:DropDownList ID="ddlMarjor" runat="server" CssClass="txt ddl" Style="margin-left: -4px;"></asp:DropDownList></span>
                                 </div>
                                 <div>
                                     <span class="left">开课学期：</span><span class="right">
-                                        <asp:DropDownList ID="ddlSemester" runat="server" CssClass="txt ddl" Style="margin-left: -6px;"></asp:DropDownList></span>
+                                        <asp:DropDownList ID="ddlSemester" runat="server" CssClass="txt ddl" Style="margin-left: -8px;"></asp:DropDownList></span>
                                     <span class="left a">考核方式：</span><span class="right">
-                                        <asp:DropDownList runat="server" ID="ddlEvaluation" CssClass="txt ddl"></asp:DropDownList></span>
+                                        <asp:DropDownList runat="server" ID="ddlEvaluation" CssClass="txt ddl" Style="margin-left: -3px;"></asp:DropDownList></span>
                                 </div>
                                 <div>
                                     <span class="left">实验学时：</span><span class="right"><asp:TextBox ID="txtTestPeriod" runat="server" CssClass="txt"></asp:TextBox></span>
@@ -74,7 +74,7 @@
                                     <span class="left">实践周数：</span><span class="right"><asp:TextBox ID="txtPracticeWeeks" runat="server" CssClass="txt"></asp:TextBox></span>
                                 </div>
                                 <div>
-                                    <span style="margin-left: 102px;">备注：<textarea id="txtaRemark" rows="5" cols="80" runat="server"></textarea></span>
+                                    <span style="margin-left: 102px;">备注：<textarea id="txtaRemark" rows="5" cols="80" runat="server" style="border-radius: 5px;"></textarea></span>
                                 </div>
                             </div>
                         </div>

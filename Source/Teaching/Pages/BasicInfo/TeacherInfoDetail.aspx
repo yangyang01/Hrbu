@@ -17,7 +17,7 @@
 
         .ddl {
             width: 155px;
-            height: 26px;
+            height: 34px;
         }
     </style>
     <%--<script type="text/javascript">
@@ -28,7 +28,7 @@
         })
     </script>--%>
 </head>
-<body style="background-color: #FAFBFC;">
+<body>
     <script type="text/javascript">
         $(function () {
             $('#btnSubmit').click(function () {
@@ -61,7 +61,7 @@
                         <div class="info">
                             <div>
                                 <span class="left">*工号：</span> <span class="right">
-                                    <asp:TextBox ID="txtEmpNo" runat="server" CssClass="txt" Style="margin-left: -10px;"></asp:TextBox></span>
+                                    <asp:TextBox ID="txtEmpNo" runat="server" CssClass="txt" Style="margin-left: -11px;"></asp:TextBox></span>
                                 <span class="left a">专业技术职务：</span><span class="right"><asp:DropDownList ID="ddlPATP" runat="server" CssClass="txt ddl"></asp:DropDownList></span>
                             </div>
 
@@ -90,7 +90,7 @@
                             </div>
                             <div>
                                 <span class="left" style="display: block; margin-top: 6px;">个人简介：</span>
-                                <textarea rows="5" cols="80" style="margin-left: 156px;" id="txtCurriculumVitae" runat="server"></textarea>
+                                <textarea rows="5" cols="80" style="margin-left: 156px;border-radius: 5px" id="txtCurriculumVitae" runat="server"></textarea>
                             </div>
                         </div>
                     </fieldset>

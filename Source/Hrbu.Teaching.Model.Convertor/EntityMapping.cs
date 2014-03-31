@@ -67,6 +67,12 @@ namespace Hrbu.Teaching.Model.Convertor
             Mapper.CreateMap<TeachingSyllabusBasicUI, TeachingSyllabusBasic>();
             Mapper.CreateMap<TeachingSyllabusDetail, TeachingSyllabusDetailUI>();
             Mapper.CreateMap<TeachingSyllabusDetailUI, TeachingSyllabusDetail>();
+            Mapper.CreateMap<TeachingSyllabusInfo, TeachingSyllabusInfoUI>();
+            Mapper.CreateMap<TeachingSyllabusInfoUI, TeachingSyllabusInfo>();
+            Mapper.CreateMap<AssessmentSyllabusBasicUI, AssessmentSyllabusBasic>();
+            Mapper.CreateMap<AssessmentSyllabusBasic, AssessmentSyllabusBasicUI>();
+             Mapper.CreateMap<AssessmentSyllabusDetailUI, AssessmentSyllabusDetail>();
+            Mapper.CreateMap<AssessmentSyllabusDetail, AssessmentSyllabusDetailUI>();
             #endregion
             Mapper.CreateMap<QueryString, QueryStringUI>();
             Mapper.CreateMap<QueryStringUI, QueryString>();

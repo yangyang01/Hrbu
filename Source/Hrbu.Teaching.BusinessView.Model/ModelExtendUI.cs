@@ -43,6 +43,7 @@ namespace Hrbu.Teaching.BusinessView.Model
         [DataMember]
         public string CourseTypeCn { get; set; }
     }
+    [DataContract]
 
     public partial class TrainingProgramCourseInfoUI
     {
@@ -67,5 +68,27 @@ namespace Hrbu.Teaching.BusinessView.Model
         [DataMember]
         public string EvaluationMode { set; get; }
         
+    }
+    [DataContract]
+
+    public partial class TeachingSyllabusInfoUI
+    {
+        [DataMember]
+        public TeachingSyllabusBasicUI TeachingSyllabusBasic { get; set; }
+        [DataMember]
+        public TeachingSyllabusDetailUI TeachingSyllabusDetail { get; set; }
+        [DataMember]
+        public string CourseName { get; set; }
+        [DataMember]
+        public string CoursePropertyCn { get; set; }
+        [DataMember]
+        public string PrerequisiteCourseCn { get; set; }
+        [DataMember]
+        public Nullable<int> Credit { get; set; }
+        [DataMember]
+        public Nullable<int> PeriodTotal { get; set; }
+        [DataMember]
+        public Nullable<int> Total { get; set; }
+
     }
 }

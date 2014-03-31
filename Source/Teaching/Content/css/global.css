@@ -12,14 +12,16 @@
 }
 
 body {
-    background-color: white;
+    background-color: #F0EEEE;
     overflow-x: hidden;
 }
 
-.table .table_title {
-    background-color: #728AC0;
-    color: white;
+.table .table_title td {
+    background-color: #8aa9de;
+    color: #333;
     width: 18px;
+    height: 30px;
+    font-family: '微软雅黑';
 }
 
 .button {
@@ -51,8 +53,11 @@ body {
 }
 
 td {
-    border: 1px solid #40444a;
+    border: 1px solid #F5F5F5;
     text-align: center;
+    color: #666;
+    background: #E7E7E7;
+    height: 20px;
 }
 
 .content_title {
@@ -71,14 +76,25 @@ td {
 
 
 .txt {
-    border: 1px solid #6A6775;
-    height: 25px;
+    border: 1px solid #AEACB8;
+    height: 29px;
+    line-height: 23px;
+    font-size: 13px;
+    vertical-align: bottom;
+    width: 153px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color:white; 
+        /*#EBEBE4;*/
 }
 
 table {
     border-collapse: collapse;
     margin: 4px 10px;
     width: 780px;
+    background: #F5F5F5;
+    text-align: center;
+    margin-top: 5px;
 }
 /*page*/
 tr.page_list {

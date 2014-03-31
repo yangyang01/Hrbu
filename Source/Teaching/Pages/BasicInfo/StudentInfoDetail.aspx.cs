@@ -42,6 +42,7 @@ namespace Teaching.Pages.BasicInfo
         {
             if (!IsPostBack)
             {
+                this.ddlMajor.BindDropDownListWithDefault(3);
                 if (Request["StudentId"] != null)
                 {
                     BindModel();
@@ -51,7 +52,6 @@ namespace Teaching.Pages.BasicInfo
                     this.btnSubmit.Visible = true;
                     this.btnReset.Visible = true;
                 }
-                this.ddlMajor.BindDropDownListWithDefault(3);
             }
         }
         protected void BindModel()

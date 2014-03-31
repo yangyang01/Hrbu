@@ -14,6 +14,16 @@
         .i {
             font-size: 13px;
         }
+
+        .c {
+            height: 33px;
+            width: 155px;
+            margin-left: -2px;
+        }
+
+        .r {
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -41,26 +51,26 @@
                             <div>
                                 <span class="left">课程编码：</span> <span class="right">
                                     <asp:TextBox ID="txtCourseCode" runat="server" CssClass="txt" Style="margin-left: -10px;"></asp:TextBox></span>
-                                <span class="left a">先修课程：</span><span class="right"><asp:TextBox ID="txtPrerequisiteCourse" runat="server" CssClass="txt"></asp:TextBox></span>
+                                <span class="left a">先修课程：</span><span class="right"><asp:DropDownList ID="ddlPrerequisiteCourse" runat="server" CssClass="txt c"></asp:DropDownList></span>
                             </div>
                             <div>
                                 <span class="left">教材：</span><span class="right"><asp:TextBox ID="txtTextbook" runat="server" CssClass="txt"></asp:TextBox></span>
                                 <span class="left a">参考书：</span><span class="right"><asp:TextBox ID="txtReferenceBook" runat="server" CssClass="txt"></asp:TextBox></span>
                             </div>
                             <div style="margin-top: 8px">
-                                <span style="margin-left: 65px;">教学内容：<textarea id="txtaTeachContent" rows="5" cols="80" runat="server"></textarea></span>
+                                <span style="margin-left: 65px;">教学内容：<textarea id="txtaTeachContent" rows="5" cols="80" runat="server" class="r"></textarea></span>
                             </div>
                             <div>
-                                <span style="margin-left: 65px;">教学原则：<textarea id="txtaTeachPrinciple" rows="5" cols="80" runat="server"></textarea></span>
+                                <span style="margin-left: 65px;">教学原则：<textarea id="txtaTeachPrinciple" rows="5" cols="80" runat="server" class="r"></textarea></span>
                             </div>
                             <div>
-                                <span style="margin-left: 65px;">教学方法：<textarea id="txtaTeachMethod" rows="5" cols="80" runat="server"></textarea></span>
+                                <span style="margin-left: 65px;">教学方法：<textarea id="txtaTeachMethod" rows="5" cols="80" runat="server" class="r"></textarea></span>
                             </div>
                             <div>
-                                <span style="margin-left: 65px;">教学目的：<textarea id="txtaTeachAim" rows="5" cols="80" runat="server"></textarea></span>
+                                <span style="margin-left: 65px;">教学目的：<textarea id="txtaTeachAim" rows="5" cols="80" runat="server" class="r"></textarea></span>
                             </div>
                             <div>
-                                <span style="margin-left: 65px;">教学任务：<textarea id="txtaTeachTask" rows="5" cols="80" runat="server"></textarea></span>
+                                <span style="margin-left: 65px;">教学任务：<textarea id="txtaTeachTask" rows="5" cols="80" runat="server" class="r"></textarea></span>
                             </div>
                         </div>
                     </fieldset>

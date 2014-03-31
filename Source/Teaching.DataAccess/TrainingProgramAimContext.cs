@@ -17,20 +17,12 @@ namespace Teaching.DataAccess
                 var sql = from t in ctx.Set<TrainingProgramAim>()
                           orderby t.id
                           select t;
-                //if (query.SchoolYear!= null)
-                //{
-                //    sql = sql.Where(x => x.SchoolYear == query.SchoolYear);
-                //}
-                //if (query.SchoolSemester != null)
-                //{
-                //    sql = sql.Where(x => x.SchoolSemester==query.SchoolSemester);
-                //}
                 //if (query.Grade != null)
                 //{
                 //    sql = sql.Where(x => x.Grade == query.Grade);
                 //}
                 totalCount = sql.Count();
-                return sql.ToList();
+                return sql.Skip(pageSize * (startPage - 1)).Take(pageSize).ToList();
             }
         }
     }

@@ -27,7 +27,7 @@
                 用户名：<asp:TextBox ID="txtSearchNo" runat="server" Width="100px" Height="25px"></asp:TextBox>
                 姓名：<asp:TextBox ID="txtSearchName" runat="server" Width="100px" Height="25px"></asp:TextBox>
                 <asp:Button runat="server" Text="查询" CssClass="button b" OnClick="SearchQuery" />
-                <a onclick="openDialog('UserAddUp.aspx,500,400')" href="#"
+                <a onclick="openDialog('UserAddUp.aspx',500,400)" href="#"
                     title="权限信息详情">
                     <asp:Button Text="添加" runat="server" CssClass="button a b" />
                 </a>

@@ -60,20 +60,20 @@ namespace Teaching.DataAccess
                               ProfessionalEmphasis=dp2.InfoName,
                               EvaluationMode=de2.InfoName
                           };
-                //if (query.SchoolYear != null)
-                //{
-                //    sql = sql.Where(x => x.SchoolYear == query.SchoolYear);
-                //}
-                //if (query.SchoolSemester != null)
-                //{
-                //    sql = sql.Where(x => x.SchoolSemester == query.SchoolSemester);
-                //}
-                //if (query.Grade != null)
-                //{
-                //    sql = sql.Where(x => x.Grade == query.Grade);
-                //}
+                if (query.SchoolYear != null)
+                {
+                    sql = sql.Where(x => x.TrainingProgramInfo.SchoolYear == query.SchoolYear);
+                }
+                if (query.SchoolSemester != null)
+                {
+                    sql = sql.Where(x => x.TrainingProgramInfo.SchoolSemester == query.SchoolSemester);
+                }
+                if (query.Grade != null)
+                {
+                    sql = sql.Where(x => x.TrainingProgramInfo.Grade == query.Grade);
+                }
                 totalCount = sql.Count();
-                return sql.ToList();
+                return sql.Skip(pageSize * (startPage - 1)).Take(pageSize).ToList();
             }
 
         }

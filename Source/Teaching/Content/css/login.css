@@ -78,7 +78,7 @@ em {
 .login_txt {
     display: inline-block;
     width: 570px;
-    margin: 10px 20px 10px 30px;
+    margin: 10px 20px 0px 30px;
     font-family: cursive;
     font-weight: 600;
 }

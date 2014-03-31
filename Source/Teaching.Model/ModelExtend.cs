@@ -19,7 +19,7 @@ namespace Hrbu.Teaching.Model
         public string RoleName { get; set; }
     }
 
-    public partial class Course 
+    public partial class Course
     {
         public CourseInfo CourseInfo { get; set; }
         public string CoursePropertyCn { get; set; }
@@ -37,5 +37,16 @@ namespace Hrbu.Teaching.Model
         public string SchoolSemester { set; get; }
         public string ProfessionalEmphasis { set; get; }
         public string EvaluationMode { set; get; }
+    }
+    public partial class TeachingSyllabusInfo
+    {
+        public TeachingSyllabusBasic TeachingSyllabusBasic { get; set; }
+        public TeachingSyllabusDetail TeachingSyllabusDetail { get; set; }
+        public string CourseName { get; set; }
+        public string CoursePropertyCn { get; set; }
+        public string PrerequisiteCourseCn { get; set; }
+        public Nullable<int> Credit { get; set; }
+        public Nullable<int> PeriodTotal { get; set; }
+        public Nullable<int> Total { get; set; }
     }
 }

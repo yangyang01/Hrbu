@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TeachingSyllabus.aspx.cs" Inherits="Teaching.Pages.TeachDocument.TeachingSyllabus" %>
 
+<%@ Register Src="~/UserControls/PagerControl.ascx" TagPrefix="uc1" TagName="PagerControl" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -44,23 +46,40 @@
                     <td>参考书</td>
                     <td>操作</td>
                 </tr>
-                <tr>
-                    <td>003121</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a onclick="openDialog('SyllabusDetail.aspx')" href="#"
-                        title="大纲详情">
-                        <asp:Button runat="server" Text="详情" CssClass ="button"/></a></td>
+                <asp:Repeater runat="server" ID="rptTeachingList">
+                    <ItemTemplate>
+                        <tr>
+                            <td title="<%#Eval("TeachingSyllabusBasic.CourseCode") %>"><%#Eval("TeachingSyllabusBasic.CourseCode") %></td>
+                            <td><%#Eval("CourseName") %></td>
+                            <td><%#Eval("Credit") %></td>
+                            <td><%#Eval("PeriodTotal") %></td>
+                            <td><%#Eval("CoursePropertyCn") %></td>
+                            <td><%#Eval("TeachingSyllabusBasic.TeachAim") %></td>
+                            <td><%#Eval("TeachingSyllabusBasic.TeachTask") %></td>
+                            <td><%#Eval("TeachingSyllabusBasic.TeachContent") %></td>
+                            <td><%#Eval("TeachingSyllabusBasic.TeachPrinciple") %></td>
+                            <td><%#Eval("TeachingSyllabusBasic.TeachMethod") %></td>
+                            <td><%#Eval("PrerequisiteCourseCn") %></td>
+                            <td><%#Eval("TeachingSyllabusBasic.Textbook") %></td>
+                            <td><%#Eval("TeachingSyllabusBasic.ReferenceBook") %></td>
+                            <td><a onclick="openDialog('SyllabusDetail.aspx?BasicId=<%#Eval("TeachingSyllabusBasic.id") %>&BasicCode=<%#Eval("TeachingSyllabusBasic.CourseCode") %>&CourseName=<%#Eval("CourseName") %>')" href="#"
+                                title="大纲详情">
+                                <asp:Button runat="server" Text="详情" CssClass="button" /></a></td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:PlaceHolder ID="phNoData" runat="server" Visible="false">
+                    <tr>
+                        <td colspan='14' style="text-align: left;">当前查询条件没有数据！
+                </td>
+                    </tr>
+                </asp:PlaceHolder>
+                <tr id="trPage" class="page_list" runat="server">
+                    <td colspan='14'>
+                        <div class="page_list_menu">
+                            <uc1:PagerControl runat="server" ID="PagerControl" />
+                        </div>
+                    </td>
                 </tr>
             </table>
         </div>

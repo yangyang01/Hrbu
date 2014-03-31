@@ -17,7 +17,7 @@
 
         .ddl {
             width: 155px;
-            height: 26px;
+            height: 34px;
         }
 
         .r {
@@ -25,7 +25,7 @@
         }
     </style>
 </head>
-<body style="background-color: #FAFBFC;">
+<body>
     <script type="text/javascript">
         $(function () {
             $('#btnSubmit').click(function () {

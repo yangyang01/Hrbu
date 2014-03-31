@@ -8,6 +8,11 @@
     <link href="../../Content/css/basicInfo.css" rel="stylesheet" />
     <link href="../../Content/css/global.css" rel="stylesheet" />
     <title></title>
+    <style>
+        .r {
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -31,16 +36,16 @@
                             </div>
 
                             <div style="margin-top: 8px">
-                                <span style="margin-left: 65px;">教学目的：<textarea rows="5" cols="80"></textarea></span>
+                                <span style="margin-left: 65px;">教学目的：<textarea rows="5" cols="80" class="r"></textarea></span>
                             </div>
                             <div>
-                                <span style="margin-left: 65px;">教学任务：<textarea rows="5" cols="80"></textarea></span>
+                                <span style="margin-left: 65px;">教学任务：<textarea rows="5" cols="80" class="r"></textarea></span>
                             </div>
                             <div>
-                                <span style="margin-left: 65px;">教学内容：<textarea rows="5" cols="80"></textarea></span>
+                                <span style="margin-left: 65px;">教学内容：<textarea rows="5" cols="80" class="r"></textarea></span>
                             </div>
                             <div>
-                                <span style="margin-left: 12px;">教学原则和方法：<textarea rows="5" cols="80"></textarea></span>
+                                <span style="margin-left: 12px;">教学原则和方法：<textarea rows="5" cols="80" class="r"></textarea></span>
                             </div>
                         </div>
                     </fieldset>

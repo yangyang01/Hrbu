@@ -33,5 +33,12 @@ namespace Hrbu.Teaching.BusinessView.Model.TeachDocument
         public string TeachKeyPoint { get; set; }
         [DataMember]
         public string LessonReview { get; set; }
+        [DataMember]
+        public string TeachingAims { get; set; }
+        [DataMember]
+        public string Title { get; set; }
+        [DataMember]
+        public Nullable<int> SerialNo { get; set; }
+
     }
 }

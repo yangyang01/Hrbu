@@ -34,7 +34,7 @@ namespace Teaching.DataAccess
                     sql = sql.Where(x => x.User.UserName.Contains(query.UserName));
                 }
                 totalCount = sql.Count();
-                return sql.ToList();
+                return sql.Skip(pageSize * (startPage - 1)).Take(pageSize).ToList();
             }
         }
         public static UserInfo GetUserInfoById(int Id)

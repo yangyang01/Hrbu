@@ -35,6 +35,9 @@
             font-size: 14px;
             color: black;
         }
+        .r {
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -74,17 +77,17 @@
                             <tr>
                                 <td class="tit" colspan="2" style="width: 100px">培养目标</td>
                                 <td class="txtarea_td">
-                                    <textarea id="txtaAim" rows="3" cols="70" runat="server"></textarea></td>
+                                    <textarea id="txtaAim" rows="3" cols="70" runat="server" class="r"></textarea></td>
                             </tr>
                             <tr>
                                 <td class="tit" colspan="2">规格要求</td>
                                 <td class="txtarea_td">
-                                    <textarea id="txtaRequirements" rows="3" cols="70" runat="server"></textarea></td>
+                                    <textarea id="txtaRequirements" rows="3" cols="70" runat="server" class="r"></textarea></td>
                             </tr>
                             <tr>
                                 <td class="tit" colspan="2">学制学位</td>
                                 <td class="txtarea_td">
-                                    <textarea id="txtaLearningDegree" rows="3" cols="70" runat="server"></textarea></td>
+                                    <textarea id="txtaLearningDegree" rows="3" cols="70" runat="server" class="r"></textarea></td>
                             </tr>
                             <tr>
                                 <td rowspan="3" style="width: 100px">课程体系<br />
@@ -92,19 +95,19 @@
                                 <td class="tit" style="width: 100px">通识教育<br />
                                     课程平台</td>
                                 <td class="txtarea_td">
-                                    <textarea id="txtaPlatform" rows="3" cols="70" runat="server"></textarea></td>
+                                    <textarea id="txtaPlatform" rows="3" cols="70" runat="server" class="r"></textarea ></td>
                             </tr>
                             <tr>
                                 <td class="tit">学科专业<br />
                                     课程平台</td>
                                 <td class="txtarea_td">
-                                    <textarea id="txtaProfessional" rows="3" cols="70" runat="server"></textarea></td>
+                                    <textarea id="txtaProfessional" rows="3" cols="70" runat="server" class="r"></textarea></td>
                             </tr>
                             <tr>
                                 <td class="tit">实践<br />
                                     课程平台</td>
                                 <td class="txtarea_td">
-                                    <textarea id="txtaPractical" rows="3" cols="70" runat="server"></textarea></td>
+                                    <textarea id="txtaPractical" rows="3" cols="70" runat="server" class="r"></textarea></td>
                             </tr>
                         </table>
                     </fieldset>

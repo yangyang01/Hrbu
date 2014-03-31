@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssessmentSyllabusBasicContext.cs" />
+    <Compile Include="AssessmentSyllabusDetailContext.cs" />
     <Compile Include="AuthorizationContext.cs" />
     <Compile Include="CourseInfoContext.cs" />
     <Compile Include="DataDicContext.cs" />

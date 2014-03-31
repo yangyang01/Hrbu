@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Hrbu.Teaching.Utility;
 using Hrbu.Teaching.BusinessView.Model.TeachDocument;
+using Hrbu.Teaching.WebUI.Code;
 
 namespace Teaching.Pages.TeachDocument
 {
@@ -17,7 +18,10 @@ namespace Teaching.Pages.TeachDocument
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                this.ddlPrerequisiteCourse.BindCourseDropDownListWithDefault();
+            }
         }
         protected void ClickbtnSubmit(object sender, EventArgs e)
         {
@@ -31,7 +35,7 @@ namespace Teaching.Pages.TeachDocument
                 {
                     TeachingSyllabusBasicUI Teaching = new TeachingSyllabusBasicUI();
                     Teaching.CourseCode = this.txtCourseCode.Text.ToNullableInt();
-                    Teaching.PrerequisiteCourse = this.txtPrerequisiteCourse.Text.ToNullableInt();
+                    Teaching.PrerequisiteCourse = this.ddlPrerequisiteCourse.SelectedValue.ToNullableInt();
                     Teaching.Textbook = this.txtTextbook.Text;
                     Teaching.ReferenceBook = this.txtReferenceBook.Text;
                     Teaching.CourseCode = this.txtCourseCode.Text.ToInt();

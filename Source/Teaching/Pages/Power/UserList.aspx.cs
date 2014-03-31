@@ -19,9 +19,9 @@ namespace Teaching.Pages.Power
         protected void Page_Load(object sender, EventArgs e)
         {
             checkAuth();
+            PagerControl.PageChange += new PagerControl.PageRefresh(BindUserist);
             if (!IsPostBack)
             {
-                PagerControl.PageChange += new PagerControl.PageRefresh(BindUserist);
                 BindUserist();
             }
         }

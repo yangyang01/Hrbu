@@ -92,11 +92,11 @@ namespace Hrbu.Teaching.Interface
         /// <param name="totalCount"></param>
         /// <returns></returns>
         List<TrainingProgramCourseInfoUI> GetTrainCourseByPage(QueryStringUI query, int startPage, int pageSize, out int totalCount);
-       /// <summary>
+        /// <summary>
         /// 判断是否存在该课程的教学大纲
-       /// </summary>
-       /// <param name="CourseCode"></param>
-       /// <returns></returns>
+        /// </summary>
+        /// <param name="CourseCode"></param>
+        /// <returns></returns>
         bool IsExitTeachingInfo(int CourseCode);
         /// <summary>
         /// 添加教学大纲基本信息
@@ -108,6 +108,59 @@ namespace Hrbu.Teaching.Interface
         /// </summary>
         /// <param name="TeachingSyllabusDetail"></param>
         void AddTeachingSyllabusDetail(TeachingSyllabusDetailUI TeachingSyllabusDetail);
-
+        /// <summary>
+        /// 教学大纲基本信息的分页列表
+        /// </summary>
+        /// <param name="startPage"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="totalCount"></param>
+        /// <returns></returns>
+        List<TeachingSyllabusInfoUI> GetTeachingSyllabusByPage(int startPage, int pageSize, out int totalCount);
+        /// <summary>
+        /// 是否已经存在该条教学大纲详细信息
+        /// </summary>
+        /// <param name="SerialNo"></param>
+        /// <returns></returns>
+        bool IsExitTeachingDetailInfo(int CourseCode, int SerialNo);
+        /// <summary>
+        /// 获取教学大纲详细内容列表
+        /// </summary>
+        /// <param name="startPage"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="totalCount"></param>
+        /// <returns></returns>
+        List<TeachingSyllabusInfoUI> GetTeachingSyllabusDetailByPage(int CourseCode, int startPage, int pageSize, out int totalCount);
+        /// <summary>
+        /// 添加考核大纲基本信息
+        /// </summary>
+        /// <param name="AssessmentSyllabusBasic"></param>
+        void AddAssessmentSyllabusBasic(AssessmentSyllabusBasicUI AssessmentSyllabusBasic);
+        /// <summary>
+        /// 添加考核大纲详细信息
+        /// </summary>
+        /// <param name="AssessmentSyllabusDetail"></param>
+        void AddAssessmentSyllabusDetail(AssessmentSyllabusDetailUI AssessmentSyllabusDetail);
+        /// <summary>
+        /// 是否存在该课程的考核大纲
+        /// </summary>
+        /// <param name="CourseCode"></param>
+        /// <returns></returns>
+        bool IsExitAssessmentInfo(int CourseCode);
+        /// <summary>
+        /// 是否存在改门课程的该章节考核大纲
+        /// </summary>
+        /// <param name="CourseCode"></param>
+        /// <param name="Chapter"></param>
+        /// <returns></returns>
+        bool IsExitAssessmentDetailInfo(int CourseCode, string Chapter);
+        /// <summary>
+        /// 获取考核大纲基本信息列表
+        /// </summary>
+        /// <param name="startPage"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="totalCount"></param>
+        /// <returns></returns>
+        List<AssessmentSyllabusBasicUI> GetAssessmentSyllabusByPage(int startPage, int pageSize, out int totalCount);
+        
     }
 }

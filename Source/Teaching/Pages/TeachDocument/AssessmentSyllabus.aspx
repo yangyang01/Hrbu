@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AssessmentSyllabus.aspx.cs" Inherits="Teaching.Pages.TeachDocument.AssessmentSyllabus" %>
 
+<%@ Register Src="~/UserControls/PagerControl.ascx" TagPrefix="uc1" TagName="PagerControl" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -53,21 +55,37 @@
                     <td>考核<br />
                         详情</td>
                 </tr>
-                <tr>
-                    <td>003121</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a onclick="openDialog('AssessmentDetail.aspx')" href="#"
-                        title="大纲详情">
-                        <asp:Button runat="server" Text="详细" CssClass="button" /></a></td>
+                <asp:Repeater ID="rptAssessList" runat="server">
+                    <ItemTemplate>
+                        <tr>
+                            <td><%#Eval("CourseCode")%></td>
+                            <td></td>
+                            <td><%#Eval("AssessmentPurpose")%></td>
+                            <td><%#Eval("CourseFoundation")%></td>
+                            <td><%#Eval("InspectionScope")%></td>
+                            <td><%#Eval("EvaluationMode")%></td>
+                            <td><%#Eval("TestRequirements")%></td>
+                            <td><%#Eval("SOTopicProportion")%></td>
+                            <td><%#Eval("TopicProportion")%></td>
+                            <td><%#Eval("DifficultyLevel")%></td>
+                            <td><a onclick="openDialog('AssessmentDetail.aspx')" href="#"
+                                title="大纲详情">
+                                <asp:Button runat="server" Text="详细" CssClass="button" /></a></td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:PlaceHolder ID="phNoData" runat="server" Visible="false">
+                    <tr>
+                        <td colspan='12' style="text-align: left;">当前查询条件没有数据！
+                </td>
+                    </tr>
+                </asp:PlaceHolder>
+                <tr id="trPage" class="page_list" runat="server">
+                    <td colspan='12'>
+                        <div class="page_list_menu">
+                            <uc1:PagerControl runat="server" ID="PagerControl" />
+                        </div>
+                    </td>
                 </tr>
             </table>
         </div>

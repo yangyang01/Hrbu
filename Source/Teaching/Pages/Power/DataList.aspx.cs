@@ -35,7 +35,7 @@ namespace Teaching.Pages.Power
         protected void BindDataList(int currentPageIndex = 0)
         {
             int totalCount = 0;
-            var dataDicList = powerInfo.GetDataInfoByPage(currentPageIndex + 1, 2, out totalCount);
+            var dataDicList = powerInfo.GetDataInfoByPage(currentPageIndex + 1, PagerControl.PageSize, out totalCount);
             this.rptDateList.DataSource = dataDicList;
             this.rptDateList.DataBind();
             PagerControl.CurrentPageIndex = currentPageIndex;

@@ -111,5 +111,57 @@ namespace Hrbu.Teaching.Business
 
             TeachingSyllabusDetailContext.Add(Info);
         }
+
+
+        public List<TeachingSyllabusInfoUI> GetTeachingSyllabusByPage(int startPage, int pageSize, out int totalCount)
+        {
+            return EntityMapping.Auto<List<TeachingSyllabusInfo>,List<TeachingSyllabusInfoUI>>(TeachingSyllabusBasicContext.GetTeachingSyllabusByPage(startPage,pageSize, out totalCount));
+        }
+
+
+        public bool IsExitTeachingDetailInfo(int CourseCode, int SerialNo)
+        {
+            return TeachingSyllabusDetailContext.IsExitTeachingDetailInfo(CourseCode,SerialNo);
+        }
+
+
+        public List<TeachingSyllabusInfoUI> GetTeachingSyllabusDetailByPage(int CourseCode, int startPage, int pageSize, out int totalCount)
+        {
+            return EntityMapping.Auto<List<TeachingSyllabusInfo>, List<TeachingSyllabusInfoUI>>(TeachingSyllabusDetailContext.GetTeachingSyllabusDetailByPage(CourseCode,startPage, pageSize, out totalCount));
+
+        }
+
+
+        public void AddAssessmentSyllabusBasic(AssessmentSyllabusBasicUI AssessmentSyllabusBasic)
+        {
+            var Info = EntityMapping.Auto<AssessmentSyllabusBasicUI, AssessmentSyllabusBasic>(AssessmentSyllabusBasic);
+
+            AssessmentSyllabusBasicContext.Add(Info);
+        }
+
+        public void AddAssessmentSyllabusDetail(AssessmentSyllabusDetailUI AssessmentSyllabusDetail)
+        {
+            var Info = EntityMapping.Auto<AssessmentSyllabusDetailUI, AssessmentSyllabusDetail>(AssessmentSyllabusDetail);
+
+            AssessmentSyllabusDetailContext.Add(Info);
+        }
+
+        public bool IsExitAssessmentInfo(int CourseCode)
+        {
+            return AssessmentSyllabusBasicContext.IsExitAssessmentInfo(CourseCode);
+        }
+
+        public bool IsExitAssessmentDetailInfo(int CourseCode, string Chapter)
+        {
+            return AssessmentSyllabusDetailContext.IsExitAssessmentDetailInfo(CourseCode, Chapter);
+
+        }
+
+
+        public List<AssessmentSyllabusBasicUI> GetAssessmentSyllabusByPage(int startPage, int pageSize, out int totalCount)
+        {
+            return EntityMapping.Auto<List<AssessmentSyllabusBasic>, List<AssessmentSyllabusBasicUI>>(AssessmentSyllabusBasicContext.GetAssessmentSyllabusByPage(startPage, pageSize, out totalCount));
+
+        }
     }
 }

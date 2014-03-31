@@ -19,7 +19,7 @@ namespace Teaching.DataAccess
                           orderby d.id
                           select d;
                 totalCount = sql.Count();
-                return sql.ToList();
+                return sql.Skip(pageSize * (startPage - 1)).Take(pageSize).ToList();
             }
         }
     }

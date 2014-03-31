@@ -55,6 +55,8 @@
     <Compile Include="Power\UserUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryStringUI.cs" />
+    <Compile Include="TeachDocument\AssessmentSyllabusBasicUI.cs" />
+    <Compile Include="TeachDocument\AssessmentSyllabusDetailUI.cs" />
     <Compile Include="TeachDocument\CourseInfoUI.cs" />
     <Compile Include="TeachDocument\TeachingSyllabusBasicUI.cs" />
     <Compile Include="TeachDocument\TeachingSyllabusDetailUI.cs" />

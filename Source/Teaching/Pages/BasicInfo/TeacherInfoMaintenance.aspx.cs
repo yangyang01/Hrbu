@@ -50,7 +50,7 @@ namespace Teaching.Pages.BasicInfo
                 UserNo = UserNo,
                 UserName = UserName
             };
-            var teacherList = TeacherInfo.GetTeacherInfoByPage(query, currentPageIndex, 8, out totalCount);
+            var teacherList = TeacherInfo.GetTeacherInfoByPage(query, currentPageIndex,PagerControl.PageSize, out totalCount);
             this.rptTeacherList.DataSource = teacherList;
             this.rptTeacherList.DataBind();
             if (totalCount == 0)

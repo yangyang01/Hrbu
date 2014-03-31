@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>教务管理平台登录</title>
+    <title>软件学院教务管理平台登录</title>
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <link type="text/css" rel="stylesheet" href="~/Content/css/global.css" />
     <link type="text/css" rel="stylesheet" href="~/Content/css/login.css" />
@@ -18,6 +18,17 @@
         .b {
             height: 35px;
             width: 127px;
+        }
+
+        .d {
+            margin: -4px -2px;
+            height: 29px;
+            width: 154px;
+        }
+
+        .t {
+            margin-bottom: 7px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -44,8 +55,8 @@
                 <span class="login_title">登录</span>
                 <div class="e">
                     <span class="login_txt">用户类型：
-                    <asp:DropDownList ID="ddlUsertype" runat="server" CssClass="type">
-                        <asp:ListItem Text="==请选择==" Value="" Selected="true"></asp:ListItem>
+                    <asp:DropDownList ID="ddlUsertype" runat="server" CssClass="type txt d">
+                        <asp:ListItem Text="=====请选择=====" Value="" Selected="true"></asp:ListItem>
                         <asp:ListItem Text="管理员" Value="1"></asp:ListItem>
                         <asp:ListItem Text="教管人员" Value="2"></asp:ListItem>
                         <asp:ListItem Text="教师" Value="3"></asp:ListItem>
@@ -54,15 +65,15 @@
                     <span id="rfvRolename" class="errorTip" style="display: none; color: red;">请选择用户类型！</span>
                 </div>
                 <div class="e">
-                    <span class="login_txt">用户名：<asp:TextBox ID="txtUsername" runat="server" CssClass="txt"></asp:TextBox></span>
+                    <span class="login_txt"><span class="t">用户名：</span><asp:TextBox ID="txtUsername" runat="server" CssClass="txt"></asp:TextBox></span>
                     <span id="rfvUsername" class="errorTip" style="display: none; color: red;">请输入用户名！</span>
                 </div>
                 <div class="e">
-                    <span class="login_txt">密&nbsp;&nbsp;&nbsp;码：<asp:TextBox ID="txtPassword" runat="server" CssClass="txt" TextMode="Password"></asp:TextBox></span>
+                    <span class="login_txt"><span class="t">密&nbsp;&nbsp;&nbsp;码：</span><asp:TextBox ID="txtPassword" runat="server" CssClass="txt" TextMode="Password"></asp:TextBox></span>
                     <span id="rfvPassword" class="errorTip" style="display: none; color: red;">请输入密码！</span>
                 </div>
                 <div class="e">
-                    <span class="login_txt">验证码：<asp:TextBox ID="txtVeriCode" runat="server" CssClass="code"></asp:TextBox>
+                    <span class="login_txt"><span class="t">验证码：</span><asp:TextBox ID="txtVeriCode" runat="server" CssClass="code txt"></asp:TextBox>
                         <span style="margin-left: 3px">
                             <img id="CodeImg" onclick="ValiCode(this.id,'VerifyImageCode.ashx')" alt="验证码" style="margin-bottom: -9px;" /></span>
                         <a onclick="ValiCode('CodeImg','VerifyImageCode.ashx')"></a>

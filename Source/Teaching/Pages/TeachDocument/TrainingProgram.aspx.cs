@@ -18,16 +18,17 @@ namespace Teaching.Pages.TeachDocument
         public ITeachDocument TrainService { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            PagerControl.PageChange += new PagerControl.PageRefresh(BindTrainCourseList);
+            PagerControl1.PageChange += new PagerControl.PageRefresh(BindTrainAimList);
             if (!IsPostBack)
             {
-                checkAuth();
-                PagerControl.PageChange += new PagerControl.PageRefresh(BindTrainCourseList);
-                PagerControl1.PageChange += new PagerControl.PageRefresh(BindTrainAimList);
-                BindTrainAimList();
-                BindTrainCourseList();
                 this.ddlGrade.BindDropDownListWithDefault(4);
                 this.ddlYear.BindDropDownListWithDefault(5);
                 this.ddlSemester.BindDropDownListWithDefault(10);
+                checkAuth();
+                BindTrainAimList();
+                BindTrainCourseList();
+              
             }
         }
         public override string PageName
@@ -49,9 +50,19 @@ namespace Teaching.Pages.TeachDocument
                 SchoolSemester = SchoolSemester,
                 Grade = Grade
             };
-            var TrainAimList = TrainService.GetTrainAimByPage(query, currentPageIndex + 1, 2, out totalCount);
+            var TrainAimList = TrainService.GetTrainAimByPage(query,currentPageIndex + 1, 2, out totalCount);
             this.rptTrainAim.DataSource = TrainAimList;
             this.rptTrainAim.DataBind();
+            if (totalCount == 0)
+            {
+                this.phNoData.Visible = true;
+                this.trPage.Visible = false;
+            }
+            else
+            {
+                this.phNoData.Visible = false;
+                this.trPage.Visible = true;
+            }
             PagerControl.CurrentPageIndex = currentPageIndex;
             PagerControl.IntialProperties(totalCount);
         }
@@ -67,9 +78,19 @@ namespace Teaching.Pages.TeachDocument
                 SchoolSemester = SchoolSemester,
                 Grade = Grade
             };
-            var TrainCourseList = TrainService.GetTrainCourseByPage(query, currentPageIndex + 1, 2, out totalCount);
+            var TrainCourseList = TrainService.GetTrainCourseByPage(query,currentPageIndex + 1, 2, out totalCount);
             this.rptTrainCourse.DataSource = TrainCourseList;
             this.rptTrainCourse.DataBind();
+            if (totalCount == 0)
+            {
+                this.phNoData1.Visible = true;
+                this.trPage1.Visible = false;
+            }
+            else
+            {
+                this.phNoData1.Visible = false;
+                this.trPage1.Visible = true;
+            }
             PagerControl.CurrentPageIndex = currentPageIndex;
             PagerControl.IntialProperties(totalCount);
         }

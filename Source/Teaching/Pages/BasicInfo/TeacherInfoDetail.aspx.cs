@@ -45,7 +45,7 @@ namespace Teaching.Pages.BasicInfo
             {
                 this.ddlMajor.BindDropDownListWithDefault(3);
                 this.ddlCollage.BindDropDownListWithDefault(2);
-                //this.ddlPATP.BindDropDownListWithDefault(1);
+                this.ddlPATP.BindDropDownListWithDefault(1);
                 this.ddlCourse1.BindCourseDropDownListWithDefault();
                 this.ddlCourse2.BindCourseDropDownListWithDefault();
                 this.ddlCourse3.BindCourseDropDownListWithDefault();
@@ -53,7 +53,7 @@ namespace Teaching.Pages.BasicInfo
                 
                 if (Request["TeacherId"] != null)
                 {
-                    this.ddlPATP.BindDropDownListWithDefault(1);
+                  
                     BindModel();
                 }
                 if (IsView)

@@ -88,7 +88,7 @@
                 </td>
                     </tr>
                 </asp:PlaceHolder>
-                <tr class="page_list">
+                <tr class="page_list" id="trPage" runat="server">
                     <td colspan='7'>
                         <div class="page_list_menu">
                             <uc1:PagerControl runat="server" ID="PagerControl1" />
@@ -140,7 +140,7 @@
                 </td>
                     </tr>
                 </asp:PlaceHolder>
-                <tr class="page_list">
+                <tr class="page_list" id="trPage1" runat="server">
                     <td colspan='14'>
                         <div class="page_list_menu">
                             <uc1:PagerControl runat="server" ID="PagerControl" />
